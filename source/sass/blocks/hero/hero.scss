@@ -1,0 +1,17 @@
+.hero {
+  min-height: 568px;
+  padding: 20px 15px;
+  background-color: gray;
+}
+
+@media #{$not-mobile} {
+  .hero {
+    min-height: 1024px;
+  }
+}
+
+@media #{$desktop-only} {
+  .hero {
+    min-height: 800px;
+  }
+}

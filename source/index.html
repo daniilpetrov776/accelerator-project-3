@@ -8,14 +8,66 @@
     <link rel="stylesheet" href="sass/style.scss">
   </head>
 
-  <body class="page-body">
-    <!-- пример использования спрайта -->
-    <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
-    <svg>
-      <use href="/__spritemap#sprite-user"></use>
-    </svg>
+  <body class="page">
+    <h1 class="visually-hidden">Стажировка за рубежом.</h1>
+    <section class="page__hero hero" data-test="hero">
+      <div class="container container--full-width hero__wrapper">
+        <h2 class="visually-hidden">Профессиональный опыт обучения.</h2>
+        <header class="hero__hero-header hero-header">
+          <div class="hero-header__logo-wrapper">
+            <img class="hero-header__logo" src="./img/logo/logo.svg" alt="Логотип нашей организации." width="30" height="30">
+          </div>
+            <div class="hero-header__menu-wrapper">
+              <button class="hero-header__nav-button nav-button button" type="button">
+                <span class="nav-button__text">Меню</span>
+                <div class="nav-button__figure"></div>
+              </button>
+              <nav class="hero-header__navigation-menu navigation-menu">
+                <ul class="navigation-menu__list">
+                  <li class="navigation-menu__item">
+                    <a class="navigation-menu__link" href="#">О проекте</a>
+                  </li>
+                  <li class="navigation-menu__item navigation-menu__item--submenu navigation-menu__item--open">
+                    <button class="navigation-menu__submenu-button" type="button">Программы</button>
+                    <ul class="navigation-menu__submenu-list">
+                      <li class="navigation-menu__submenu-item">
+                        <a class="navigation-menu__submenu-link" href="#">Стажировки</a>
+                        <a class="navigation-menu__submenu-link" href="#">Волонтёрство</a>
+                        <a class="navigation-menu__submenu-link" href="#">Учёба</a>
+                        <a class="navigation-menu__submenu-link" href="#">Религия</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="navigation-menu__item">
+                    <a class="navigation-menu__link" href="#">как поехать</a>
+                  </li>
+                  <li class="navigation-menu__item">
+                    <a class="navigation-menu__link" href="#">отзывы</a>
+                  </li>
+                  <li class="navigation-menu__item navigation-menu__item--submenu">
+                    <button class="navigation-menu__submenu-button" type="button">новости</button>
+                    <ul class="navigation-menu__submenu-list">
+                      <li class="navigation-menu__submenu-item">
+                        <a class="navigation-menu__submenu-link" href="#">новость 1</a>
+                        <a class="navigation-menu__submenu-link" href="#">новость 2</a>
+                        <a class="navigation-menu__submenu-link" href="#">новость 3</a>
+                        <a class="navigation-menu__submenu-link" href="#">новость 4</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="navigation-menu__item">
+                    <a class="navigation-menu__link" href="#">контакты</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+        <div class="swiper"></div>
+      </div>
+    </section>
     <!-- примеры требуемых атрибутов data-test="*" -->
-    <div data-test="hero">hero</div>
+    <!-- <div data-test="hero">hero</div> -->
     <div data-test="about">about</div>
     <div data-test="programs">programs</div>
     <div data-test="grant">grant</div>

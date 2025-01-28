@@ -1,0 +1,235 @@
+$tablet-min-width: 768px;
+$tablet-max-width: 1439px;
+$desktop-min-width: 1440px ;
+$mobile-min-width: 320px;
+$mobile-max-width: 767px;
+$mobile-only: "(width <= #{$mobile-max-width})";
+$tablet-only: "(#{$tablet-min-width} <= width <= #{$tablet-max-width})";
+$desktop-only: "(width >= #{$desktop-min-width})";
+$not-mobile: "(width >= #{$tablet-min-width})";
+$not-desktop: "(width <= #{$desktop-min-width})";
+$smooth: cubic-bezier(0.4, 0, 0.4, 1);
+$fast: cubic-bezier(0.4, 0.0, 0.2, 1);
+
+$primary: #484848;
+$additional: #316DC2;
+$additional-on-dark: #F0EFE9;
+$active: #275699;
+$white: #ffffff;
+$disabled: #A9AFB7;
+$error: #FF5E66;
+$photo: #316DC233;
+$under-menu: #0D1D3366;
+
+
+
+$desktop-h1: (
+  font-size: 54px,
+  line-height: 62px,
+  font-weight: 400,
+);
+$tablet-h1: (
+  font-size: 36px,
+  line-height: 44px,
+  font-weight: 400,
+);
+$mobile-h1: (
+  font-size: 22px,
+  line-height: 26px,
+  font-weight: 400,
+);
+
+$desktop-h2: (
+  font-size: 50px,
+  line-height: 50px,
+  font-weight: 400,
+);
+$tablet-h2: (
+  font-size: 34px,
+  line-height: 50px,
+  font-weight: 400,
+);
+$mobile-h2: (
+  font-size: 20px,
+  line-height: 20px,
+  font-weight: 400,
+);
+
+$desktop-h3: (
+  font-size: 32px,
+  line-height: 36px,
+  font-weight: 400,
+);
+$tablet-h3: (
+  font-size: 28px,
+  line-height: 28px,
+  font-weight: 400,
+);
+$mobile-h3: (
+  font-size: 18px,
+  line-height: 22px,
+  font-weight: 400,
+);
+
+$desktop-h4: (
+  font-size: 28px,
+  line-height: 23px,
+  font-weight: 400,
+);
+$tablet-h4: (
+  font-size: 22px,
+  line-height: 26px,
+  font-weight: 400,
+);
+$mobile-h4: (
+  font-size: 16px,
+  line-height: 18px,
+  font-weight: 400,
+);
+
+$desktop-h5: (
+  font-size: 26px,
+  line-height: 30px,
+  font-weight: 400,
+  letter-spacing: 0.01em,
+  text-transform: uppercase,
+);
+$tablet-h5: (
+  font-size: 20px,
+  line-height: 22px,
+  font-weight: 400,
+  letter-spacing: 0.01em,
+  text-transform: uppercase,
+);
+$mobile-h5: (
+  font-size: 16px,
+  line-height: 20px,
+  font-weight: 400,
+  letter-spacing: 0.01em,
+  text-transform: uppercase,
+);
+
+$desktop-h6: (
+  font-size: 24px,
+  line-height: 26px,
+  font-weight: 400,
+);
+$tablet-h6: (
+  font-size: 20px,
+  line-height: 24px,
+  font-weight: 400,
+);
+$mobile-h6: (
+  font-size: 16px,
+  line-height: 18px,
+  font-weight: 400,
+);
+
+$desktop-text-big: (
+  font-size: 22px,
+  line-height: 32px,
+  font-weight: 400,
+);
+$tablet-text-big: (
+  font-size: 20px,
+  line-height: 26px,
+  font-weight: 400,
+);
+$mobile-text-big: (
+  font-size: 16px,
+  line-height: 22px,
+  font-weight: 400,
+);
+
+$desktop-text-medium: (
+  font-size: 18px,
+  line-height: 24px,
+  font-weight: 400,
+);
+$tablet-text-medium: (
+  font-size: 16px,
+  line-height: 26px,
+  font-weight: 400,
+);
+$mobile-text-regular: (
+  font-size: 14px,
+  line-height: 20px,
+  font-weight: 400,
+);
+
+$desktop-text-regular: (
+  font-size: 16px,
+  line-height: 26px,
+  font-weight: 400,
+);
+$tablet-text-regular: (
+  font-size: 16px,
+  line-height: 20px,
+  font-weight: 400,
+);
+$mobile-text-small: (
+  font-size: 14px,
+  line-height: 20px,
+  font-weight: 300,
+);
+
+$desktop-text-small: (
+  font-size: 16px,
+  line-height: 20px,
+  font-weight: 300,
+);
+$tablet-text-small: (
+  font-size: 16px,
+  line-height: 20px,
+  font-weight: 300,
+);
+$mobile-text-xsmall: (
+  font-size: 12px,
+  line-height: 14px,
+  font-weight: 400,
+);
+
+$desktop-text-xsmall: (
+  font-size: 14px,
+  line-height: 18px,
+  font-weight: 400,
+);
+$tablet-text-xsmall: (
+  font-size: 14px,
+  line-height: 20px,
+  font-weight: 400,
+);
+
+$desktop-text-xxsmall: (
+  font-size: 12px,
+  line-height: 12px,
+  font-weight: 400,
+);
+$tablet-text-xsmall: (
+  font-size: 12px,
+  line-height: 12px,
+  font-weight: 400,
+);
+
+$caption: (
+  font-size: 12px,
+  line-height: 12px,
+  font-weight: 400,
+  letter-spacing: 0.01em,
+  text-transform: uppercase,
+);
+
+$button: (
+  font-size: 14px,
+  line-height: 14px,
+  font-weight: 500,
+  letter-spacing: 0.02em,
+  text-transform: uppercase,
+);
+$button-mobile: (
+  font-size: 12px,
+  line-height: 12px,
+  font-weight: 500,
+  letter-spacing: 0.02em,
+  text-transform: uppercase,
+);
