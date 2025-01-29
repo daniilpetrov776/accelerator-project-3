@@ -1,7 +1,7 @@
 .hero-header {
   display: flex;
   flex-flow: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   min-height: 54px;
   position: relative;
@@ -16,17 +16,20 @@
   flex-flow: wrap;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  // position: absolute;
   top: 2px;
   left: 0;
 }
 
 .hero-header__menu-wrapper {
-  position: relative;
+  position: absolute;
   display: flex;
   flex-flow: wrap;
   width: 290px;
+  top: -2px;
+  right: 1px;
   margin: 0 0 0 auto;
+  gap: 4px;
 }
 
 @media #{$not-mobile} {

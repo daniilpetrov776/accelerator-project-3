@@ -1,9 +1,24 @@
 .navigation-menu {
-  // display: none;
   background-color: $additional;
   border-radius: 30px;
   padding: 35px 25px;
   width: 100%;
+  transition: max-height 0.3s $smooth, padding 0.3s $smooth;
+  overflow: hidden;
+
+  &--is-closed {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 0 0 25px;
+  }
+
+  &--is-overflow-visible {
+    overflow: visible;
+  }
+
+  &--is-opened {
+    max-height: 1500px;
+  }
 }
 
 .navigation-menu__list {
@@ -12,21 +27,17 @@
   list-style-type: none;
   display: flex;
   flex-flow: column wrap;
-  gap: 28px;
+}
+
+.navigation-menu__item:not(:last-child) {
+  margin: 0 0 28px;
 }
 
 .navigation-menu__item--submenu {
   display: flex;
-  // gap: 20px;
   flex-flow: column wrap;
   justify-content: flex-start;
 }
-
-// .navigation-menu__submenu-list {
-  // margin: 20px 0 0;
-//   padding: 0;
-//   list-style-type: none;
-// }
 
 .navigation-menu__link {
   color: $white;
@@ -64,12 +75,12 @@
   display: flex;
   flex-flow: wrap;
   gap: 16px;
-  transition: max-height 0.3s $smooth;
-  // margin: 20px 0 0;
+  transition: max-height 0.15s ease, margin 0.3s $smooth;
+
 
   &--is-closed {
     max-height: 0;
-    overflow: clip;
+    overflow: hidden;
     margin: 0;
   }
 
