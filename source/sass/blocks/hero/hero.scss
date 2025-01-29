@@ -7,11 +7,13 @@
 @media #{$not-mobile} {
   .hero {
     min-height: 1024px;
+    padding: 30px 45px 60px 45px;
   }
 }
 
 @media #{$desktop-only} {
   .hero {
     min-height: 800px;
+    padding: 30px 100px 60px 100px;
   }
 }

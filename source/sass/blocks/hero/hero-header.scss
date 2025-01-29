@@ -25,4 +25,12 @@
   position: relative;
   display: flex;
   flex-flow: wrap;
+  width: 290px;
+  margin: 0 0 0 auto;
+}
+
+@media #{$not-mobile} {
+  .hero-header__menu-wrapper {
+    width: 286px;
+  }
 }
