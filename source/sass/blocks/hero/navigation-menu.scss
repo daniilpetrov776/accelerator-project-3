@@ -76,6 +76,7 @@
   flex-flow: wrap;
   gap: 16px;
   transition: max-height 0.15s ease, margin 0.3s $smooth;
+  overflow: hidden;
 
 
   &--is-closed {

@@ -2,5 +2,5 @@
 // import Swiper from "swiper";
 // import {Navigation, Pagination} from "swiper/modules";
 // import 'swiper/css';
-import { handlenavMenuControls } from './nav-menu';
-handlenavMenuControls();
+import { handleNavMenuControls } from './nav-menu';
+handleNavMenuControls();

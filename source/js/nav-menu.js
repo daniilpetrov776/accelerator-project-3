@@ -1,38 +1,31 @@
 const navMenu = document.querySelector('.navigation-menu');
 const navButton = document.querySelector('.nav-button');
 const submenuButtons = document.querySelectorAll('.navigation-menu__submenu-button');
-// const submenuList = navMenu.querySelectorAll('.navigation-menu__submenu-list');
 
-const updateElementHeight = (element) => {
-  element.style.maxHeight = `${element.scrollHeight}px`;
+const updateListHeight = (list) => {
+  list.style.maxHeight = `${list.scrollHeight}px`;
+};
+
+const updateMenuHeight = (element = null) => {
+  requestAnimationFrame(() => {
+    const additionalHeight = element ? element.scrollHeight : 0;
+    navMenu.style.maxHeight = `${navMenu.scrollHeight + 70 + additionalHeight}px`;
+  });
 };
 
 let overflowTimeout;
-
-// const handleOverflowVisibility = (list) => {
-//   if (list.classList.contains('navigation-menu__submenu-list--is-open')) {
-//     overflowTimeout = setTimeout(() => {
-//       list.classList.add('navigation-menu__submenu-list--is-overflow-visible');
-//     }, 300);
-//   } else {
-//     clearTimeout(overflowTimeout);
-//     list.classList.remove('navigation-menu__submenu-list--is-overflow-visible');
-//   }
-// };
 
 const handleOverflowVisibility = (element) => {
   let isOpenClass, overflowVisibleClass;
 
   if (element.classList.contains('navigation-menu__submenu-list')) {
-    // Элемент - это подменю
     isOpenClass = 'navigation-menu__submenu-list--is-open';
     overflowVisibleClass = 'navigation-menu__submenu-list--is-overflow-visible';
   } else if (element.classList.contains('navigation-menu')) {
-    // Элемент - это основное меню
     isOpenClass = 'navigation-menu--is-opened';
     overflowVisibleClass = 'navigation-menu--is-overflow-visible';
   } else {
-    return; // Если не подпадает под известные классы, выходим из функции
+    return;
   }
 
   if (element.classList.contains(isOpenClass)) {
@@ -55,7 +48,7 @@ const closeMenu = () => {
 const openMenu = () => {
   navMenu.classList.remove('navigation-menu--is-closed');
   navMenu.classList.add('navigation-menu--is-opened');
-  updateElementHeight(navMenu);
+  updateMenuHeight();
   handleOverflowVisibility(navMenu);
 };
 
@@ -63,14 +56,20 @@ const closeSubmenu = (list) => {
   list.classList.remove('navigation-menu__submenu-list--is-open');
   list.classList.add('navigation-menu__submenu-list--is-closed');
   list.style.maxHeight = 0;
-  handleOverflowVisibility(list);
+  requestAnimationFrame(() => {
+    updateMenuHeight();
+    handleOverflowVisibility(list);
+  });
 };
 
 const openSubmenu = (list) => {
   list.classList.remove('navigation-menu__submenu-list--is-closed');
   list.classList.add('navigation-menu__submenu-list--is-open');
-  updateElementHeight(list);
-  handleOverflowVisibility(list);
+  updateListHeight(list);
+  requestAnimationFrame(() => {
+    updateMenuHeight(list);
+    handleOverflowVisibility(list);
+  });
 };
 
 const handleSubMenuToggle = (evt) => {
@@ -98,7 +97,7 @@ const handleNavButtonClick = () => {
   }
 };
 
-export const handlenavMenuControls = () => {
+export const handleNavMenuControls = () => {
   navButton.addEventListener('click', handleNavButtonClick);
   submenuButtons.forEach((button) => button.addEventListener('click', handleSubMenuToggle));
 };
