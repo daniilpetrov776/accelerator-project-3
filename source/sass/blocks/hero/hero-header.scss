@@ -4,7 +4,11 @@
   align-items: flex-start;
   justify-content: space-between;
   min-height: 54px;
-  position: relative;
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  width: 290px;
+  z-index: 2;
 }
 
 .hero-header__logo-wrapper {
@@ -33,7 +37,21 @@
 }
 
 @media #{$not-mobile} {
+  .hero-header {
+    width: 678px;
+    top: 30px;
+    left: 45px;
+  }
+
   .hero-header__menu-wrapper {
     width: 286px;
+  }
+}
+
+@media #{$desktop-only} {
+  .hero-header {
+    width: 1240px;
+    top: 60px;
+    left: 100px;
   }
 }
