@@ -6,12 +6,17 @@
 .hero-swiper__slide {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 568px;
+  display: flex;
+  align-items: flex-end;
+  flex-flow: wrap;
+  padding: 30px 15px;
 }
 
 .hero-swiper__picture-wrapper {
   position: absolute;
   top: 0;
+  left: 0;
 
   &::before {
     position: absolute;
@@ -23,12 +28,118 @@
   }
 }
 
+.hero-swiper__content-wrapper {
+  display: flex;
+  flex-flow: wrap;
+  z-index: 1;
+}
+
 .hero-swiper__title {
   margin: 0;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 20px 25px 16px 14px;
+  width: 290px;
+  min-height: 140px;
+  background-color: $white;
+  color: $additional;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 267px;
+    height: 100px;
+    background-color: $white;
+    left: 0;
+    bottom: -55px;
+    z-index: -1;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    bottom: -10px;
+    right: 14px;
+    background-color: $white;
+    mask: url("/__spritemap#sprite-corner-mobile-bottom-small-view") center center no-repeat;
+  }
 }
 
 .hero-swiper__cms-wrapper {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 184px;
+    height: 100px;
+    background-color: $white;
+    left: 0;
+    bottom: -15px;
+    z-index: -1;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    bottom: -10px;
+    right: 73px;
+    background-color: $white;
+    mask: url("/__spritemap#sprite-corner-mobile-bottom-view") center center no-repeat;
+  }
+
   p {
     margin: 0;
+    width: 267px;
+    min-height: 115px;
+    border-bottom-right-radius: 14px;
+    background-color: $white;
+    color: #484848;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    padding: 0 14px 15px 14px;
+  }
+}
+
+.hero-swiper__button {
+  margin: 10px 0 0 14px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 184px;
+    min-height: 64px;
+    left: -15px;
+    top: -10px;
+    background-color: $white;
+    z-index: -1;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+  }
+}
+
+@media  #{$not-mobile} {
+  .hero-swiper__slide {
+    height: 1024px;
+  }
+}
+
+@media  #{$desktop-only} {
+  .hero-swiper__slide {
+    height: 800px;
   }
 }

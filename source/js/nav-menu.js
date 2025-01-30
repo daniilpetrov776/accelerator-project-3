@@ -59,6 +59,7 @@ const handleOverflowVisibility = (element) => {
   }
 
   if (element.classList.contains(isOpenClass)) {
+    clearTimeout(overflowTimeout);
     overflowTimeout = setTimeout(() => {
       element.classList.add(overflowVisibleClass);
     }, 300);

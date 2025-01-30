@@ -1,6 +1,6 @@
 .button {
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 12px;
+  line-height: 12px;
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -8,6 +8,13 @@
   border: solid 1px $additional;
   background-color: $white;
   transition: color 0.3s $smooth, background 0.3s $smooth, border 0.3s $smooth;
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+  min-height: 44px;
+  border-radius: 30px;
+  padding: 5px 5px 5px 21px;
+  gap: 20px;
 
   &:hover {
     background-color: $additional;
@@ -44,8 +51,8 @@
 }
 
 .button__figure {
-  width: 46px;
-  height: 46px;
+  width: 34px;
+  height: 34px;
   background-color: $additional;
   border-radius: 44px;
   display: flex;

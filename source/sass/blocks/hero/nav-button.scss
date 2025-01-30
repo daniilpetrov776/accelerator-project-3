@@ -4,12 +4,14 @@
   border-radius: 30px;
   background-color: $white;
   display: flex;
+  font-size: 14px;
+  font-weight: 14px;
   flex-flow: wrap;
   align-items: center;
   justify-content: space-between;
   border: solid 1px $additional;
   cursor: pointer;
-  padding: 4px 5px 4px 21px;
+  padding: 3px 5px 3px 21px;
   margin: 0 0 0 auto;
   flex-grow: 0;
   transform: translateZ(0);
@@ -67,6 +69,11 @@
 .nav-button:active .nav-button__lines::after {
   background-color: rgba(49, 109, 194, 0.7);
   transition: 0.3s transform $smooth, 0.3s width $smooth;
+}
+
+.nav-button__figure {
+  width: 46px;
+  height: 46px;
 }
 
 .nav-button__lines {
