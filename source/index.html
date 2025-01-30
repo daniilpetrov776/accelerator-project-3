@@ -9,6 +9,7 @@
   </head>
 
   <body class="page">
+    <div class="page__page-overlay page-overlay"></div>
     <h1 class="visually-hidden">Стажировка за рубежом.</h1>
     <section class="page__hero hero" data-test="hero">
       <div class="container hero__wrapper">
@@ -18,10 +19,10 @@
             <img class="hero-header__logo" src="./img/logo/logo.svg" alt="Логотип нашей организации." width="30" height="30">
           </div>
             <div class="hero-header__menu-wrapper">
-              <button class="hero-header__nav-button nav-button" type="button">
+              <button class="hero-header__nav-button button nav-button" type="button">
                 <span class="nav-button__text">Меню</span>
-                <div class="nav-button__figure">
-                  <div class="nav-button__lines"></div>
+                <div class="nav-button__figure button__figure">
+                  <div class="nav-button__lines button__icon"></div>
                 </div>
               </button>
               <nav class="hero-header__navigation-menu navigation-menu navigation-menu--is-closed">
@@ -30,7 +31,7 @@
                     <a class="navigation-menu__link" href="#">О проекте</a>
                   </li>
                   <li class="navigation-menu__item navigation-menu__item--submenu navigation-menu__item--open">
-                    <button class="navigation-menu__submenu-button" type="button">Программы</button>
+                    <button class="navigation-menu__submenu-button navigation-menu__submenu-button--active" type="button">Программы</button>
                     <ul class="navigation-menu__submenu-list navigation-menu__submenu-list--is-open">
                       <li class="navigation-menu__submenu-item">
                         <a class="navigation-menu__submenu-link" href="#">Стажировки</a>
@@ -56,16 +57,19 @@
                     <button class="navigation-menu__submenu-button" type="button">новости</button>
                     <ul class="navigation-menu__submenu-list navigation-menu__submenu-list--is-closed">
                       <li class="navigation-menu__submenu-item">
-                        <a class="navigation-menu__submenu-link" href="#">новость 1</a>
+                        <a class="navigation-menu__submenu-link" href="#">общее</a>
                       </li>
                       <li class="navigation-menu__submenu-item">
-                        <a class="navigation-menu__submenu-link" href="#">новость 2</a>
+                        <a class="navigation-menu__submenu-link" href="#">Волонтёрство</a>
                       </li>
                       <li class="navigation-menu__submenu-item">
-                        <a class="navigation-menu__submenu-link" href="#">новость 3</a>
+                        <a class="navigation-menu__submenu-link" href="#">Стажировки</a>
                       </li>
                       <li class="navigation-menu__submenu-item">
-                        <a class="navigation-menu__submenu-link" href="#">новость 4</a>
+                        <a class="navigation-menu__submenu-link" href="#">Карьера</a>
+                      </li>
+                      <li class="navigation-menu__submenu-item">
+                        <a class="navigation-menu__submenu-link" href="#">путешествия</a>
                       </li>
                     </ul>
                   </li>

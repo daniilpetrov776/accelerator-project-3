@@ -50,19 +50,23 @@
   &--opened:hover .nav-button__lines {
     transform: rotate(225deg);
   }
+
+  // &:active .nav-button__lines {
+  //   background-color: rgba(49, 109, 194, 0.7);
+  // }
+  // &:active .nav-button__lines::before {
+  //   background-color: rgba(49, 109, 194, 0.7);
+  // }
+  // &:active .nav-button__lines::after {
+  //   background-color: rgba(49, 109, 194, 0.7);
+  // }
 }
 
-.nav-button__figure {
-  width: 46px;
-  height: 46px;
-  background-color: $additional;
-  border-radius: 44px;
-  display: flex;
-  flex-flow: wrap;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  transition: 0.3s background $smooth;
+.nav-button:active .nav-button__lines,
+.nav-button:active .nav-button__lines::before,
+.nav-button:active .nav-button__lines::after {
+  background-color: rgba(49, 109, 194, 0.7);
+  transition: 0.3s transform $smooth, 0.3s width $smooth;
 }
 
 .nav-button__lines {
@@ -80,8 +84,8 @@
     height: 1px;
     left: 0;
     top: -3px;
-    background-color: $white;
-    transition: 0.3s transform $smooth, 0.3s background $smooth;
+    background-color: inherit;
+    transition: 0.3s transform $smooth;
   }
 
   &::after {
@@ -92,8 +96,15 @@
     left: 0;
     top: 3px;
     opacity: 1;
-    background-color: $white;
-    transition: 0.3s transform $smooth, 0.3s opacity $smooth, 0.3s background $smooth;
+    background-color: inherit;
+    transition: 0.3s transform $smooth, 0.3s opacity $smooth;
   }
 
+  &:hover::after {
+    background-color: $additional;
+  }
+
+  &:hover::before {
+    background-color: $additional;
+  }
 }
