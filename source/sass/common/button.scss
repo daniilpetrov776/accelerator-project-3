@@ -10,11 +10,13 @@
   transition: color 0.3s $smooth, background 0.3s $smooth, border 0.3s $smooth;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-flow: wrap;
   min-height: 44px;
   border-radius: 30px;
-  padding: 5px 5px 5px 21px;
+  padding: 4px 5px 4px 21px;
   gap: 20px;
+  cursor: pointer;
 
   &:hover {
     background-color: $additional;
@@ -35,19 +37,18 @@
 .button:focus-visible .button__figure {
   background-color: $additional;
 }
-.button:focus-visible .button__icon {
+.button:focus-visible .button__figure::after {
   background-color: $white;
-}
-
-.button:active .button__icon {
-  background-color: rgba(49, 109, 194, 0.7);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .button:hover .button__figure {
   background-color: $white;
 }
-.button:hover .button__icon {
+
+.button:hover .button__figure::after {
   background-color: $additional;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .button__figure {
@@ -61,9 +62,45 @@
   justify-content: center;
   position: relative;
   transition: 0.3s background $smooth;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $white;
+    transition: transform 0.3s $smooth, background 0.3s $smooth;
+    mask: url("/__spritemap#sprite-arrow-button-view") center center no-repeat;
+  }
 }
 
-.button__icon {
+.button:active .button__figure::after {
+  background-color: rgba(49, 109, 194, 0.7);
+}
+
+.button:disabled {
   background-color: $white;
-  transition: background 0.3s $smooth;
+  cursor: auto;
+  pointer-events: none;
+  color: $disabled;
+  border-color: $disabled;
+}
+
+.button:disabled .button__figure {
+  background-color: $disabled;
+}
+
+.button--disabled {
+  background-color: $white;
+  cursor: auto;
+  pointer-events: none;
+  color: $disabled;
+  border-color: $disabled;
+}
+
+.button--disabled .button__figure {
+  background-color: $disabled;
 }
