@@ -233,12 +233,14 @@
           </div>
           <div class="modal__input-wrapper">
             <label class="modal__input-title" for="city">Выберите город</label>
-            <select id="city" name="city" class="modal__select">
-              <option value=""></option>
-              <option value="moscow">Москва</option>
-              <option value="saint-petersburg">Санкт-Петербург</option>
-              <option value="novosibirsk">Новосибирск</option>
-            </select>
+            <div class="modal__select select">
+              <ul class="select__options">
+                <li class="select__option" value="moscow">Москва</li>
+                <li class="select__option" value="saint-petersburg">Санкт-Петербург</li>
+                <div class="select__option" value="novosibirsk">Новосибирск</div>
+              </ul>
+            </div>
+            <input type="hidden" id="city" name="city" >
           </div>
           <div class="modal__input-wrapper modal__input-wrapper--check">
             <input class="modal__input" type="checkbox" name="agree" id="agree" required>

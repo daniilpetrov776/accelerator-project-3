@@ -1,0 +1,38 @@
+.select {
+  min-height: 44px;
+  border: solid 1px rgba(72, 72, 72, 0.3);
+  border-radius: 8px;
+  // opacity: 30%;
+  appearance: none;
+  position: relative;
+  z-index: 1;
+}
+
+.select__options {
+  position: absolute;
+  background-color: $white;
+  top: 49px;
+  left: -1px;
+  list-style-type: none;
+  width: calc(100% + 2px);
+  margin: 0;
+  padding: 0;
+  height: 134px;
+  overflow-x: hidden;
+  border: solid 1px rgba(72, 72, 72);
+  border-radius: 8px;
+}
+
+.select__option {
+  min-height: 44px;
+  border-radius: 8px;
+  padding: 11px 20px;
+  width: 260px;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  color: $primary;
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+}

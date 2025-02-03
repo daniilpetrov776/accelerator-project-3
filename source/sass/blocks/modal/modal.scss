@@ -10,12 +10,22 @@
   flex-flow: wrap;
   align-items: flex-start;
   justify-content: center;
-  padding: 15px 40px;
+  padding: 40px 15px;
   border-radius: 16px;
+}
+
+.modal__wrapper {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
 }
 
 .modal__from {
   width: 260px;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-start;
+  gap: 15px;
 }
 
 .modal__close-button {
@@ -30,6 +40,7 @@
   color: $additional;
   font-weight: 400;
   text-align: center;
+  width: 220px;
 }
 
 .modal__description {
@@ -37,14 +48,19 @@
   line-height: 20px;
   font-weight: 400;
   text-align: center;
+  width: 220px;
 }
 
 .modal__input-wrapper {
   display: flex;
   flex-flow: wrap column;
-
+  width: 100%;
+  min-height: 66px;
+  gap: 10px 8px;
   &--check {
     flex-flow: wrap row;
+    align-items: center;
+    min-height: 28px;
   }
 }
 
@@ -52,9 +68,31 @@
   font-size: 14px;
   line-height: 14px;
   font-weight: 400;
+  opacity: 80%;
 
   &--check {
     font-size: 12px;
     width: fit-content;
+    width: 80%;
+    opacity: 90%;
   }
+}
+
+.modal__input {
+  min-height: 44px;
+  border: solid 1px $primary;
+  border-radius: 8px;
+  opacity: 30%;
+}
+
+// .modal__select {
+//   min-height: 44px;
+//   border: solid 1px $primary;
+//   border-radius: 8px;
+//   opacity: 30%;
+//   appearance: none;
+// }
+
+.modal__button {
+  width: 100%;
 }
