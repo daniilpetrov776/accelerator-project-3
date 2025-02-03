@@ -9,7 +9,7 @@
   </head>
 
   <body class="page">
-    <div class="page__page-overlay page-overlay page-overlay--active"></div>
+    <div class="page__page-overlay page-overlay"></div>
     <h1 class="visually-hidden">Стажировка за рубежом.</h1>
     <section class="page__hero hero" data-test="hero">
       <h2 class="visually-hidden">Профессиональный опыт обучения.</h2>
@@ -222,28 +222,29 @@
         <h2 class="modal__title">Напишите нам</h2>
         <p class="modal__description">Оставьте ваши контакты, если у вас остались вопросы – мы на них ответим!</p>
         <button class="modal__close-button" type="button"></button>
-        <form class="modal__from" action="https://echo.htmlacademy.ru" method="post">
+        <form class="modal__form" action="https://echo.htmlacademy.ru" method="post" autocomplete="off" novalidate>
           <div class="modal__input-wrapper">
+            <input class="modal__input modal__input--name" type="text" id="name" name="name" required>
             <label class="modal__input-title" for="name">Имя</label>
-            <input class="modal__input" type="text" id="name" name="name" required>
           </div>
           <div class="modal__input-wrapper">
+            <input class="modal__input modal__input--phone" type="tel" id="phone" name="phone" required>
             <label class="modal__input-title" for="phone">Телефон</label>
-            <input class="modal__input" type="tel" id="phone" name="phone" required>
           </div>
-          <div class="modal__input-wrapper">
-            <label class="modal__input-title" for="city">Выберите город</label>
-            <div class="modal__select select">
+          <div class="modal__input-wrapper select">
+            <div class="modal__select select-element">
               <ul class="select__options">
-                <li class="select__option" value="moscow">Москва</li>
+                <li class="select__option" value="moscow" tabindex="0">
+                  Москва</li>
                 <li class="select__option" value="saint-petersburg">Санкт-Петербург</li>
-                <div class="select__option" value="novosibirsk">Новосибирск</div>
+                <li class="select__option" value="novosibirsk">Новосибирск</li>
               </ul>
             </div>
-            <input type="hidden" id="city" name="city" >
+            <label class="modal__input-title select__title" for="city">Выберите город</label>
+            <input class="select-input" type="text" id="city" name="city" value="" required>
           </div>
           <div class="modal__input-wrapper modal__input-wrapper--check">
-            <input class="modal__input" type="checkbox" name="agree" id="agree" required>
+            <input class="modal__input modal__input--check" type="checkbox" name="agree" id="agree" required>
             <label class="modal__input-title modal__input-title--check" for="agree" >Я согласен на обработку моих персональных данных</label>
           </div>
           <button class="modal__button button" type="submit">

@@ -12,6 +12,14 @@
   justify-content: center;
   padding: 40px 15px;
   border-radius: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s $smooth;
+
+  &--is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 .modal__wrapper {
@@ -20,7 +28,7 @@
   justify-content: center;
 }
 
-.modal__from {
+.modal__form {
   width: 260px;
   display: flex;
   flex-flow: wrap;
@@ -53,7 +61,7 @@
 
 .modal__input-wrapper {
   display: flex;
-  flex-flow: wrap column;
+  flex-flow: wrap column-reverse;
   width: 100%;
   min-height: 66px;
   gap: 10px 8px;
@@ -62,6 +70,15 @@
     align-items: center;
     min-height: 28px;
   }
+
+  &:hover .modal__input-title {
+    color: $primary;
+    opacity: 1;
+  }
+  &:hover .modal__input {
+    border-color: $primary;
+    opacity: 1;
+  }
 }
 
 .modal__input-title {
@@ -69,29 +86,43 @@
   line-height: 14px;
   font-weight: 400;
   opacity: 80%;
+  transition: opacity 0.3s $smooth;
 
   &--check {
     font-size: 12px;
     width: fit-content;
     width: 80%;
     opacity: 90%;
+    cursor: pointer;
   }
+}
+
+.modal__input:focus + .modal__input-title {
+  color: $primary;
+  opacity: 1;
+}
+
+.modal__input:focus {
+  opacity: 1;
+  border: solid 1px #484848;
+  outline: none;
 }
 
 .modal__input {
   min-height: 44px;
-  border: solid 1px $primary;
+  border: solid 1px #48484830;
   border-radius: 8px;
-  opacity: 30%;
-}
+  transition: opacity 0.3s $smooth, border 0.3s $smooth;
 
-// .modal__select {
-//   min-height: 44px;
-//   border: solid 1px $primary;
-//   border-radius: 8px;
-//   opacity: 30%;
-//   appearance: none;
-// }
+  &--error:not(.modal__input--check) {
+    border-color: #ff5e66;
+    background-color: rgba(255, 94, 102, 0.2);
+  }
+
+  &--error:not(.modal__input--check) + .modal__input-title {
+    opacity: 1;
+  }
+}
 
 .modal__button {
   width: 100%;
