@@ -1,13 +1,36 @@
-export const validateInput = (input, validator, errorMessage) => {
-  input.classList.remove('modal__input--error');
+// export const validateInput = (input, validator, errorMessage, errorClass) => {
+//   input.classList.remove(errorClass);
+//   input.setCustomValidity('');
+
+//   if (!validator(input.value)) {
+//     input.classList.add(errorClass);
+//     input.setCustomValidity(errorMessage);
+//     input.reportValidity();
+//     return false;
+//   }
+//   return true;
+// };
+
+export const validateInput = (input, validator, errorMessage, errorClass, additionalElement) => {
+  // Удаляем класс ошибки с основного и дополнительного элемента, если он передан
+  input.classList.remove(errorClass);
+  if (additionalElement) {
+    additionalElement.classList.remove(errorClass);
+  }
+
   input.setCustomValidity('');
 
+  // Проверка валидности ввода и навешивание класса ошибки
   if (!validator(input.value)) {
-    input.classList.add('modal__input--error');
+    input.classList.add(errorClass);
+    if (additionalElement) {
+      additionalElement.classList.add(errorClass);
+    }
     input.setCustomValidity(errorMessage);
     input.reportValidity();
     return false;
   }
+
   return true;
 };
 

@@ -232,16 +232,17 @@
             <label class="modal__input-title" for="phone">Телефон</label>
           </div>
           <div class="modal__input-wrapper select">
-            <div class="modal__select select-element">
-              <ul class="select__options">
-                <li class="select__option" value="moscow" tabindex="0">
-                  Москва</li>
-                <li class="select__option" value="saint-petersburg">Санкт-Петербург</li>
-                <li class="select__option" value="novosibirsk">Новосибирск</li>
-              </ul>
-            </div>
             <label class="modal__input-title select__title" for="city">Выберите город</label>
             <input class="select-input" type="text" id="city" name="city" value="" required>
+            <div class="modal__select select-element">
+              <span class="select__text"></span>
+              <div class="select__options">
+                <button class="select__option" value="moscow" type="button" tabindex="0">
+                  Москва</button>
+                <button class="select__option" value="saint-petersburg" type="button" tabindex="0">Санкт-Петербург</button>
+                <button class="select__option" value="novosibirsk" type="button" tabindex="0">Новосибирск</button>
+              </div>
+            </div>
           </div>
           <div class="modal__input-wrapper modal__input-wrapper--check">
             <input class="modal__input modal__input--check" type="checkbox" name="agree" id="agree" required>

@@ -1,4 +1,5 @@
 .select {
+  flex-flow: column;
   &:hover .select__title{
     color: $primary;
     opacity: 1;
@@ -18,6 +19,7 @@
   z-index: 1;
   transition: border 0.3s $smooth;
   cursor: pointer;
+  pointer-events: none;
 }
 
 .select-element:focus {
@@ -34,10 +36,15 @@
 }
 
 .select-input {
-  pointer-events: none;
+  // pointer-events: none;
   // display: none;
+  width: 100%;
+  height: 74px;
+  // padding: 20px;
   opacity: 0;
+  // top: 0;
   position: absolute;
+  z-index: 20;
 }
 
 .select__options {
