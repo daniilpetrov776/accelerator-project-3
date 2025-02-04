@@ -104,3 +104,10 @@
 .button--disabled .button__figure {
   background-color: $disabled;
 }
+
+@media #{$not-mobile} {
+  .button {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}

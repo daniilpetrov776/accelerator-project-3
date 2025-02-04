@@ -3,6 +3,7 @@ const modalSelect = modal.querySelector('.select-input');
 const selectOptions = modal.querySelector('.select__options');
 const form = modal.querySelector('.modal__form');
 const selectText = modal.querySelector('.select__text');
+const fakeSelect = modal.querySelector('.select-element');
 
 const updateSelectItemsTabIndex = () => {
   const selectOptionItems = document.querySelectorAll('.select__option');
@@ -18,11 +19,13 @@ const updateSelectItemsTabIndex = () => {
 
 const openSelect = () => {
   selectOptions.classList.add('select__options--is-open');
+  fakeSelect.classList.add('select-element--active');
   updateSelectItemsTabIndex();
 };
 
 const closeSelect = () => {
   selectOptions.classList.remove('select__options--is-open');
+  fakeSelect.classList.remove('select-element--active');
   updateSelectItemsTabIndex();
 };
 
@@ -31,7 +34,16 @@ const setSelectValue = (evt) => {
   if (!option) {
     return;
   }
+
+  const selectOptionItems = modal.querySelectorAll('.select__option');
+  selectOptionItems.forEach((item) => {
+    item.classList.remove('select__option--active');
+  });
+
+  option.classList.add('select__option--active');
+
   modalSelect.setAttribute('value', option.textContent);
+  modalSelect.dispatchEvent(new Event('change', { bubbles: true }));
   selectText.textContent = option.textContent;
   closeSelect();
 };

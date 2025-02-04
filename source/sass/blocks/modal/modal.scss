@@ -38,8 +38,50 @@
 
 .modal__close-button {
   position: absolute;
-  top: 0;
+  top: -25px;
   right: 0;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s $smooth;
+
+  &:focus-visible {
+    outline: none;
+    opacity: 0.3;
+  }
+
+  &:disabled {
+    cursor: auto;
+    pointer-events: none;
+  }
+
+  &:disabled::after {
+    cursor: auto;
+    pointer-events: none;
+    background-color: $disabled;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 22px;
+    height: 22px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $additional;
+    mask: url("/__spritemap#sprite-cross-view") center center no-repeat;
+  }
 }
 
 .modal__title {
@@ -75,7 +117,7 @@
     color: $primary;
     opacity: 1;
   }
-  &:hover .modal__input {
+  &:hover .modal__input:not(.modal__input--check) {
     border-color: $primary;
     opacity: 1;
   }
@@ -102,7 +144,7 @@
   opacity: 1;
 }
 
-.modal__input:focus {
+.modal__input:focus:not(.modal__input--check) {
   opacity: 1;
   border: solid 1px #484848;
   outline: none;
@@ -112,6 +154,7 @@
   min-height: 44px;
   border: solid 1px #48484830;
   border-radius: 8px;
+  padding: 0 20px;
   transition: opacity 0.3s $smooth, border 0.3s $smooth;
 
   &--error:not(.modal__input--check) {
@@ -126,4 +169,194 @@
 
 .modal__button {
   width: 100%;
+}
+
+.modal__input-title--check {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: $white;
+    border: 1px solid $additional;
+    border-radius: 2px;
+    top: 50%;
+    left: -28px;
+    transform: translateY(-50%);
+    opacity: 0.7;
+    transition: opacity 0.3s $smooth, background 0.3s $smooth, border 0.3s $smooth;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: $white;
+    z-index: 2;
+    left: -22px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background 0.3s $smooth;
+    mask: url("/__spritemap#sprite-check-view") center center no-repeat;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+.modal__input--check:focus + .modal__input-title--check {
+  &::before {
+    opacity: 1;
+  }
+}
+
+.modal__input--check:disabled + .modal__input-title--check {
+  pointer-events: none;
+  cursor: auto;
+  &::before {
+    opacity: 0.6;
+    background-color: #FFFFFF99;
+    pointer-events: none;
+    cursor: auto;
+  }
+}
+
+.modal__input--check.modal__input--error + .modal__input-title--check {
+  &::before {
+    border-color: #FF5E66;
+    background-color: #FF5E6633;
+  }
+}
+
+.modal__input--check:checked + .modal__input-title--check {
+  &::before {
+    background-color: $additional;
+    border-color: $additional;
+  }
+
+  &::after {
+    background: $white;
+  }
+}
+
+.modal__input--check:checked:hover + .modal__input-title--check {
+  &::before {
+    background-color: $white;
+    border-color: $additional;
+  }
+
+  &::after {
+    background: $additional;
+  }
+}
+
+.modal__input--check:disabled + .modal__input-title--check {
+  &::before {
+    background-color: $disabled;
+    border-color: $disabled;
+  }
+
+  &::after {
+    background: $white;
+    left: -22px;
+  }
+}
+
+.modal__input--check {
+  width: 20px;
+  height: 20px;
+  border: solid 1px $additional;
+  opacity: 0;
+  border-radius: 2px;
+  position: relative;
+}
+
+@media #{$not-mobile} {
+  .modal {
+    width: 510px;
+    padding: 60px 80px;
+  }
+
+  .modal__title {
+    width: 350px;
+    margin: 0 0 20px;
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .modal__description {
+    width: 350px;
+    margin: 20px 0 30px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .modal__form {
+    width: 350px;
+    gap: 20px;
+  }
+
+  .modal__input-wrapper {
+    gap: 12px;
+  }
+
+  .modal__input-title {
+    width: 90%;
+    font-size: 14px;
+    line-height: 20px;
+
+    &--check {
+      font-size: 12px;
+      line-height: 12px;
+    }
+  }
+
+  .modal__button {
+    width: 194px;
+    margin: 10px auto 0;
+  }
+
+  .modal__input-title--check {
+    &::before {
+      left: -31px;
+    }
+    &::after {
+      left: -25px;
+    }
+  }
+
+  .modal__close-button {
+    top: -40px;
+    right: -50px;
+  }
+
+  .modal__button {
+    padding: 4px 5px 4px 30px;
+  }
+}
+
+@media #{$desktop-only} {
+  .modal__title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .modal__description {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .modal__input-title {
+    font-size: 14px;
+    line-height: 18px;
+
+    &--check {
+      font-size: 12px;
+      line-height: 12px;
+    }
+  }
 }

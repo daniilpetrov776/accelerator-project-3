@@ -20,6 +20,25 @@
   transition: border 0.3s $smooth;
   cursor: pointer;
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+  padding: 10px 20px;
+
+  &::after {
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: $primary;
+  right: 20px;
+  mask: url("/__spritemap#sprite-arrow-down-view") center center no-repeat;
+  transition: transform 0.3s $smooth;
+  }
+
+  &--active::after {
+    transform: rotate(180deg);
+  }
 }
 
 .select-element:focus {
@@ -86,6 +105,8 @@
   align-items: center;
   transition: color 0.3s $smooth, background 0.3s $smooth;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
 
   &--active {
     background-color: $additional;
