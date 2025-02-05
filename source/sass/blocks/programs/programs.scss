@@ -1,0 +1,16 @@
+.programs {
+  min-height: 634px;
+  overflow-x: clip;
+}
+
+@media #{$not-mobile} {
+  .programs {
+    min-height: 678px;
+  }
+}
+
+@media #{$desktop-only} {
+  .programs {
+    min-height: 702px;
+  }
+}

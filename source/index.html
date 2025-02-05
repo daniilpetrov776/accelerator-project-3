@@ -165,7 +165,7 @@
         </div>
       </div>
     </section>
-    <section class="page__about about">
+    <section class="page__about about" data-test="about">
       <div class="container about__wrapper">
         <div class="about__header">
           <h2 class="about__title section-title">О проекте «Стажировка»</h2>
@@ -256,8 +256,88 @@
       </div>
     </section>
     <!-- примеры требуемых атрибутов data-test="*" -->
-    <!-- <div data-test="hero">hero</div> -->
-    <div data-test="about">about</div>
+    <section class="page__programs programs">
+      <div class="container programs__wrapper">
+        <h2 class="programs__title">Программы</h2>
+        <div class="programs__programs-swiper programs-swiper swiper">
+          <div class="swiper-wrapper programs-swiper__wrapper">
+            <div class="programs-swiper__slide swiper-slide">
+              <div class="programs-swiper__picture-wrapper">
+                <picture>
+                  <source media="(min-width: 1440px)" srcset="./img/programs/programs-1-desktop@1x.webp, ./img/programs/programs-1-desktop@2x.webp 2x" type="image/webp" width="392" height="420">
+                  <source media="(min-width: 1440px)" srcset="./img/programs/programs-1-desktop@1x.jpg ./img/programs/programs-1-desktop@2x.jpg 2x" type="image/jpeg" width="392" height="420">
+                  <source media="(min-width: 768px)" srcset="./img/programs/programs-1-tablet@1x.webp, ./img/programs/programs-1-tablet@2x.webp 2x" type="image/webp" width="324" height="420">
+                  <source media="(min-width: 768px)" srcset="./img/programs/programs-1-tablet@1x.jpg, ./img/programs/programs-1-tablet@2x.jpg 2x" type="image/jpeg" width="324" height="420">
+                  <source media="(min-width: 320px)" srcset="./img/programs/programs-1-mobile@1x.webp, ./img/programs/programs-1-mobile@2x.webp 2x" type="image/webp" width="290" height="400">
+                  <img class="programs-swiper__picture" src="./img/programs/programs-1-mobile@1x.jpg" srcset="./img/programs/programs-1-mobile@2x.jpg 2x" width="290" height="400" alt="Две женщины изучают документы и работают за компьютером.">
+                </picture>
+              </div>
+              <div class="programs-swiper__content">
+                <h3 class="programs-swiper__slide-title">Стажировки</h3>
+                <div class="programs-swiper__text-wrapper">
+                  <p>Получите незаменимый опыт
+                    работы в крупнейших мировых компаниях.</p>
+                  <a class="programs-swiper__link circle-link" href="#">
+                    <span class="visually-hidden">Перейти к стажировкам.</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="programs-swiper__slide swiper-slide">
+              <div class="programs-swiper__picture-wrapper">
+                <picture>
+                  <source media="(min-width: 1440px)" srcset="./img/programs/programs-2-desktop@1x.webp, ./img/programs/programs-2-desktop@2x.webp 2x" type="image/webp" width="392" height="420">
+                  <source media="(min-width: 1440px)" srcset="./img/programs/programs-2-desktop@1x.jpg ./img/programs/programs-2-desktop@2x.jpg 2x" type="image/jpeg" width="392" height="420">
+                  <source media="(min-width: 768px)" srcset="./img/programs/programs-2-tablet@1x.webp, ./img/programs/programs-2-tablet@2x.webp 2x" type="image/webp" width="324" height="420">
+                  <source media="(min-width: 768px)" srcset="./img/programs/programs-2-tablet@1x.jpg, ./img/programs/programs-2-tablet@2x.jpg 2x" type="image/jpeg" width="324" height="420">
+                  <source media="(min-width: 320px)" srcset="./img/programs/programs-2-mobile@1x.webp, ./img/programs/programs-2-mobile@2x.webp 2x" type="image/webp" width="290" height="400">
+                  <img class="programs-swiper__picture" src="./img/programs/programs-2-mobile@1x.jpg" srcset="./img/programs/programs-2-mobile@2x.jpg 2x" width="290" height="400" alt=" Человек в синей футболке с надписью Volunteer держит в руках символ сердца.">
+                </picture>
+              </div>
+              <div class="programs-swiper__content">
+                <h3 class="programs-swiper__slide-title">Волонтёрство</h3>
+                <div class="programs-swiper__text-wrapper">
+                  <p>Помогайте другим и развивайте
+                    свои лидерские качества.</p>
+                  <a class="programs-swiper__link circle-link" href="#"></a>
+                </div>
+              </div>
+            </div>
+            <div class="programs-swiper__slide swiper-slide">
+              <div class="programs-swiper__picture-wrapper">
+                <picture>
+                  <source media="(min-width: 1440px)" srcset="./img/programs/programs-3-desktop@1x.webp, ./img/programs/programs-3-desktop@2x.webp 2x" type="image/webp" width="392" height="420">
+                  <source media="(min-width: 1440px)" srcset="./img/programs/programs-3-desktop@1x.jpg ./img/programs/programs-3-desktop@2x.jpg 2x" type="image/jpeg" width="392" height="420">
+                  <source media="(min-width: 768px)" srcset="./img/programs/programs-3-tablet@1x.webp, ./img/programs/programs-3-tablet@2x.webp 2x" type="image/webp" width="324" height="420">
+                  <source media="(min-width: 768px)" srcset="./img/programs/programs-3-tablet@1x.jpg, ./img/programs/programs-3-tablet@2x.jpg 2x" type="image/jpeg" width="324" height="420">
+                  <source media="(min-width: 320px)" srcset="./img/programs/programs-3-mobile@1x.webp, ./img/programs/programs-3-mobile@2x.webp 2x" type="image/webp" width="290" height="400">
+                  <img class="programs-swiper__picture" src="./img/programs/programs-3-mobile@1x.jpg" srcset="./img/programs/programs-3-mobile@2x.jpg 2x" width="290" height="400" alt="Человек читает бумагу, сидя за столом, рядом лежит стопка книг; на заднем плане виднеются книжные полки.">
+                </picture>
+              </div>
+              <div class="programs-swiper__content">
+                <h3 class="programs-swiper__slide-title">Учёба</h3>
+                <div class="programs-swiper__text-wrapper">
+                  <p>Получите образование и измените
+                    своё будущее.</p>
+                  <a class="programs-swiper__link circle-link" href="#"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="button programs__button">
+          <span class="button__text">все программы</span>
+          <span class="button__figure"></span>
+        </button>
+        <div class="programs__navigation">
+          <div class="swiper-scrollbar programs__scrollbar"></div>
+          <div class="programs__nav-buttons-wrapper">
+            <div class="swiper-button-next programs__button-next"></div>
+            <div class="swiper-button-prev programs__button-next"></div>
+          </div>
+        </div>
+      </div>
+    </section>
     <div data-test="programs">programs</div>
     <div data-test="grant">grant</div>
     <div data-test="news">news</div>

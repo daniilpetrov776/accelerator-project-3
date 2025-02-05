@@ -1,0 +1,139 @@
+.programs-swiper {
+  height: 400px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.programs-swiper__wrapper {
+  display: flex;
+  flex-flow: nowrap;
+}
+
+.programs-swiper__slide {
+  width: 290px;
+  height: 400px;
+  position: relative;
+  display: flex;
+  flex-flow: wrap;
+  align-items: flex-end;
+  padding: 18px 10px;
+}
+
+.programs-swiper__picture-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.programs-swiper__content {
+  width: 290px;
+}
+
+.programs-swiper__slide-title {
+  font-size: 16px;
+  line-height: 18px;
+  color: $additional;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: flex-end;
+  flex-flow: wrap;
+  padding: 10px 10px 6px 18px;
+  width: 146px;
+  min-height: 42px;
+  background-color: $white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  margin: 0;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: $white;
+    right: -18px;
+    bottom: 0;
+    mask: url("/__spritemap#sprite-corner-top-view") center center no-repeat;
+  }
+}
+
+.programs-swiper__text-wrapper {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 270px;
+  min-height: 69px;
+  background-color: $white;
+  padding: 12px 18px 15px 18px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+
+  p {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    margin: 0;
+    width: 188px;
+  }
+
+}
+
+@media #{$not-mobile} {
+  .programs-swiper {
+    height: 420px;
+    width: 768px;
+  }
+
+  .programs-swiper__slide {
+    width: 324px;
+    height: 420px;
+    padding: 10px 20px;
+  }
+
+  .programs-swiper__content {
+    width: 324px;
+  }
+
+  .programs-swiper__slide-title {
+    font-size: 20px;
+    line-height: 14px;
+  }
+
+  .programs-swiper__text-wrapper {
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+@media #{$desktop-only} {
+  .programs-swiper {
+   width: 1240px;
+  }
+
+  .programs-swiper__slide {
+    width: 392px;
+    padding: 17px 20px;
+  }
+
+  .programs-swiper__content {
+    width: 392px;
+  }
+
+  .programs-swiper__slide-title {
+    font-size: 24px;
+    line-height: 17px;
+  }
+
+  .programs-swiper__text-wrapper {
+    p {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}

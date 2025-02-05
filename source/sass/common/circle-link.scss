@@ -1,0 +1,19 @@
+.circle-link {
+  background-color: $additional;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $white;
+    mask: url("/__spritemap#sprite-arrow-button-view") center center no-repeat;
+  }
+}
