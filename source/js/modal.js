@@ -189,6 +189,14 @@ const select = form.querySelector('.select-input');
 const selectOptions = form.querySelectorAll('.select__option');
 const checkboxInput = form.querySelector('.modal__input--check');
 
+const updateTabindex = (isOpen) => {
+  const elements = modal.querySelectorAll('[tabindex]');
+
+  elements.forEach((element) => {
+    element.tabIndex = isOpen ? 0 : -1;
+  });
+};
+
 const clearFormFields = () => {
   window.addEventListener('beforeunload', () => {
     if (form) {
@@ -202,11 +210,13 @@ const validateSelect = (value) => !!value;
 const openModal = () => {
   modal.classList.add('modal--is-open');
   overlay.classList.add('page-overlay--active');
+  updateTabindex(true);
 };
 
 const closeModal = () => {
   modal.classList.remove('modal--is-open');
   overlay.classList.remove('page-overlay--active');
+  updateTabindex(false);
 };
 
 const onFormSubmit = (evt) => {
@@ -345,6 +355,7 @@ const handleModalVisibility = () => {
 };
 
 export const handleFormValidation = () => {
+  updateTabindex(false);
   handleModalVisibility();
   setupSubmitHandler();
   attachFormListeners();

@@ -43,8 +43,12 @@
   @media #{$desktop-only} {
     width: 1240px;
 
+    // &--full-width {
+    //   width: 1440px;
+    // }
+
     &--full-width {
-      width: 1440px;
+      width: 100vw;
     }
 
     &--full-width-not-desktop {

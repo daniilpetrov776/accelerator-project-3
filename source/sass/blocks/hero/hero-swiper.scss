@@ -1,19 +1,33 @@
+// .hero-swiper {
+//   height: 568px;
+//   width: 320px;
+//   overflow: hidden;
+// }
+
 .hero-swiper {
   height: 568px;
-  width: 320px;
+  width: 100%;
   overflow: hidden;
+  position: relative;
 }
+
+// .hero-swiper__swiper-wrapper {
+//   display: flex;
+//   align-items: flex-start;
+//   flex-flow: nowrap;
+// }
 
 .hero-swiper__swiper-wrapper {
   display: flex;
   align-items: flex-start;
   flex-flow: nowrap;
+  width: 100%;
 }
 
 .hero-swiper__slide {
   position: relative;
   width: 100%;
-  height: 568px;
+  min-height: 568px;
   display: flex;
   align-items: flex-end;
   flex-flow: wrap;
@@ -119,11 +133,29 @@
   }
 }
 
+// .hero-swiper__picture-wrapper {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 320px;
+//   pointer-events: none;
+
+//   &::before {
+//     position: absolute;
+//     content: "";
+//     width: 100%;
+//     height: 100%;
+//     background-color: rgb(49, 109, 194, 0.2);
+//     z-index: 1;
+//     pointer-events: none;
+//   }
+// }
+
 .hero-swiper__picture-wrapper {
   position: absolute;
   top: 0;
   left: 0;
-  width: 320px;
+  width: 100%;
   pointer-events: none;
 
   &::before {
@@ -137,14 +169,22 @@
   }
 }
 
+
+// .hero-swiper__picture {
+//   width: 320px;
+// }
+
 .hero-swiper__picture {
-  width: 320px;
+  width: 100%;
 }
+
 
 .hero-swiper__content-wrapper {
   display: flex;
   flex-flow: wrap;
   z-index: 1;
+  margin: 0 auto;
+  width: 290px;
 }
 
 .hero-swiper__title {
@@ -246,28 +286,50 @@
 }
 
 @media  #{$not-mobile} {
+  // .hero-swiper {
+  //   width: 768px;
+  //   height: 1024px;
+  // }
+
   .hero-swiper {
-    width: 768px;
-    height: 1024px;
+    width: 100%;
+    min-height: 1024px;
   }
 
+
+  // .hero-swiper__picture-wrapper {
+  //   width: 768px;
+  // }
+
+  // .hero-swiper__picture {
+  //   width: 768px;
+  // }
+
+
   .hero-swiper__picture-wrapper {
-    width: 768px;
+    width: 100%;
   }
 
   .hero-swiper__picture {
-    width: 768px;
+    width: 100%;
   }
 
+
   .hero-swiper__slide {
-    height: 1024px;
+    min-height: 1024px;
     padding: 90px 64px 60px 45px;
   }
 
+
+  // .hero-swiper__slide {
+  //   height: 100%;
+  //   padding: 90px 64px 60px 45px;
+  // }
+
   .hero-swiper__content-wrapper {
-    // align-items: flex-start;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 678px;
   }
 
   .hero-swiper__title {
@@ -333,17 +395,6 @@
     justify-self: flex-end;
     align-self: flex-start;
     margin: 0 106px 0 0;
-    // &::after {
-    //   position: absolute;
-    //   // content: "";
-    //   width: 285px;
-    //   height: 250px;
-    //   left: -31px;
-    //   top: -126px;
-    //   background-color: $white;
-    //   border-bottom-right-radius: 30px;
-    //   z-index: -1;
-    // }
   }
 
   .hero-swiper__pagination {
@@ -376,22 +427,41 @@
 }
 
 @media  #{$desktop-only} {
+  // .hero-swiper {
+  //   width: 1440px;
+  //   height: 800px;
+  // }
+
   .hero-swiper {
-    width: 1440px;
-    height: 800px;
+    width: 100%;
+    min-height: 800px;
   }
 
+  // .hero-swiper__picture-wrapper {
+  //   width: 1440px;
+  // }
+
+  // .hero-swiper__picture {
+  //   width: 1440px;
+  // }
+
   .hero-swiper__picture-wrapper {
-    width: 1440px;
+    width: 100%;
   }
 
   .hero-swiper__picture {
-    width: 1440px;
+    width: 100%;
   }
 
   .hero-swiper__slide {
-    height: 800px;
+    min-height: 800px;
     padding: 100px 100px 60px 100px;
+  }
+
+
+  .hero-swiper__content-wrapper {
+    width: 1240px;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .hero-swiper__title {
@@ -399,6 +469,7 @@
     line-height: 62px;
     width: 968px;
     padding: 40px 50px 30px 50px;
+    grid-column: span 3;
 
     &::after {
       right: 168px;
@@ -407,6 +478,7 @@
 
   .hero-swiper__cms-wrapper {
     min-height: 113px;
+    grid-column: span 1;
     &::before {
       width: 775px;
     }
@@ -425,7 +497,9 @@
   }
 
   .hero-swiper__button {
-    margin: 0 243px 0 0;
+    // margin: 0 243px 0 0;
+    grid-column: span 1;
+    min-height: 58px;
   }
 
   .hero-swiper__pagination {

@@ -1,0 +1,62 @@
+.swiper-nav-button {
+  width: 22px;
+  height: 22px;
+  background-color: transparent;
+  border-radius: 50%;
+  position: relative;
+  transition: opacity 0.3s $smooth, background 0.3s $smooth;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: -10px;
+    bottom: -10px;
+    width: calc(100% + 6px);
+    left: -3px;
+    right: 0;
+    background: transparent;
+    pointer-events: auto;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: $additional;
+  }
+
+  &--prev::after {
+    mask: url("/__spritemap#sprite-arrow-left-view") center center no-repeat;
+  }
+  &--next::after {
+    mask: url("/__spritemap#sprite-arrow-right-view") center center no-repeat;
+  }
+
+  &:hover {
+    background-color: $white;
+  }
+
+  &:focus-visible {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.7;
+    background-color: $white;
+  }
+}
+
+.swiper-nav-button.swiper-button-disabled {
+  pointer-events: none;
+  cursor: auto;
+  &::after {
+    background: $disabled;
+    pointer-events: none;
+    cursor: auto;
+  }
+}

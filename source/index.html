@@ -13,7 +13,6 @@
     <h1 class="visually-hidden">Стажировка за рубежом.</h1>
     <section class="page__hero hero" data-test="hero">
       <h2 class="visually-hidden">Профессиональный опыт обучения.</h2>
-      <div class="container container--full-width hero__wrapper">
         <header class="hero__hero-header hero-header">
           <div class="hero-header__logo-wrapper">
             <img class="hero-header__logo" src="./img/logo/logo.svg" alt="Логотип нашей организации." width="30" height="30">
@@ -163,7 +162,7 @@
           </div>
           <div class="hero-swiper__pagination swiper-pagination"></div>
         </div>
-      </div>
+
     </section>
     <section class="page__about about" data-test="about">
       <div class="container about__wrapper">
@@ -221,19 +220,19 @@
       <div class="container modal__wrapper">
         <h2 class="modal__title">Напишите нам</h2>
         <p class="modal__description">Оставьте ваши контакты, если у вас остались вопросы – мы на них ответим!</p>
-        <button class="modal__close-button" type="button"></button>
+        <button class="modal__close-button" type="button" tabindex="0"></button>
         <form class="modal__form" action="https://echo.htmlacademy.ru" method="post" autocomplete="off" novalidate>
           <div class="modal__input-wrapper">
-            <input class="modal__input modal__input--name" type="text" id="name" name="name" required>
+            <input class="modal__input modal__input--name" type="text" id="name" name="name" required tabindex="0">
             <label class="modal__input-title" for="name">Имя</label>
           </div>
           <div class="modal__input-wrapper">
-            <input class="modal__input modal__input--phone" type="tel" id="phone" name="phone" required>
+            <input class="modal__input modal__input--phone" type="tel" id="phone" name="phone" required tabindex="0">
             <label class="modal__input-title" for="phone">Телефон</label>
           </div>
           <div class="modal__input-wrapper select">
             <label class="modal__input-title select__title" for="city">Выберите город</label>
-            <input class="select-input" type="text" id="city" name="city" value="" required>
+            <input class="select-input" type="text" id="city" name="city" value="" required tabindex="0">
             <div class="modal__select select-element">
               <span class="select__text"></span>
               <div class="select__options">
@@ -255,8 +254,7 @@
         </form>
       </div>
     </section>
-    <!-- примеры требуемых атрибутов data-test="*" -->
-    <section class="page__programs programs">
+    <section class="page__programs programs" data-test="programs">
       <div class="container programs__wrapper">
         <h2 class="programs__title">Программы</h2>
         <div class="programs__programs-swiper programs-swiper swiper">
@@ -323,6 +321,66 @@
                 </div>
               </div>
             </div>
+            <div class="programs-swiper__slide swiper-slide">
+              <div class="programs-swiper__picture-wrapper">
+                <picture>
+                  <source media="(min-width: 1440px)" srcset="./img/programs/programs-3-desktop@1x.webp, ./img/programs/programs-3-desktop@2x.webp 2x" type="image/webp" width="392" height="420">
+                  <source media="(min-width: 1440px)" srcset="./img/programs/programs-3-desktop@1x.jpg ./img/programs/programs-3-desktop@2x.jpg 2x" type="image/jpeg" width="392" height="420">
+                  <source media="(min-width: 768px)" srcset="./img/programs/programs-3-tablet@1x.webp, ./img/programs/programs-3-tablet@2x.webp 2x" type="image/webp" width="324" height="420">
+                  <source media="(min-width: 768px)" srcset="./img/programs/programs-3-tablet@1x.jpg, ./img/programs/programs-3-tablet@2x.jpg 2x" type="image/jpeg" width="324" height="420">
+                  <source media="(min-width: 320px)" srcset="./img/programs/programs-3-mobile@1x.webp, ./img/programs/programs-3-mobile@2x.webp 2x" type="image/webp" width="290" height="400">
+                  <img class="programs-swiper__picture" src="./img/programs/programs-3-mobile@1x.jpg" srcset="./img/programs/programs-3-mobile@2x.jpg 2x" width="290" height="400" alt="Человек читает бумагу, сидя за столом, рядом лежит стопка книг; на заднем плане виднеются книжные полки.">
+                </picture>
+              </div>
+              <div class="programs-swiper__content">
+                <h3 class="programs-swiper__slide-title">Учёба</h3>
+                <div class="programs-swiper__text-wrapper">
+                  <p>Получите образование и измените
+                    своё будущее.</p>
+                  <a class="programs-swiper__link circle-link" href="#"></a>
+                </div>
+              </div>
+            </div>
+            <div class="programs-swiper__slide swiper-slide">
+              <div class="programs-swiper__picture-wrapper">
+                <picture>
+                  <source media="(min-width: 1440px)" srcset="./img/programs/programs-3-desktop@1x.webp, ./img/programs/programs-3-desktop@2x.webp 2x" type="image/webp" width="392" height="420">
+                  <source media="(min-width: 1440px)" srcset="./img/programs/programs-3-desktop@1x.jpg ./img/programs/programs-3-desktop@2x.jpg 2x" type="image/jpeg" width="392" height="420">
+                  <source media="(min-width: 768px)" srcset="./img/programs/programs-3-tablet@1x.webp, ./img/programs/programs-3-tablet@2x.webp 2x" type="image/webp" width="324" height="420">
+                  <source media="(min-width: 768px)" srcset="./img/programs/programs-3-tablet@1x.jpg, ./img/programs/programs-3-tablet@2x.jpg 2x" type="image/jpeg" width="324" height="420">
+                  <source media="(min-width: 320px)" srcset="./img/programs/programs-3-mobile@1x.webp, ./img/programs/programs-3-mobile@2x.webp 2x" type="image/webp" width="290" height="400">
+                  <img class="programs-swiper__picture" src="./img/programs/programs-3-mobile@1x.jpg" srcset="./img/programs/programs-3-mobile@2x.jpg 2x" width="290" height="400" alt="Человек читает бумагу, сидя за столом, рядом лежит стопка книг; на заднем плане виднеются книжные полки.">
+                </picture>
+              </div>
+              <div class="programs-swiper__content">
+                <h3 class="programs-swiper__slide-title">Учёба</h3>
+                <div class="programs-swiper__text-wrapper">
+                  <p>Получите образование и измените
+                    своё будущее.</p>
+                  <a class="programs-swiper__link circle-link" href="#"></a>
+                </div>
+              </div>
+            </div>
+            <div class="programs-swiper__slide swiper-slide">
+              <div class="programs-swiper__picture-wrapper">
+                <picture>
+                  <source media="(min-width: 1440px)" srcset="./img/programs/programs-3-desktop@1x.webp, ./img/programs/programs-3-desktop@2x.webp 2x" type="image/webp" width="392" height="420">
+                  <source media="(min-width: 1440px)" srcset="./img/programs/programs-3-desktop@1x.jpg ./img/programs/programs-3-desktop@2x.jpg 2x" type="image/jpeg" width="392" height="420">
+                  <source media="(min-width: 768px)" srcset="./img/programs/programs-3-tablet@1x.webp, ./img/programs/programs-3-tablet@2x.webp 2x" type="image/webp" width="324" height="420">
+                  <source media="(min-width: 768px)" srcset="./img/programs/programs-3-tablet@1x.jpg, ./img/programs/programs-3-tablet@2x.jpg 2x" type="image/jpeg" width="324" height="420">
+                  <source media="(min-width: 320px)" srcset="./img/programs/programs-3-mobile@1x.webp, ./img/programs/programs-3-mobile@2x.webp 2x" type="image/webp" width="290" height="400">
+                  <img class="programs-swiper__picture" src="./img/programs/programs-3-mobile@1x.jpg" srcset="./img/programs/programs-3-mobile@2x.jpg 2x" width="290" height="400" alt="Человек читает бумагу, сидя за столом, рядом лежит стопка книг; на заднем плане виднеются книжные полки.">
+                </picture>
+              </div>
+              <div class="programs-swiper__content">
+                <h3 class="programs-swiper__slide-title">Учёба</h3>
+                <div class="programs-swiper__text-wrapper">
+                  <p>Получите образование и измените
+                    своё будущее.</p>
+                  <a class="programs-swiper__link circle-link" href="#"></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <button class="button programs__button">
@@ -332,13 +390,60 @@
         <div class="programs__navigation">
           <div class="swiper-scrollbar programs__scrollbar"></div>
           <div class="programs__nav-buttons-wrapper">
-            <div class="swiper-button-next programs__button-next"></div>
-            <div class="swiper-button-prev programs__button-next"></div>
+            <div class="swiper-button-prev programs__button-prev swiper-nav-button swiper-nav-button--prev"></div>
+            <div class="swiper-button-next programs__button-next swiper-nav-button swiper-nav-button--next"></div>
           </div>
         </div>
       </div>
     </section>
-    <div data-test="programs">programs</div>
+    <section class="page__grant grant" data-test="grant">
+      <div class="container grant__wrapper">
+        <div class="grant__about">
+          <h2 class="section-title grant__title">Как поехать</h2>
+          <div class="grant__content-wrapper">
+            <p>Свяжитесь с координатором, чтобы узнать
+              полную информацию. Вы получите
+              актуальные сведения о доступных
+              программах и городах, в которых можете
+              пройти программу.</p>
+          </div>
+          <div class="grant__picture-wrapper">
+            <picture>
+              <source media="(min-width: 1440px)" srcset="./img/grant/grant-desktop@1x.webp, ./img/grant/grant-desktop@2x.webp 2x" type="image/webp" width="498" height="363">
+              <source media="(min-width: 1440px)" srcset="./img/grant/grant-desktop@1x.png ./img/grant/grant-desktop@2x.png 2x" type="image/png" width="498" height="363">
+              <source media="(min-width: 768px)" srcset="./img/grant/grant-tablet@1x.webp, ./img/grant/grant-tablet@2x.webp 2x" type="image/webp" width="678" height="375">
+              <source media="(min-width: 768px)" srcset="./img/grant/grant-tablet@1x.png, ./img/grant/grant-tablet@2x.png 2x" type="image/png" width="678" height="375">
+              <source media="(min-width: 320px)" srcset="./img/grant/grant-mobile@1x.webp, ./img/grant/grant-mobile@2x.webp 2x" type="image/webp" width="290" height="200">
+              <img src="./img/grant/grant-mobile@1x.png" srcset="./img/grant/grant-mobile@2x.png 2x" width="290" height="200" alt="Знаки, указывающие направления к разным странам.">
+            </picture>
+          </div>
+        </div>
+        <div class="grant__conditions conditions">
+          <h3 class="conditions__title">Чтобы получить грант
+            на обучение, вам нужно:</h3>
+            <ul class="conditions__list">
+              <li class="conditions__item" data-number="1">
+                <p class="conditions__text">Быть в возрасте от 16 до 30 лет</p>
+              </li>
+              <li class="conditions__item" data-number="2">
+                <p class="conditions__text">Иметь оконченное среднее
+                  образование</p>
+              </li>
+              <li class="conditions__item" data-number="3">
+                <p class="conditions__text">Иметь документально
+                  подтверждённое отсутствие
+                  судимости и пройти консульскую
+                  проверку</p>
+              </li>
+              <li class="conditions__item" data-number="4">
+                <p class="conditions__text">За последние 2 года быть
+                  не больше 3х месяцев подряд
+                  непрерывно в одной стране</p>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </section>
     <div data-test="grant">grant</div>
     <div data-test="news">news</div>
     <div data-test="FAQ">FAQ</div>

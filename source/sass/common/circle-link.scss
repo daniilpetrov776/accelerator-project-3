@@ -4,6 +4,19 @@
   height: 30px;
   border-radius: 50%;
   position: relative;
+  transition: background 0.3s $smooth, opacity 0.3s $smooth;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: -10px;
+    bottom: -10px;
+    width: calc(100% + 20px);
+    left: -10px;
+    right: 0;
+    background: transparent;
+    pointer-events: auto;
+  }
 
   &::after {
     position: absolute;
@@ -15,5 +28,33 @@
     transform: translate(-50%, -50%);
     background-color: $white;
     mask: url("/__spritemap#sprite-arrow-button-view") center center no-repeat;
+    transition: transform 0.3s $smooth;
+  }
+
+  &:hover {
+    background-color: $white;
+  }
+
+  &:hover::after {
+    background-color: $additional;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+
+  &:active::after {
+    background-color: $additional;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &:focus-visible {
+    background-color: $additional;
+    outline: none;
+  }
+  &:focus-visible::after {
+    background-color: $white;
+    transform: translate(-50%, -50%) rotate(45deg);
   }
 }

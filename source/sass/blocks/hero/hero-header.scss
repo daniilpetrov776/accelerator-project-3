@@ -6,7 +6,8 @@
   min-height: 54px;
   position: absolute;
   top: 20px;
-  left: 15px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 290px;
   z-index: 2;
 }
@@ -37,7 +38,7 @@
   .hero-header {
     width: 678px;
     top: 30px;
-    left: 45px;
+    // left: 45px;
   }
 
   .hero-header__menu-wrapper {
@@ -49,6 +50,6 @@
   .hero-header {
     width: 1240px;
     top: 60px;
-    left: 100px;
+    // left: 100px;
   }
 }

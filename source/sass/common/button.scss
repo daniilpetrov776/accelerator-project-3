@@ -6,7 +6,7 @@
   text-transform: uppercase;
   color: $additional;
   border: solid 1px $additional;
-  background-color: $white;
+  background-color: transparent;
   transition: color 0.3s $smooth, background 0.3s $smooth, border 0.3s $smooth;
   display: flex;
   align-items: center;
