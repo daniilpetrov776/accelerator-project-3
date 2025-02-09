@@ -1,0 +1,217 @@
+
+.news-swiper-slide {
+  position: relative;
+  height: 240px;
+  display: flex;
+  flex-flow: wrap;
+  align-items: flex-end;
+  // border-radius: 12px;
+  overflow: hidden;
+  width: 290px;
+  height: 240px;
+  flex-shrink: 0;
+
+  &--bigger {
+    height: 330px;
+  }
+}
+
+.news-swiper-slide__picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 12px;
+}
+
+// .news-swiper-slide__picture-wrapper {
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+//   z-index: -1;
+//   &::after {
+//     position: absolute;
+//     content: "";
+//     width: 50px;
+//     height: 50px;
+//     left: -25px;
+//     bottom: -25px;
+//     background-color: red;
+//     z-index: 22;
+//   }
+// }
+
+.news-swiper-slide__content {
+  width: 100%;
+  z-index: 1;
+}
+
+.news-swiper-slide__date {
+  margin: 0;
+  background-color: #f0efe9;
+  min-width: 78px;
+  max-width: min-content;
+  color: $additional;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.12px;
+  padding: 12px 12px 6px 0;
+  border-top-right-radius: 12px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: -16px;
+    background: #f0efe9;
+    mask: url("/__spritemap#sprite-corner-top-view") center center no-repeat;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    right: -16px;
+    bottom: 0;
+    background: #f0efe9;
+    mask: url("/__spritemap#sprite-corner-top-view") center center no-repeat;
+  }
+}
+
+.news-swiper-slide__title {
+  margin: 0;
+  background-color: #f0efe9;
+  width: 200px;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: $additional;
+  font-weight: 400;
+  padding: 10px 18px 4px 0;
+  border-top-right-radius: 12px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    right: -16px;
+    bottom: 0;
+    background: #f0efe9;
+    mask: url("/__spritemap#sprite-corner-top-view") center center no-repeat;
+  }
+}
+
+.news-swiper-slide__cms-wrapper {
+  border-top-right-radius: 12px;
+  width: 263px;
+  background-color: #f0efe9;
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 0 0;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    right: -16px;
+    bottom: 0;
+    background: #f0efe9;
+    mask: url("/__spritemap#sprite-corner-top-view") center center no-repeat;
+  }
+
+  p {
+    margin: 0;
+    width: 213px;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    padding: 12px 0 10px;
+  }
+}
+
+// @media #{$mobile-only} {
+//   .news-swiper-slide:nth-child(odd) {
+//     height: 330px;
+//   }
+// }
+
+@media #{$not-mobile} {
+  .news-swiper-slide {
+    width: 324px;
+  }
+
+  .news-swiper-slide__title {
+    font-size: 20px;
+    line-height: 24px;
+    width: 207px;
+  }
+
+  .news-swiper-slide__cms-wrapper {
+    p {
+      font-size: 14px;
+      line-height: 20px;
+      width: 176px;
+      padding: 12px 0 15px;
+    }
+  }
+}
+
+@media #{$desktop-only} {
+  .news-swiper-slide {
+    width: 286px;
+    height: 100%;
+
+    &--bigger {
+      width: 604px;
+    }
+  }
+
+  // .news-swiper-slide:nth-child(4n) {
+  //   width: 604px;
+  // }
+  // .news-swiper-slide:first-child {
+  //   width: 604px;
+  // }
+
+  .news-swiper-slide__title {
+    font-size: 24px;
+    line-height: 26px;
+    width: 190px;
+  }
+
+  .news-swiper-slide__cms-wrapper {
+    width: 240px;
+    p {
+      font-size: 14px;
+      line-height: 18px;
+      width: 176px;
+    }
+  }
+
+  .news-swiper-slide--bigger .news-swiper-slide__title {
+    width: 426px;
+  }
+
+  .news-swiper-slide--bigger .news-swiper-slide__cms-wrapper {
+    width: 468px;
+
+    p {
+      width: 404px;
+    }
+  }
+
+  .news-swiper-slide--bigger .news-swiper-slide__picture {
+    width: 604px;
+    height: 400px;
+  }
+}
