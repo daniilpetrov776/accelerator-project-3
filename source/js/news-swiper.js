@@ -60,7 +60,8 @@ const updateSlideHeights = (swiper) => {
 };
 
 const changeStandardActivePaginationClass = (customActiveClass) => {
-  const bullets = paginationContainer.querySelectorAll('.news-swiper__pagination-bullet');
+  // const bullets = paginationContainer.querySelectorAll('.news-swiper__pagination-bullet');
+  const bullets = paginationContainer.querySelectorAll('.swiper-pagination-bullet');
   const standardActive = paginationContainer.querySelector('.swiper-pagination-bullet-active');
   bullets.forEach((bullet) => {
     bullet.classList.remove(customActiveClass);
@@ -69,25 +70,45 @@ const changeStandardActivePaginationClass = (customActiveClass) => {
 };
 
 const updatePagination = (swiper) => {
+  let totalGroups;
   const totalSlides = swiper.slides.length;
   const slidesPerGroup = swiper.params.slidesPerGroup;
-  const totalGroups = Math.ceil(totalSlides / slidesPerGroup);
+  if (window.innerWidth < 1440) {
+    totalGroups = (Math.ceil(totalSlides / slidesPerGroup) / 2);
+  } else {
+    totalGroups = Math.ceil(totalSlides / slidesPerGroup);
+  }
   const currentGroup = Math.floor(swiper.activeIndex / slidesPerGroup) + 1;
 
-  const bullets = document.querySelectorAll('.news-swiper__pagination-bullet');
+  const prevGroup = (typeof swiper.prevGroup !== 'undefined') ? swiper.prevGroup : currentGroup;
+  const direction = currentGroup > prevGroup ? 'forward' : 'backward';
+  swiper.prevGroup = currentGroup;
 
-  bullets.forEach((bullet) => (bullet.style.display = 'none')); // Скрываем все кнопки
+  const bullets = document.querySelectorAll('.news-swiper__pagination-bullet');
+  bullets.forEach((bullet) => {
+    bullet.style.display = 'none';
+  });
 
   let visibleIndexes = [];
 
   if (totalGroups <= 4) {
     visibleIndexes = Array.from({ length: totalGroups }, (_, i) => i + 1);
-  } else if (currentGroup <= 3) {
-    visibleIndexes = [1, 2, 3, 4];
-  } else if (currentGroup >= totalGroups - 2) {
-    visibleIndexes = [totalGroups - 3, totalGroups - 2, totalGroups - 1, totalGroups];
   } else {
-    visibleIndexes = [currentGroup - 1, currentGroup, currentGroup + 1, currentGroup + 2];
+    let start;
+    if (direction === 'forward') {
+      start = currentGroup - 2;
+    } else {
+      start = currentGroup - 1;
+    }
+
+    if (start < 1) {
+      start = 1;
+    }
+    if (start + 3 >= totalGroups) {
+      start = Math.max(1, totalGroups - 3);
+    }
+
+    visibleIndexes = [start, start + 1, start + 2, start + 3];
   }
 
   visibleIndexes.forEach((i) => {
@@ -98,24 +119,24 @@ const updatePagination = (swiper) => {
   });
 };
 
-
 const updateSlideWidths = (swiper) => {
   if (window.innerWidth >= 1440) {
     const slides = swiper.slides;
+    const slidesPerGroup = swiper.params.slidesPerGroup;
     if (slides.length > 0) {
       slides.forEach((slide, index) => {
-        // Сначала удаляем класс у всех
+        // Сначала убираем класс у всех слайдов
         slide.classList.remove('news-swiper-slide--bigger');
 
-        // Добавляем класс "bigger" к первому слайду каждой группы из трех
-        if (index % 3 === 0) {
+        // Если индекс слайда кратен slidesPerGroup, значит это первый слайд группы
+        if (index % slidesPerGroup === 0) {
           slide.classList.add('news-swiper-slide--bigger');
         }
       });
+      swiper.update();
     }
   }
 };
-
 
 export const initNewsSwiper = () => {
   if (!newsSwiper) {
@@ -169,9 +190,9 @@ export const initNewsSwiper = () => {
       on: {
         init: function () {
           updateSlideHeights(this);
-          changeStandardActivePaginationClass('news-swiper__pagination-bullet--active');
           updateSlideWidths(this);
           updatePagination(this);
+          changeStandardActivePaginationClass('news-swiper__pagination-bullet--active');
         },
         resize: function () {
           updateSlideHeights(this);
@@ -179,8 +200,8 @@ export const initNewsSwiper = () => {
           updatePagination(this);
         },
         slideChange: function() {
-          changeStandardActivePaginationClass('news-swiper__pagination-bullet--active');
           updatePagination(this);
+          changeStandardActivePaginationClass('news-swiper__pagination-bullet--active');
         }
       }
     });
