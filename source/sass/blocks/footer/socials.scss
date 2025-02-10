@@ -1,0 +1,90 @@
+.socials {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  gap: 10px;
+}
+
+.socials__link {
+  width: 26px;
+  height: 26px;
+  background-color: $additional;
+  display: block;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s $smooth;
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: -3px;
+    top: -3px;
+    pointer-events: auto;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    background: transparent;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: $white;
+    transition: opacity 0.3s $smooth, background 0.3s $smooth;
+  }
+
+  &--vk::after {
+    mask: url("/__spritemap#sprite-vk-view") center center no-repeat;
+  }
+  &--ok::after {
+    mask: url("/__spritemap#sprite-ok-view") center center no-repeat;
+  }
+  &--reddit::after {
+    mask: url("/__spritemap#sprite-reddit-view") center center no-repeat;
+  }
+
+  &:hover::after {
+    opacity: 0.7;
+  }
+
+  &:focus-visible {
+    background-color: $white;
+    outline: none;
+  }
+  &:focus-visible::after {
+    background: $additional;
+  }
+  &:active {
+    background: $active;
+  }
+  &:active::after {
+    opacity: 1;
+  }
+}
+
+@media #{$not-mobile} {
+  .socials__link {
+    width: 36px;
+    height: 36px;
+
+    &::after {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+@media #{$desktop-only} {
+  .socials {
+    margin: 0 0 0 auto;
+    gap: 20px;
+  }
+}
