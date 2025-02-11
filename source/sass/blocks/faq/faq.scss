@@ -1,0 +1,29 @@
+.faq {
+  padding: 50px 0;
+  min-height: 836px;
+}
+
+.faq__title {
+  margin: 0;
+}
+
+.faq__wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: wrap;
+  gap: 30px;
+}
+
+@media #{$not-mobile} {
+  .faq {
+    min-height: 874px;
+  }
+}
+
+@media #{$desktop-only} {
+  .faq {
+    padding: 60px 0;
+    min-height: 1066px;
+  }
+}

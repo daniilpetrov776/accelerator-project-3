@@ -14,4 +14,5 @@ const blockDisabledElementsBySelector = (selector, disabledClass) => {
 export const blockDisabledElements = () => {
   blockDisabledElementsBySelector('.nav-button', 'nav-button--disabled');
   blockDisabledElementsBySelector('.button', 'button--disabled');
+  blockDisabledElementsBySelector('.accordeon-button', 'accordeon-button--disabled');
 };

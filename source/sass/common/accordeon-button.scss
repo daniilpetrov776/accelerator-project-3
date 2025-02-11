@@ -1,0 +1,119 @@
+.accordeon-button {
+  width: 40px;
+  height: 40px;
+  background-color: $additional;
+  border-radius: 50%;
+  border: solid 1px $additional;
+  transition: background 0.3s $smooth, border 0.3s $smooth, transform 0.3s $smooth;
+  transform: translateY(0);
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 18px;
+    height: 1px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(90deg) ;
+    background-color: $white;
+    transition: background 0.3s $smooth, transform 0.3s $smooth;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 18px;
+    height: 1px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+    background-color: $white;
+    transition: background 0.3s $smooth, transform 0.3s $smooth;
+  }
+
+  &:focus-visible {
+    background-color: $white;
+    outline: none;
+  }
+
+  &:focus-visible::before {
+  background-color: $additional;
+  }
+
+  &:focus-visible::after {
+  background-color: $additional;
+  }
+
+  &:active {
+    background-color: $active;
+  }
+
+  &:active::before {
+    background-color: $white;
+  }
+
+  &:active::after {
+    background-color: $white;
+  }
+}
+
+.accordeon-button:disabled {
+  cursor: auto;
+  pointer-events: none;
+  background-color: $disabled;
+
+  &::before {
+    background-color: $white;
+    opacity: 0.6;
+  }
+  &::after {
+    background-color: $white;
+    opacity: 0.6;
+  }
+}
+
+.accordeon-button--disabled {
+  cursor: auto;
+  pointer-events: none;
+  background-color: $disabled;
+
+  &::before {
+    background-color: $white;
+    opacity: 0.6;
+  }
+  &::after {
+    background-color: $white;
+    opacity: 0.6;
+  }
+}
+
+.accordeon-button--active {
+  background-color: $white;
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(-180deg);
+    background-color: $additional;
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+    background-color: $additional;
+  }
+
+  &:focus-visible {
+    border-color: $active;
+  }
+}
+
+.accordeon-button--active:focus-visible {
+  background-color: $additional;
+  border-color: $white;
+  &::before {
+    background-color: $white;
+  }
+  &::after {
+    background-color: $white;
+  }
+}

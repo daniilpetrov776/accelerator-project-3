@@ -38,11 +38,14 @@
   }
 
   &:hover {
-    background-color: $white;
+    background-color: transparent;
+    opacity: 0.7;
   }
 
   &:focus-visible {
-    opacity: 0.7;
+    opacity: 1;
+    outline: none;
+    background-color: $white;
   }
 
   &:active {
@@ -58,5 +61,10 @@
     background: $disabled;
     pointer-events: none;
     cursor: auto;
+  }
+
+  &:hover {
+    background-color: transparent;
+    opacity: 1;
   }
 }
