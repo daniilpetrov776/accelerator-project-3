@@ -1,0 +1,16 @@
+.reviews-swiper {
+  // overflow: hidden;
+}
+
+.reviews-swiper__wrapper  {
+  display: flex;
+  flex-flow: nowrap;
+}
+
+@media #{$not-mobile} {
+
+}
+
+@media #{$desktop-only} {
+
+}
