@@ -1,5 +1,6 @@
 .select {
   flex-flow: column;
+  width: 100%;
   &:hover .select__title{
     color: $primary;
     opacity: 1;
@@ -7,6 +8,7 @@
   &:hover .select-element{
     border-color: $primary;
   }
+  position: relative;
 }
 
 .select-element {
@@ -61,6 +63,7 @@
   height: 74px;
   // padding: 20px;
   opacity: 0;
+  left: 0;
   // top: 0;
   position: absolute;
   z-index: 20;
@@ -116,4 +119,8 @@
   &:hover:not(.select__option--active) {
     color: $additional;
   }
+}
+
+.select--on-additional {
+  border-color: rgba(255, 255, 255, 0.302);
 }

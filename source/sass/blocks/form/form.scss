@@ -1,0 +1,32 @@
+.form {
+  min-height: 833px;
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.form__picture-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.form__picture {
+  width: 100%;
+}
+
+@media #{$not-mobile} {
+  .form {
+    min-height: 880px;
+    padding: 50px 0;
+  }
+}
+
+@media #{$desktop-only} {
+  .form {
+    min-height: 920px;
+    padding: 60px 0;
+  }
+}

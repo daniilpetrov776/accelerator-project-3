@@ -111,3 +111,66 @@
     line-height: 14px;
   }
 }
+
+.button--on-additional {
+  border-color: $white;
+
+  &:hover {
+    background-color: $white;
+    color: $additional;
+  }
+
+  &:hover .button__figure {
+    background-color: $additional;
+  }
+  &:hover .button__figure::after {
+    background-color: $white;
+  }
+
+  &:focus-visible .button__figure::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &:active {
+    color: rgba(49, 109, 194, 0.7);
+  }
+  &:active .button__figure::after {
+    background-color: rgb(255, 255, 255, 0.7);
+  }
+}
+
+.button--on-additional .button__figure {
+  background-color: $white;
+
+  &::after {
+    background-color: $additional;
+  }
+}
+
+.button--disabled.button--on-additional {
+  background-color: transparent;
+  color: $disabled;
+  border-color: $disabled;
+}
+
+.button--disabled.button--on-additional .button__figure {
+  background-color: $disabled;
+}
+
+.button--disabled.button--on-additional .button__figure::after {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.button:disabled.button--on-additional {
+  background-color: transparent;
+  color: $disabled;
+  border-color: $disabled;
+}
+
+.button:disabled.button--on-additional .button__figure {
+  background-color: $disabled;
+}
+
+.button:disabled.button--on-additional .button__figure::after {
+  background-color: rgba(255, 255, 255, 0.6);
+}

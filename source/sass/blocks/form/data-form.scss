@@ -1,0 +1,35 @@
+.data-form {
+  min-height: 670px;
+  width: 300px;
+  margin: 0 auto;
+  background-color: $additional;
+  border-radius: 16px;
+  display: flex;
+  flex-flow: wrap column;
+  align-items: flex-start;
+}
+
+.data-form__title {
+  color: $white;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.data-form__subtitle {
+  color: #f0efe9;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.data-form__input-title {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+  color: #f0efe9;
+}
+
+.data-form__button {
+  color: $white;
+}

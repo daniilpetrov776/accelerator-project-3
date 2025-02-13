@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
 import { Grid } from 'swiper/modules';
 
-const paginationContainer = document.querySelector('.news-swiper__pagination');
+const paginationContainer = document.querySelector('.news__pagination');
 
 let newsSwiper = null;
 
@@ -84,7 +84,7 @@ const updatePagination = (swiper) => {
   const direction = currentGroup > prevGroup ? 'forward' : 'backward';
   swiper.prevGroup = currentGroup;
 
-  const bullets = document.querySelectorAll('.news-swiper__pagination-bullet');
+  const bullets = document.querySelectorAll('.news__pagination-bullet');
   bullets.forEach((bullet) => {
     bullet.style.display = 'none';
   });
@@ -112,7 +112,7 @@ const updatePagination = (swiper) => {
   }
 
   visibleIndexes.forEach((i) => {
-    const bullet = document.querySelector(`.news-swiper__pagination-bullet--${i - 1}`);
+    const bullet = document.querySelector(`.news__pagination-bullet--${i - 1}`);
     if (bullet) {
       bullet.style.display = 'inline-block';
     }
@@ -125,10 +125,9 @@ const updateSlideWidths = (swiper) => {
     const slidesPerGroup = swiper.params.slidesPerGroup;
     if (slides.length > 0) {
       slides.forEach((slide, index) => {
-        // Сначала убираем класс у всех слайдов
+
         slide.classList.remove('news-swiper-slide--bigger');
 
-        // Если индекс слайда кратен slidesPerGroup, значит это первый слайд группы
         if (index % slidesPerGroup === 0) {
           slide.classList.add('news-swiper-slide--bigger');
         }
@@ -146,14 +145,14 @@ export const initNewsSwiper = () => {
       modules: [Grid],
       init: true,
       navigation: {
-        nextEl: '.news-swiper__button-next',
-        prevEl: '.news-swiper__button-prev',
+        nextEl: '.news__button-next',
+        prevEl: '.news__button-prev',
       },
       pagination: {
-        el: '.news-swiper__pagination',
+        el: '.news__pagination',
         clickable: true,
         renderBullet: function (index, className) {
-          return `<span class="${className} news-swiper__pagination-bullet news-swiper__pagination-bullet--${index}"
+          return `<span class="${className} news__pagination-bullet news__pagination-bullet--${index}"
             aria-label="Перейти к слайду ${index + 1}."
             role="button"
             data-order="${index + 1}"
@@ -192,7 +191,7 @@ export const initNewsSwiper = () => {
           updateSlideHeights(this);
           updateSlideWidths(this);
           updatePagination(this);
-          changeStandardActivePaginationClass('news-swiper__pagination-bullet--active');
+          changeStandardActivePaginationClass('news__pagination-bullet--active');
         },
         resize: function () {
           updateSlideHeights(this);
@@ -201,7 +200,7 @@ export const initNewsSwiper = () => {
         },
         slideChange: function() {
           updatePagination(this);
-          changeStandardActivePaginationClass('news-swiper__pagination-bullet--active');
+          changeStandardActivePaginationClass('news__pagination-bullet--active');
         }
       }
     });
