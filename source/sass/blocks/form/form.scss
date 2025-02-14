@@ -5,6 +5,11 @@
   overflow: hidden;
 }
 
+.form__wrapper {
+  width: 100%;
+  padding: 43px 0 40px;
+}
+
 .form__picture-wrapper {
   position: absolute;
   left: 0;
@@ -22,11 +27,39 @@
     min-height: 880px;
     padding: 50px 0;
   }
+
+  .form__wrapper {
+    width: 652px;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .form__picture {
+    width: 652px;
+  }
+
+  .form__picture-wrapper {
+    width: 652px;
+  }
 }
 
 @media #{$desktop-only} {
   .form {
     min-height: 920px;
     padding: 60px 0;
+  }
+
+  .form__wrapper {
+    width: 1240px;
+    padding: 0;
+  }
+
+  .form__picture {
+    width: 1240px;
+  }
+
+  .form__picture-wrapper {
+    width: 1240px;
   }
 }
