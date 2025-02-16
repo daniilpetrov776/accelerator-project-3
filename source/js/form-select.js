@@ -57,7 +57,7 @@ const setupSelectListeners = () => {
   formSelect.addEventListener('focus', openSelect);
 
   window.addEventListener('mousedown', (evt) => {
-    if (!fakeSelect.contains(evt.target)) {
+    if (!fakeSelect.contains(evt.target) && !formSelect.contains(evt.target)) {
       closeSelect();
     }
   });

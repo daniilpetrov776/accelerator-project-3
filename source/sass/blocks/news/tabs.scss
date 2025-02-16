@@ -34,9 +34,22 @@
   flex-flow: wrap;
   padding: 10px 14px;
   cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s $smooth, border 0.3s $smooth, background 0.3s $smooth;
 
   &--active {
     border: solid 2px $additional;
+    opacity: 1;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:focus-visible {
+    outline: none;
+    opacity: 1;
+    background-color: $white;
   }
 }
 

@@ -86,19 +86,26 @@
   overflow: hidden;
   // z-index: 10;
   pointer-events: auto;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s $smooth, max-height 0.3s $smooth, background 0.3s $smooth;
 
   &--is-open {
     max-height: 1000px;
     border-color: rgba(72, 72, 72);
     max-height: 134px;
-    overflow: visible;
+    transform: scaleY(1);
   }
+  // &--is-overflow-visible {
+  //   overflow: visible;
+  // }
 }
 
 .select__option {
   min-height: 44px;
   padding: 11px 20px;
-  width: 260px;
+  // width: 260px;
+  width: 100%;
   font-size: 14px;
   line-height: 14px;
   font-weight: 400;
@@ -119,6 +126,15 @@
   &:hover:not(.select__option--active) {
     color: $additional;
   }
+}
+
+.select__option:first-child.select__option--active {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.select__option:last-child.select__option--active {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .select--on-additional {

@@ -77,6 +77,10 @@
   }
 }
 
+.button__text {
+  max-width: 80%;
+}
+
 .button:active .button__figure::after {
   background-color: rgba(49, 109, 194, 0.7);
 }

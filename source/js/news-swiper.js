@@ -1,9 +1,12 @@
 import Swiper from 'swiper';
+import 'swiper/css/grid';
 import { Grid } from 'swiper/modules';
 
 const paginationContainer = document.querySelector('.news__pagination');
 
 let newsSwiper = null;
+let currentBreakpoint = null;
+let originalSlides = [];
 
 const swapSecondAndThirdSlides = () => {
   if (window.innerWidth >= 320 && window.innerWidth < 768) {
@@ -12,41 +15,51 @@ const swapSecondAndThirdSlides = () => {
       return;
     }
 
-    const slides = Array.from(container.children);
-    if (slides.length < 3) {
+    const swiperSslides = Array.from(container.children);
+    if (swiperSslides.length < 3) {
       return;
     } // Проверяем, что слайдов хотя бы 3
 
     // Меняем местами 2-й и 3-й слайд
-    container.insertBefore(slides[2], slides[1]);
+    container.insertBefore(swiperSslides[2], swiperSslides[1]);
   }
+};
+
+const saveSlidesOrder = (swiper) => {
+  originalSlides = Array.from(swiper.slides).map((slide) => slide.cloneNode(true));
+};
+
+const getBreakpoint = () => {
+  if (window.innerWidth >= 1440) {
+    return 'desktop';
+  }
+  if (window.innerWidth >= 320 && window.innerWidth < 768) {
+    return 'mobile';
+  }
+  return 'tablet';
 };
 
 const updateSlideHeights = (swiper) => {
   if (window.innerWidth >= 320 && window.innerWidth < 768) {
-    const slidesArray = Array.from(swiper.slides);
-
     swiper.slides.forEach((slide, index) => {
-      if (index % 4 === 0 || index % 4 === 1) {
-        slide.style.height = '330px';
-        slide.style.marginTop = '0';
-      } else {
-        slide.style.height = '240px';
-        slide.style.marginTop = '20px';
-      }
+      const isOdd = index % 2 !== 0;
+
+      slide.style.height = isOdd ? '240px' : '330px';
+      slide.style.marginTop = isOdd ? '20px' : '0';
     });
 
     const reorderedSlides = [];
+    const slidesArray = Array.from(swiper.slides);
 
     for (let i = 0; i < slidesArray.length; i += 4) {
       if (slidesArray[i]) {
         reorderedSlides.push({ slide: slidesArray[i], tabindex: i + 1 });
       }
-      if (slidesArray[i + 2]) {
-        reorderedSlides.push({ slide: slidesArray[i + 2], tabindex: i + 2 });
-      }
       if (slidesArray[i + 1]) {
-        reorderedSlides.push({ slide: slidesArray[i + 1], tabindex: i + 3 });
+        reorderedSlides.push({ slide: slidesArray[i + 1], tabindex: i + 2 });
+      }
+      if (slidesArray[i + 2]) {
+        reorderedSlides.push({ slide: slidesArray[i + 2], tabindex: i + 3 });
       }
       if (slidesArray[i + 3]) {
         reorderedSlides.push({ slide: slidesArray[i + 3], tabindex: i + 4 });
@@ -60,7 +73,6 @@ const updateSlideHeights = (swiper) => {
 };
 
 const changeStandardActivePaginationClass = (customActiveClass) => {
-  // const bullets = paginationContainer.querySelectorAll('.news-swiper__pagination-bullet');
   const bullets = paginationContainer.querySelectorAll('.swiper-pagination-bullet');
   const standardActive = paginationContainer.querySelector('.swiper-pagination-bullet-active');
   bullets.forEach((bullet) => {
@@ -137,9 +149,52 @@ const updateSlideWidths = (swiper) => {
   }
 };
 
+const restoreSlides = () => {
+  const container = document.querySelector('.news-swiper .swiper-wrapper');
+  if (!container || originalSlides.length === 0) {
+    return;
+  }
+
+  // Удаляем все текущие слайды
+  container.innerHTML = '';
+
+  // Восстанавливаем исходный порядок из сохраненных слайдов
+  originalSlides.forEach((slide) => {
+    container.appendChild(slide.cloneNode(true)); // Клонируем для избежания ссылочных зависимостей
+  });
+
+  // Обновляем структуру свайпера
+  if (newsSwiper) {
+    newsSwiper.updateSlides(); // Обновляем внутреннюю коллекцию слайдов
+    newsSwiper.slideTo(0); // Сбрасываем позицию
+    newsSwiper.updateProgress(); // Обновляем прогресс
+    newsSwiper.updateSize(); // Пересчитываем размеры
+    newsSwiper.updateSlidesClasses(); // Обновляем CSS-классы
+
+    // Дополнительные обновления из обработчиков
+    updateSlideHeights(newsSwiper);
+    updateSlideWidths(newsSwiper);
+    updatePagination(newsSwiper);
+  }
+};
+
+const handleResponsiveSlides = (swiper) => {
+  const newBreakpoint = getBreakpoint();
+  if (newBreakpoint !== currentBreakpoint) {
+    if (newBreakpoint === 'desktop') {
+      restoreSlides();
+      swiper.update();
+    } else if (newBreakpoint === 'tablet') {
+      swapSecondAndThirdSlides();
+      swiper.update();
+    }
+    currentBreakpoint = newBreakpoint;
+  }
+};
+
+
 export const initNewsSwiper = () => {
   if (!newsSwiper) {
-    swapSecondAndThirdSlides();
     newsSwiper = new Swiper('.news-swiper', {
       direction: 'horizontal',
       modules: [Grid],
@@ -166,6 +221,11 @@ export const initNewsSwiper = () => {
           spaceBetween: 32,
           slidesPerGroup: 3,
           simulateTouch: false,
+          height: 400,
+          grid: {
+            rows: 1,
+            fill: 'column'
+          }
         },
         768: {
           slidesPerView: 2,
@@ -179,6 +239,7 @@ export const initNewsSwiper = () => {
         },
         320: {
           slidesPerView: 1,
+          slidesPerGroup: 1,
           spaceBetween: 20,
           grid: {
             rows: 2,
@@ -188,15 +249,18 @@ export const initNewsSwiper = () => {
       },
       on: {
         init: function () {
-          updateSlideHeights(this);
+          saveSlidesOrder(this);
+          handleResponsiveSlides(this);
           updateSlideWidths(this);
           updatePagination(this);
           changeStandardActivePaginationClass('news__pagination-bullet--active');
+          updateSlideHeights(this);
         },
         resize: function () {
-          updateSlideHeights(this);
+          handleResponsiveSlides(this);
           updateSlideWidths(this);
           updatePagination(this);
+          updateSlideHeights(this);
         },
         slideChange: function() {
           updatePagination(this);
@@ -206,8 +270,9 @@ export const initNewsSwiper = () => {
     });
   } else {
     if (newsSwiper) {
-      newsSwiper.destroy(true, true);
-      newsSwiper = null;
+      // handleResponsiveSlides(this);
+      newsSwiper.update();
     }
   }
 };
+

@@ -101,8 +101,7 @@ export const initHeroSwiper = () => {
     });
   } else {
     if (heroSwiper) {
-      heroSwiper.destroy(true, true);
-      heroSwiper = null;
+      heroSwiper.update();
     }
   }
 };

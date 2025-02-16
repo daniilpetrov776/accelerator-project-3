@@ -232,7 +232,7 @@
           </div>
           <div class="modal__input-wrapper select">
             <label class="modal__input-title select__title" for="city">Выберите город</label>
-            <input class="select-input" type="text" id="city" name="city" value="" required tabindex="0">
+            <input class="select-input" type="text" id="city" autocomplete="something" name="city" value="" required tabindex="0">
             <div class="modal__select select__select-element select-element">
               <span class="select__text"></span>
               <div class="select__options">
@@ -297,7 +297,9 @@
                 <div class="programs-swiper__text-wrapper">
                   <p>Помогайте другим и развивайте
                     свои лидерские качества.</p>
-                  <a class="programs-swiper__link circle-link" href="#"></a>
+                  <a class="programs-swiper__link circle-link" href="#">
+                    <span class="visually-hidden">Перейти к волонтерству.</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -317,7 +319,9 @@
                 <div class="programs-swiper__text-wrapper">
                   <p>Получите образование и измените
                     своё будущее.</p>
-                  <a class="programs-swiper__link circle-link" href="#"></a>
+                  <a class="programs-swiper__link circle-link" href="#">
+                    <span class="visually-hidden">Перейти к образованию.</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -337,7 +341,9 @@
                 <div class="programs-swiper__text-wrapper">
                   <p>Получите образование и измените
                     своё будущее.</p>
-                  <a class="programs-swiper__link circle-link" href="#"></a>
+                  <a class="programs-swiper__link circle-link" href="#">
+                    <span class="visually-hidden">Перейти к учебе.</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -357,7 +363,9 @@
                 <div class="programs-swiper__text-wrapper">
                   <p>Получите образование и измените
                     своё будущее.</p>
-                  <a class="programs-swiper__link circle-link" href="#"></a>
+                  <a class="programs-swiper__link circle-link" href="#">
+                    <span class="visually-hidden">Перейти к Учёбе.</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -377,7 +385,9 @@
                 <div class="programs-swiper__text-wrapper">
                   <p>Получите образование и измените
                     своё будущее.</p>
-                  <a class="programs-swiper__link circle-link" href="#"></a>
+                  <a class="programs-swiper__link circle-link" href="#">
+                    <span class="visually-hidden">Перейти к Учёбе.</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -1702,16 +1712,6 @@
     </section>
     <section class="page__form form" data-test="form">
       <div class="container form__wrapper">
-        <div class="form__picture-wrapper">
-          <picture>
-            <source media="(min-width: 1440px)" srcset="./img/form/form-desktop@1x.webp, ./img/form/form-desktop@2x.webp 2x" type="image/webp" width="1240" height="800">
-            <source media="(min-width: 1440px)" srcset="./img/form/form-desktop@1x.jpg, ./img/form/form-desktop@2x.jpg 2x" type="image/jpeg" width="1240" height="800">
-            <source media="(min-width: 768px)" srcset="./img/form/form-tablet@1x.webp, ./img/form/form-tablet@2x.webp 2x" type="image/webp" width="652" height="780">
-            <source media="(min-width: 768px)" srcset="./img/form/form-tablet@1x.jpg, ./img/form/form-tablet@2x.jpg 2x" type="image/jpeg" width="652" height="780">
-            <source media="(min-width: 320px)" srcset="./img/form/form-mobile@1x.webp, ./img/form/form-mobile@2x.webp 2x" type="image/webp" width="320" height="753">
-            <img class="form__picture" src="./img/form/form-mobile@1x.jpg" srcset="./img/form/form-mobile@2x.jpg 2x" width="320" height="753" alt="Прибрежный ландшафт с видом на длинный песчаный пляж и множество расположенных вдоль него зданий.">
-          </picture>
-        </div>
         <form class="form__data-form data-form" action="https://echo.htmlacademy.ru" method="post" novalidate>
           <h2 class="data-form__title section-title">Напишите нам</h2>
           <p class="data-form__subtitle">Оставьте ваши контакты, если у вас
@@ -1730,7 +1730,7 @@
           </div>
           <div class="data-form__input-wrapper select select--on-additional">
             <label class="data-form__input-title data-form__input-title--city select__title" for="form-city">Выберите город</label>
-            <input class="select-input data-form__input data-form__input--select" type="text" id="form-city" name="city" value="" required tabindex="0">
+            <input class="select-input data-form__input data-form__input--select" autocomplete="something" type="text" id="form-city" name="city" value="" required tabindex="0">
             <div class="data-form__select select__select-element select-element select-element--on-additional">
               <span class="select__text"></span>
               <div class="select__options">

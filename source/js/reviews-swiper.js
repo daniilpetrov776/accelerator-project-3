@@ -79,8 +79,7 @@ export const initReviewsSwiper = () => {
     });
   } else {
     if (reviewsSwiper) {
-      reviewsSwiper.destroy(true, true);
-      reviewsSwiper = null;
+      reviewsSwiper.update();
     }
   }
 };

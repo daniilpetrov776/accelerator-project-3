@@ -75,8 +75,7 @@ export const initProgramsSwiper = () => {
     });
   } else {
     if (programsSwiper) {
-      programsSwiper.destroy(true, true);
-      programsSwiper = null;
+      programsSwiper.update();
     }
   }
 };
