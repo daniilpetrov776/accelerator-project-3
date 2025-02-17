@@ -30,7 +30,7 @@ const clearFormFields = () => {
   });
 };
 
-const validateSelect = (value) => !!value;
+// const validateSelect = (value) => !!value;
 
 const openModal = () => {
   modal.classList.add('modal--is-open');
@@ -81,17 +81,17 @@ const onFormSubmit = (evt) => {
   }
 
   // Валидация селекта
-  const isSelectValid = validateInput(
-    select,
-    validateSelect,
-    'Пожалуйста, укажите город.',
-    'modal__input--error',
-    fakeSelect
-  );
-  if (!isSelectValid) {
-    isFormValid = false;
-    firstInvalidInput = firstInvalidInput || select;
-  }
+  // const isSelectValid = validateInput(
+  //   select,
+  //   validateSelect,
+  //   'Пожалуйста, укажите город.',
+  //   'modal__input--error',
+  //   fakeSelect
+  // );
+  // if (!isSelectValid) {
+  //   isFormValid = false;
+  //   firstInvalidInput = firstInvalidInput || select;
+  // }
 
   // Валидация чекбокса (отдельная логика)
   if (!checkboxInput.checked) {

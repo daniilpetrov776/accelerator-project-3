@@ -5,39 +5,39 @@ import { Grid } from 'swiper/modules';
 const paginationContainer = document.querySelector('.news__pagination');
 
 let newsSwiper = null;
-let currentBreakpoint = null;
-let originalSlides = [];
+// let currentBreakpoint = null;
+// const originalSlides = [];
 
-const swapSecondAndThirdSlides = () => {
-  if (window.innerWidth >= 320 && window.innerWidth < 768) {
-    const container = document.querySelector('.news-swiper .swiper-wrapper');
-    if (!container) {
-      return;
-    }
+// const swapSecondAndThirdSlides = () => {
+//   if (window.innerWidth >= 320 && window.innerWidth < 768) {
+//     const container = document.querySelector('.news-swiper .swiper-wrapper');
+//     if (!container) {
+//       return;
+//     }
 
-    const swiperSslides = Array.from(container.children);
-    if (swiperSslides.length < 3) {
-      return;
-    } // Проверяем, что слайдов хотя бы 3
+//     const swiperSslides = Array.from(container.children);
+//     if (swiperSslides.length < 3) {
+//       return;
+//     } // Проверяем, что слайдов хотя бы 3
 
-    // Меняем местами 2-й и 3-й слайд
-    container.insertBefore(swiperSslides[2], swiperSslides[1]);
-  }
-};
+//     // Меняем местами 2-й и 3-й слайд
+//     container.insertBefore(swiperSslides[2], swiperSslides[1]);
+//   }
+// };
 
-const saveSlidesOrder = (swiper) => {
-  originalSlides = Array.from(swiper.slides).map((slide) => slide.cloneNode(true));
-};
+// const saveSlidesOrder = (swiper) => {
+//   originalSlides = Array.from(swiper.slides).map((slide) => slide.cloneNode(true));
+// };
 
-const getBreakpoint = () => {
-  if (window.innerWidth >= 1440) {
-    return 'desktop';
-  }
-  if (window.innerWidth >= 320 && window.innerWidth < 768) {
-    return 'mobile';
-  }
-  return 'tablet';
-};
+// const getBreakpoint = () => {
+//   if (window.innerWidth >= 1440) {
+//     return 'desktop';
+//   }
+//   if (window.innerWidth >= 320 && window.innerWidth < 768) {
+//     return 'mobile';
+//   }
+//   return 'tablet';
+// };
 
 const updateSlideHeights = (swiper) => {
   if (window.innerWidth >= 320 && window.innerWidth < 768) {
@@ -131,6 +131,8 @@ const updatePagination = (swiper) => {
   });
 };
 
+let lastSavedCurrentGroup = 0;
+
 const updateSlideWidths = (swiper) => {
   if (window.innerWidth >= 1440) {
     const slides = swiper.slides;
@@ -149,48 +151,48 @@ const updateSlideWidths = (swiper) => {
   }
 };
 
-const restoreSlides = () => {
-  const container = document.querySelector('.news-swiper .swiper-wrapper');
-  if (!container || originalSlides.length === 0) {
-    return;
-  }
+// const restoreSlides = () => {
+//   const container = document.querySelector('.news-swiper .swiper-wrapper');
+//   if (!container || originalSlides.length === 0) {
+//     return;
+//   }
 
-  // Удаляем все текущие слайды
-  container.innerHTML = '';
+//   // Удаляем все текущие слайды
+//   container.innerHTML = '';
 
-  // Восстанавливаем исходный порядок из сохраненных слайдов
-  originalSlides.forEach((slide) => {
-    container.appendChild(slide.cloneNode(true)); // Клонируем для избежания ссылочных зависимостей
-  });
+//   // Восстанавливаем исходный порядок из сохраненных слайдов
+//   originalSlides.forEach((slide) => {
+//     container.appendChild(slide.cloneNode(true)); // Клонируем для избежания ссылочных зависимостей
+//   });
 
-  // Обновляем структуру свайпера
-  if (newsSwiper) {
-    newsSwiper.updateSlides(); // Обновляем внутреннюю коллекцию слайдов
-    newsSwiper.slideTo(0); // Сбрасываем позицию
-    newsSwiper.updateProgress(); // Обновляем прогресс
-    newsSwiper.updateSize(); // Пересчитываем размеры
-    newsSwiper.updateSlidesClasses(); // Обновляем CSS-классы
+//   // Обновляем структуру свайпера
+//   if (newsSwiper) {
+//     newsSwiper.updateSlides(); // Обновляем внутреннюю коллекцию слайдов
+//     newsSwiper.slideTo(0); // Сбрасываем позицию
+//     newsSwiper.updateProgress(); // Обновляем прогресс
+//     newsSwiper.updateSize(); // Пересчитываем размеры
+//     newsSwiper.updateSlidesClasses(); // Обновляем CSS-классы
 
-    // Дополнительные обновления из обработчиков
-    updateSlideHeights(newsSwiper);
-    updateSlideWidths(newsSwiper);
-    updatePagination(newsSwiper);
-  }
-};
+//     // Дополнительные обновления из обработчиков
+//     updateSlideHeights(newsSwiper);
+//     updateSlideWidths(newsSwiper);
+//     updatePagination(newsSwiper);
+//   }
+// };
 
-const handleResponsiveSlides = (swiper) => {
-  const newBreakpoint = getBreakpoint();
-  if (newBreakpoint !== currentBreakpoint) {
-    if (newBreakpoint === 'desktop') {
-      restoreSlides();
-      swiper.update();
-    } else if (newBreakpoint === 'tablet') {
-      swapSecondAndThirdSlides();
-      swiper.update();
-    }
-    currentBreakpoint = newBreakpoint;
-  }
-};
+// const handleResponsiveSlides = (swiper) => {
+//   const newBreakpoint = getBreakpoint();
+//   if (newBreakpoint !== currentBreakpoint) {
+//     if (newBreakpoint === 'desktop') {
+//       restoreSlides();
+//       swiper.update();
+//     } else if (newBreakpoint === 'tablet') {
+//       swapSecondAndThirdSlides();
+//       swiper.update();
+//     }
+//     currentBreakpoint = newBreakpoint;
+//   }
+// };
 
 
 export const initNewsSwiper = () => {
@@ -199,6 +201,7 @@ export const initNewsSwiper = () => {
       direction: 'horizontal',
       modules: [Grid],
       init: true,
+      initialSlide: lastSavedCurrentGroup,
       navigation: {
         nextEl: '.news__button-next',
         prevEl: '.news__button-prev',
@@ -249,30 +252,24 @@ export const initNewsSwiper = () => {
       },
       on: {
         init: function () {
-          saveSlidesOrder(this);
-          handleResponsiveSlides(this);
+          // saveSlidesOrder(this);
+          // handleResponsiveSlides(this);
           updateSlideWidths(this);
           updatePagination(this);
           changeStandardActivePaginationClass('news__pagination-bullet--active');
           updateSlideHeights(this);
         },
         resize: function () {
-          handleResponsiveSlides(this);
-          updateSlideWidths(this);
-          updatePagination(this);
-          updateSlideHeights(this);
+          this.destroy();
+          newsSwiper = null;
         },
         slideChange: function() {
           updatePagination(this);
           changeStandardActivePaginationClass('news__pagination-bullet--active');
+          lastSavedCurrentGroup = this.activeIndex;
         }
       }
     });
-  } else {
-    if (newsSwiper) {
-      // handleResponsiveSlides(this);
-      newsSwiper.update();
-    }
   }
 };
 

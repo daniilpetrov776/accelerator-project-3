@@ -27,53 +27,53 @@
             <nav class="hero-header__navigation-menu navigation-menu navigation-menu--is-closed">
               <ul class="navigation-menu__list">
                 <li class="navigation-menu__item">
-                  <a class="navigation-menu__link" href="#">О проекте</a>
+                  <a class="navigation-menu__link" href="#about">О проекте</a>
                 </li>
                 <li class="navigation-menu__item navigation-menu__item--submenu navigation-menu__item--open">
-                  <button class="navigation-menu__submenu-button navigation-menu__submenu-button--active" type="button">Программы</button>
-                  <ul class="navigation-menu__submenu-list navigation-menu__submenu-list--is-open">
+                  <button class="navigation-menu__submenu-button" type="button">Программы</button>
+                  <ul class="navigation-menu__submenu-list navigation-menu__submenu-list--is-closed">
                     <li class="navigation-menu__submenu-item">
-                      <a class="navigation-menu__submenu-link" href="#">Стажировки</a>
+                      <a class="navigation-menu__submenu-link" href="#programs">Стажировки</a>
                     </li>
                     <li class="navigation-menu__submenu-item">
-                      <a class="navigation-menu__submenu-link" href="#">Волонтёрство</a>
+                      <a class="navigation-menu__submenu-link" href="#programs">Волонтёрство</a>
                     </li>
                     <li class="navigation-menu__submenu-item">
-                      <a class="navigation-menu__submenu-link" href="#">Учёба</a>
+                      <a class="navigation-menu__submenu-link" href="#programs">Учёба</a>
                     </li>
                     <li class="navigation-menu__submenu-item">
-                      <a class="navigation-menu__submenu-link" href="#">Религия</a>
+                      <a class="navigation-menu__submenu-link" href="#programs">Религия</a>
                     </li>
                   </ul>
                 </li>
                 <li class="navigation-menu__item">
-                  <a class="navigation-menu__link" href="#">как поехать</a>
+                  <a class="navigation-menu__link" href="#grant">как поехать</a>
                 </li>
                 <li class="navigation-menu__item">
-                  <a class="navigation-menu__link" href="#">отзывы</a>
+                  <a class="navigation-menu__link" href="#reviews">отзывы</a>
                 </li>
                 <li class="navigation-menu__item navigation-menu__item--submenu">
                   <button class="navigation-menu__submenu-button" type="button">новости</button>
                   <ul class="navigation-menu__submenu-list navigation-menu__submenu-list--is-closed">
                     <li class="navigation-menu__submenu-item">
-                      <a class="navigation-menu__submenu-link" href="#">общее</a>
+                      <a class="navigation-menu__submenu-link" href="#news">общее</a>
                     </li>
                     <li class="navigation-menu__submenu-item">
-                      <a class="navigation-menu__submenu-link" href="#">Волонтёрство</a>
+                      <a class="navigation-menu__submenu-link" href="#news">Волонтёрство</a>
                     </li>
                     <li class="navigation-menu__submenu-item">
-                      <a class="navigation-menu__submenu-link" href="#">Стажировки</a>
+                      <a class="navigation-menu__submenu-link" href="#news">Стажировки</a>
                     </li>
                     <li class="navigation-menu__submenu-item">
-                      <a class="navigation-menu__submenu-link" href="#">Карьера</a>
+                      <a class="navigation-menu__submenu-link" href="#news">Карьера</a>
                     </li>
                     <li class="navigation-menu__submenu-item">
-                      <a class="navigation-menu__submenu-link" href="#">путешествия</a>
+                      <a class="navigation-menu__submenu-link" href="#news">путешествия</a>
                     </li>
                   </ul>
                 </li>
                 <li class="navigation-menu__item">
-                  <a class="navigation-menu__link" href="#">контакты</a>
+                  <a class="navigation-menu__link" href="#contacts">контакты</a>
                 </li>
               </ul>
             </nav>
@@ -164,7 +164,7 @@
         </div>
 
     </section>
-    <section class="page__about about" data-test="about">
+    <section class="page__about about" id="about" data-test="about">
       <div class="container about__wrapper">
         <div class="about__header">
           <h2 class="about__title section-title">О проекте «Стажировка»</h2>
@@ -236,6 +236,7 @@
             <div class="modal__select select__select-element select-element">
               <span class="select__text"></span>
               <div class="select__options">
+                <button class="select__option" value="" type="button" tabindex="0"></button>
                 <button class="select__option" value="moscow" type="button" tabindex="0">
                   Москва</button>
                 <button class="select__option" value="saint-petersburg" type="button" tabindex="0">Санкт-Петербург</button>
@@ -254,7 +255,7 @@
         </form>
       </div>
     </section>
-    <section class="page__programs programs" data-test="programs">
+    <section class="page__programs programs" id="programs" data-test="programs">
       <div class="container programs__wrapper">
         <h2 class="programs__title">Программы</h2>
         <div class="programs__programs-swiper programs-swiper swiper">
@@ -406,7 +407,7 @@
         </div>
       </div>
     </section>
-    <section class="page__grant grant" data-test="grant">
+    <section class="page__grant grant" id="grant" data-test="grant">
       <div class="container grant__wrapper">
         <div class="grant__about">
           <h2 class="section-title grant__title">Как поехать</h2>
@@ -454,7 +455,7 @@
         </div>
       </div>
     </section>
-    <section class="page__news news" data-test="news">
+    <section class="page__news news" id="news" data-test="news">
       <div class="container news__wrapper">
         <h2 class="section-title news__title">Новости и материалы</h2>
         <div class="news__tabs tabs">
@@ -1525,7 +1526,7 @@
         </ul>
       </div>
     </section>
-    <section class="page__reviews reviews" data-test="reviews">
+    <section class="page__reviews reviews" id="reviews" data-test="reviews">
       <div class="container reviews__wrapper">
         <h2 class="reviews__title section-title">Отзывы</h2>
         <div class="reviews__reviews-swiper reviews-swiper swiper">
@@ -1680,7 +1681,7 @@
         </div>
       </div>
     </section>
-    <section class="page__contacts contacts" data-test="contacts">
+    <section class="page__contacts contacts" id="contacts" data-test="contacts">
       <div class="container contacts__wrapper">
         <h2 class="contacts__title section-title">Контакты</h2>
         <ul class="contacts__info-list">
@@ -1734,6 +1735,7 @@
             <div class="data-form__select select__select-element select-element select-element--on-additional">
               <span class="select__text"></span>
               <div class="select__options">
+                <button class="select__option" value="" type="button" tabindex="0"></button>
                 <button class="select__option" value="moscow" type="button" tabindex="0">
                   Москва</button>
                 <button class="select__option" value="saint-petersburg" type="button" tabindex="0">Санкт-Петербург</button>
@@ -1761,42 +1763,42 @@
         <nav class="footer__nav">
           <ul class="footer__nav-list">
             <li class="footer__nav-list-item">
-              <a class="footer__nav-link" href="#">О проекте</a>
+              <a class="footer__nav-link" href="#about">О проекте</a>
             </li>
             <li class="footer__nav-list-item">
-              <a class="footer__nav-link" href="#">Программы</a>
+              <a class="footer__nav-link" href="#programs">Программы</a>
             </li>
             <li class="footer__nav-list-item">
-              <a class="footer__nav-link" href="#">Как поехать</a>
+              <a class="footer__nav-link" href="#grant">Как поехать</a>
             </li>
             <li class="footer__nav-list-item">
-              <a class="footer__nav-link" href="#">Отзывы</a>
+              <a class="footer__nav-link" href="#reviews">Отзывы</a>
             </li>
             <li class="footer__nav-list-item">
-              <a class="footer__nav-link" href="#">Новости</a>
+              <a class="footer__nav-link" href="#news">Новости</a>
             </li>
             <li class="footer__nav-list-item">
-              <a class="footer__nav-link" href="#">Контакты</a>
+              <a class="footer__nav-link" href="#contacts">Контакты</a>
             </li>
           </ul>
         </nav>
         <div class="footer__policy-wrapper">
-          <a class="footer__policy-link" href="#">Политика конфиденциальности</a>
+          <a class="footer__policy-link" href="https://htmlacademy.ru/intensive/nodejs">Политика конфиденциальности</a>
           <p class="footer__policy-disclaimer">Стажировка © 2023 Все права защищены</p>
         </div>
         <ul class="footer__socials socials">
           <li class="socials__item">
-            <a class="socials__link socials__link--vk" href="#">
+            <a class="socials__link socials__link--vk" target="_blank" href="https://htmlacademy.ru/profession/frontender/individual">
               <span class="visually-hidden">Перейти в ВК.</span>
             </a>
           </li>
           <li class="socials__item">
-            <a class="socials__link socials__link--ok" href="#">
+            <a class="socials__link socials__link--ok" target="_blank" href="https://htmlacademy.ru/profession/react/individual">
               <span class="visually-hidden">Перейти в Одноклассники.</span>
             </a>
           </li>
           <li class="socials__item">
-            <a class="socials__link socials__link--reddit" href="#">
+            <a class="socials__link socials__link--reddit" target="_blank" href="https://htmlacademy.ru/profession/fullstack/individual">
               <span class="visually-hidden">Перейти на Реддит.</span>
             </a>
           </li>

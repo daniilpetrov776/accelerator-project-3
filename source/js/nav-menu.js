@@ -131,6 +131,7 @@ const closeMenu = () => {
   navMenu.classList.remove('navigation-menu--is-opened');
   navMenu.classList.add('navigation-menu--is-closed');
   navMenu.style.maxHeight = 0;
+  navButton.classList.remove('nav-button--opened');
   handleOverflowVisibility(navMenu);
   updateNavMenuItemsTabIndex();
   updateListLinksTabIndex();
@@ -143,6 +144,7 @@ const openMenu = () => {
   navMenu.classList.remove('navigation-menu--is-overflow-visible');
   navMenu.classList.remove('navigation-menu--is-closed');
   navMenu.classList.add('navigation-menu--is-opened');
+  navButton.classList.add('nav-button--opened');
   updateMenuHeight();
   handleOverflowVisibility(navMenu);
   updateNavMenuItemsTabIndex();
