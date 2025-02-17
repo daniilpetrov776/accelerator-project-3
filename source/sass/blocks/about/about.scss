@@ -4,6 +4,9 @@
 
 .about__title {
   margin: 0 0 15px;
+  position: relative;
+  left: 1px;
+  top: 1px;
 }
 
 .about__subtitle-wrapper {
@@ -20,6 +23,7 @@
     line-height: 22px;
     color: $additional;
     margin: 40px 0 20px;
+    font-weight: 400;
   }
 
   p {
@@ -38,6 +42,8 @@
 @media #{$not-mobile} {
   .about__title {
     margin: 0 0 30px;
+    left: 0;
+    top: 0;
   }
 
   .about__subtitle-wrapper {
@@ -58,6 +64,7 @@
       font-size: 16px;
       line-height: 20px;
       margin: 0 0 40px;
+      padding: 0 150px 0 0;
     }
   }
 
@@ -65,12 +72,13 @@
     margin: 40px 0 60px;
     min-width: 279px;
     min-height: 56px;
+    padding: 3px 3px 3px 31px;
   }
 }
 
 @media #{$desktop-only} {
   .about {
-    padding: 60px 0;
+    padding: 70px 0;
   }
 
   .about__wrapper {
@@ -78,7 +86,7 @@
     flex-flow: wrap;
     align-items: flex-start;
     justify-content: flex-end;
-    gap: 40px;
+    gap: 10px 40px;
   }
 
   .about__subtitle-wrapper {
@@ -100,11 +108,12 @@
     p {
       font-size: 16px;
       line-height: 26px;
+      padding: 0;
     }
   }
 
   .about__button {
-    margin: 0 219px 20px 0;
+    margin: 0 219px 50px 0;
     min-width: 279px;
   }
 }

@@ -257,7 +257,7 @@
     </section>
     <section class="page__programs programs" id="programs" data-test="programs">
       <div class="container programs__wrapper">
-        <h2 class="programs__title">Программы</h2>
+        <h2 class="programs__title section-title">Программы</h2>
         <div class="programs__programs-swiper programs-swiper swiper">
           <div class="swiper-wrapper programs-swiper__wrapper">
             <div class="programs-swiper__slide swiper-slide">
@@ -458,21 +458,21 @@
     <section class="page__news news" id="news" data-test="news">
       <div class="container news__wrapper">
         <h2 class="section-title news__title">Новости и материалы</h2>
-        <div class="news__tabs tabs">
-          <ul class="tabs__list">
-            <li class="tabs__item">
+        <div class="news__tabs tabs swiper">
+          <ul class="tabs__list swiper-wrapper">
+            <li class="tabs__item swiper-slide">
               <button class="tabs__button tabs__button--active" data-tab="general">общее</button>
             </li>
-            <li class="tabs__item">
+            <li class="tabs__item swiper-slide">
               <button class="tabs__button" data-tab="Volunteering">Волонтёрство</button>
             </li>
-            <li class="tabs__item">
+            <li class="tabs__item swiper-slide">
               <button class="tabs__button" data-tab="internship">Стажировки</button>
             </li>
-            <li class="tabs__item">
+            <li class="tabs__item swiper-slide">
               <button class="tabs__button" data-tab="career">Карьера</button>
             </li>
-            <li class="tabs__item">
+            <li class="tabs__item swiper-slide">
               <button class="tabs__button" data-tab="travel">путешествия</button>
             </li>
           </ul>
@@ -1805,8 +1805,6 @@
         </ul>
       </div>
     </footer>
-    <div data-test="contacts">contacts</div>
-    <div data-test="form">form</div>
     <script type="module" src="js/main.js"></script>
   </body>
 

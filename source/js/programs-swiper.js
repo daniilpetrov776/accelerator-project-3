@@ -53,7 +53,7 @@ export const initProgramsSwiper = () => {
       },
       breakpoints: {
         1440: {
-          slidesPerView: 3,
+          slidesPerView: 'auto',
           spaceBetween: 32,
           centeredSlides: false,
           slideToClickedSlide: false,
@@ -64,6 +64,9 @@ export const initProgramsSwiper = () => {
           spaceBetween: 30,
           centeredSlides: false,
           slideToClickedSlide: false,
+          scrollbar: {
+            dragSize: 326,
+          }
         },
         320: {
           slidesPerView: 'auto',

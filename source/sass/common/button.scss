@@ -2,7 +2,7 @@
   font-size: 12px;
   line-height: 12px;
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.24px;
   text-transform: uppercase;
   color: $additional;
   border: solid 1px $additional;
@@ -14,7 +14,8 @@
   flex-flow: wrap;
   min-height: 44px;
   border-radius: 30px;
-  padding: 4px 5px 4px 21px;
+  padding: 3px 3px 3px 21px;
+  // padding: 3px 3px 3px 31px;
   gap: 20px;
   cursor: pointer;
 
@@ -113,6 +114,11 @@
   .button {
     font-size: 14px;
     line-height: 14px;
+  }
+
+  .button__figure {
+    width: 46px;
+    height: 46px;
   }
 }
 

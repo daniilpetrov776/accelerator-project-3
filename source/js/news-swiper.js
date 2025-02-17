@@ -5,39 +5,7 @@ import { Grid } from 'swiper/modules';
 const paginationContainer = document.querySelector('.news__pagination');
 
 let newsSwiper = null;
-// let currentBreakpoint = null;
-// const originalSlides = [];
-
-// const swapSecondAndThirdSlides = () => {
-//   if (window.innerWidth >= 320 && window.innerWidth < 768) {
-//     const container = document.querySelector('.news-swiper .swiper-wrapper');
-//     if (!container) {
-//       return;
-//     }
-
-//     const swiperSslides = Array.from(container.children);
-//     if (swiperSslides.length < 3) {
-//       return;
-//     } // Проверяем, что слайдов хотя бы 3
-
-//     // Меняем местами 2-й и 3-й слайд
-//     container.insertBefore(swiperSslides[2], swiperSslides[1]);
-//   }
-// };
-
-// const saveSlidesOrder = (swiper) => {
-//   originalSlides = Array.from(swiper.slides).map((slide) => slide.cloneNode(true));
-// };
-
-// const getBreakpoint = () => {
-//   if (window.innerWidth >= 1440) {
-//     return 'desktop';
-//   }
-//   if (window.innerWidth >= 320 && window.innerWidth < 768) {
-//     return 'mobile';
-//   }
-//   return 'tablet';
-// };
+let lastSavedCurrentGroup = 0;
 
 const updateSlideHeights = (swiper) => {
   if (window.innerWidth >= 320 && window.innerWidth < 768) {
@@ -81,17 +49,19 @@ const changeStandardActivePaginationClass = (customActiveClass) => {
   standardActive?.classList.add(customActiveClass);
 };
 
+
 const updatePagination = (swiper) => {
-  let totalGroups;
   const totalSlides = swiper.slides.length;
   const slidesPerGroup = swiper.params.slidesPerGroup;
-  if (window.innerWidth < 1440) {
-    totalGroups = (Math.ceil(totalSlides / slidesPerGroup) / 2);
+  let totalGroups;
+
+  const groups = Math.ceil(totalSlides / slidesPerGroup);
+  if (window.matchMedia('(max-width: 1439px)').matches) {
+    totalGroups = Math.ceil(groups / 2);
   } else {
-    totalGroups = Math.ceil(totalSlides / slidesPerGroup);
+    totalGroups = groups;
   }
   const currentGroup = Math.floor(swiper.activeIndex / slidesPerGroup) + 1;
-
   const prevGroup = (typeof swiper.prevGroup !== 'undefined') ? swiper.prevGroup : currentGroup;
   const direction = currentGroup > prevGroup ? 'forward' : 'backward';
   swiper.prevGroup = currentGroup;
@@ -116,7 +86,8 @@ const updatePagination = (swiper) => {
     if (start < 1) {
       start = 1;
     }
-    if (start + 3 >= totalGroups) {
+    // Изменяем условие: корректируем только если start+3 строго больше totalGroups
+    if (start + 3 > totalGroups) {
       start = Math.max(1, totalGroups - 3);
     }
 
@@ -130,8 +101,6 @@ const updatePagination = (swiper) => {
     }
   });
 };
-
-let lastSavedCurrentGroup = 0;
 
 const updateSlideWidths = (swiper) => {
   if (window.innerWidth >= 1440) {
@@ -150,50 +119,6 @@ const updateSlideWidths = (swiper) => {
     }
   }
 };
-
-// const restoreSlides = () => {
-//   const container = document.querySelector('.news-swiper .swiper-wrapper');
-//   if (!container || originalSlides.length === 0) {
-//     return;
-//   }
-
-//   // Удаляем все текущие слайды
-//   container.innerHTML = '';
-
-//   // Восстанавливаем исходный порядок из сохраненных слайдов
-//   originalSlides.forEach((slide) => {
-//     container.appendChild(slide.cloneNode(true)); // Клонируем для избежания ссылочных зависимостей
-//   });
-
-//   // Обновляем структуру свайпера
-//   if (newsSwiper) {
-//     newsSwiper.updateSlides(); // Обновляем внутреннюю коллекцию слайдов
-//     newsSwiper.slideTo(0); // Сбрасываем позицию
-//     newsSwiper.updateProgress(); // Обновляем прогресс
-//     newsSwiper.updateSize(); // Пересчитываем размеры
-//     newsSwiper.updateSlidesClasses(); // Обновляем CSS-классы
-
-//     // Дополнительные обновления из обработчиков
-//     updateSlideHeights(newsSwiper);
-//     updateSlideWidths(newsSwiper);
-//     updatePagination(newsSwiper);
-//   }
-// };
-
-// const handleResponsiveSlides = (swiper) => {
-//   const newBreakpoint = getBreakpoint();
-//   if (newBreakpoint !== currentBreakpoint) {
-//     if (newBreakpoint === 'desktop') {
-//       restoreSlides();
-//       swiper.update();
-//     } else if (newBreakpoint === 'tablet') {
-//       swapSecondAndThirdSlides();
-//       swiper.update();
-//     }
-//     currentBreakpoint = newBreakpoint;
-//   }
-// };
-
 
 export const initNewsSwiper = () => {
   if (!newsSwiper) {
@@ -252,8 +177,6 @@ export const initNewsSwiper = () => {
       },
       on: {
         init: function () {
-          // saveSlidesOrder(this);
-          // handleResponsiveSlides(this);
           updateSlideWidths(this);
           updatePagination(this);
           changeStandardActivePaginationClass('news__pagination-bullet--active');
@@ -264,8 +187,8 @@ export const initNewsSwiper = () => {
           newsSwiper = null;
         },
         slideChange: function() {
-          updatePagination(this);
           changeStandardActivePaginationClass('news__pagination-bullet--active');
+          updatePagination(this);
           lastSavedCurrentGroup = this.activeIndex;
         }
       }

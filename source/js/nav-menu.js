@@ -192,12 +192,6 @@ const handleSubMenuToggle = (evt) => {
   }
 };
 
-// Переключение состояния кнопки навигации и затем меню и оверлея
-// const toggleNavButton = () => {
-//   navButton.classList.toggle('nav-button--opened');
-//   overlay.classList.toggle('page-overlay--active');
-// };
-
 const setOverlay = () => {
   overlay.classList.add('page-overlay--active');
 };
@@ -225,6 +219,8 @@ const handleNavLinkClick = (evt) => {
       link.classList.remove('navigation-menu__link--active');
     });
     evt.target.classList.add('navigation-menu__link--active');
+    removeOverlay();
+    closeMenu();
   }
 };
 
@@ -235,6 +231,8 @@ const handleSubNavLinkClick = (evt) => {
       link.classList.remove('navigation-menu__submenu-link--active');
     });
     evt.target.classList.add('navigation-menu__submenu-link--active');
+    removeOverlay();
+    closeMenu();
   }
 };
 

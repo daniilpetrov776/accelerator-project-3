@@ -2,6 +2,9 @@
   padding: 50px 0;
   min-height: 844px;
   background-color: #f0efe9;
+  width: 320px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .news__wrapper {
@@ -9,6 +12,7 @@
   flex-flow: wrap;
   align-items: flex-start;
   gap: 20px;
+  // width: 320px;
 }
 
 .news__title {
@@ -25,7 +29,8 @@
 }
 
 .news__pagination {
-  width: 152px;
+  // width: 152px;
+  width: fit-content;
   height: 26px;
   display: flex;
   flex-flow: wrap;
@@ -109,6 +114,7 @@
 
   .news {
     min-height: 1048px;
+    width: 768px;
   }
 
   .news__wrapper {
@@ -130,6 +136,7 @@
   .news {
     padding: 60px 0;
     min-height: 768px;
+    width: 1440px;
   }
 
   .news__wrapper {

@@ -1,7 +1,7 @@
 .programs {
   min-height: 634px;
   overflow-x: clip;
-  padding: 50px 0;
+  padding: 50px 0 50px 0;
   position: relative;
 }
 
@@ -22,6 +22,8 @@
   align-items: center;
   flex-flow: wrap;
   min-height: 30px;
+  position: relative;
+  top: 2px;
 }
 
 .programs__nav-buttons-wrapper {
@@ -29,16 +31,23 @@
   min-height: 22px;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 5px;
   display: flex;
   flex-flow: wrap;
   align-items: center;
   gap: 8px;
 }
 
+.programs__button {
+  width: 205px;
+  padding: 3px 3px 3px 31px;
+}
+
 @media #{$not-mobile} {
   .programs {
     min-height: 678px;
+    width: 768px;
+    margin: 0 auto;
   }
 
   .programs__wrapper {
@@ -60,6 +69,7 @@
   .programs__button {
     order: -1;
     min-height: 56px;
+    width: 234px;
   }
 
   .programs__navigation {
@@ -101,10 +111,18 @@
 @media #{$desktop-only} {
   .programs {
     min-height: 702px;
-    padding: 60px 0;
+    padding: 50px 0 60px 0;
+    width: 1244px;
+    margin: 0 auto;
   }
 
   .programs__scrollbar {
     width: 1136px;
+  }
+
+  .programs__title {
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: 400;
   }
 }
