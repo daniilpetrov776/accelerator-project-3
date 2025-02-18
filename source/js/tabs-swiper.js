@@ -14,7 +14,7 @@ export const initTabsSwiper = () => {
       mousewheel: true,
       freeMode: true,
       slidesPerView: 'auto',
-      spaceBetween: 12,
+      spaceBetween: 14,
       breakpoints: {
         1440: {
           spaceBetween: 0,

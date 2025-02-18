@@ -22,6 +22,8 @@
 .grant__title {
   color: $white;
   margin: 0;
+  position: relative;
+  top: 1px;
 }
 
 .grant__content-wrapper {
@@ -43,6 +45,10 @@
   .grant {
     min-height: 1147px;
     padding: 100px 0;
+  }
+
+  .grant__wrapper {
+    gap: 50px;
   }
 
   .grant__content-wrapper {

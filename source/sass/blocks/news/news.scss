@@ -16,7 +16,9 @@
 }
 
 .news__title {
-  margin: 0 0 4px;
+  margin: 0 auto 4px;
+  position: relative;
+  top: 1px;
 }
 
 .news__navigation-wrapper {

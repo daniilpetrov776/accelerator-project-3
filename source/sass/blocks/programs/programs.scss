@@ -110,10 +110,10 @@
 
 @media #{$desktop-only} {
   .programs {
-    min-height: 702px;
-    padding: 50px 0 60px 0;
-    width: 1244px;
-    margin: 0 auto;
+    min-height: 675px;
+    padding: 60px 0 50px 0;
+    width: 100%;
+    // margin: 0 auto;
   }
 
   .programs__scrollbar {

@@ -19,15 +19,16 @@
   display: flex;
   flex-flow: wrap;
   align-items: flex-start;
+  justify-content: flex-end;
   gap: 15px;
 }
 
 .conditions__item {
-  padding: 25px 26px;
+  padding: 24px 20px 24px 26px;
   color: #f0efe9;
   border: solid 1px #F0EFE9;
   border-radius: 16px;
-  width: 100%;
+  width: 95%;
   position: relative;
 
   &::after {
@@ -37,7 +38,7 @@
     height: 32px;
     background-color: $additional;
     left: -16px;
-    top: 0;
+    top: -5px;
     border-radius: 30px;
     color: $white;
     display: flex;
@@ -64,17 +65,20 @@
   .conditions__title {
     font-size: 28px;
     line-height: 28px;
+    top: 0;
   }
 
   .conditions__list {
     display: grid;
     grid-template-columns: 1fr 1fr;;
     gap: 25px 48px;
+    padding: 0 0 0 20px;
   }
 
   .conditions__item {
     height: 100%;
-    padding: 31px 26px;
+    padding: 30px 25px;
+    width: 305px;
 
     &::after {
       width: 42px;
@@ -99,15 +103,17 @@
   .conditions__title {
     font-size: 32px;
     line-height: 36px;
+    margin: 10px 0 0;
   }
 
   .conditions__list {
     grid-template-columns: 1fr;
     gap: 23px;
+    width: 100%;
   }
 
   .conditions__item {
-    padding: 31px 26px;
+    width: 100%;
   }
 
   .conditions__text {

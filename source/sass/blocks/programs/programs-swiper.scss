@@ -160,12 +160,16 @@
     font-size: 24px;
     line-height: 17px;
     width: 194px;
+    padding: 17px 10px 7px 18px;
   }
 
   .programs-swiper__text-wrapper {
+    width: 321px;
+    min-height: 82px;
     p {
       font-size: 14px;
       line-height: 18px;
+      width: 239px;
     }
   }
 }
