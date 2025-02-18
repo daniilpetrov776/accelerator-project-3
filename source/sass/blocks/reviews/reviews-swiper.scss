@@ -12,5 +12,9 @@
 }
 
 @media #{$desktop-only} {
+  .reviews-swiper {
+    width: 1240px;
+    overflow: hidden;
+  }
 
 }

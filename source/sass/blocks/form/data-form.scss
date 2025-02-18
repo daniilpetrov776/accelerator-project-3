@@ -41,6 +41,11 @@
   }
 }
 
+.data-form__input-wrapper.select {
+  flex-flow: wrap column;
+  margin: 0 0 6px;
+}
+
 .data-form__input-title {
   font-size: 12px;
   line-height: 14px;
@@ -89,6 +94,15 @@
   }
 }
 
+.data-form__select.select-element {
+  width: 260px;
+  height: 52px;
+}
+
+// .data-form__input-wrapper--check {
+//   gap: 15px;
+// }
+
 .data-form__input {
   min-height: 50px;
   background: transparent;
@@ -113,8 +127,16 @@
   }
 }
 
+.data-form__input-title:not(.data-form__input-title--check) {
+  top: 1px;
+}
+
+.data-form__input-title::before {
+  background-color: $white;
+}
+
 .data-form__input--check:focus-visible + .data-form__input-title--check::before {
-  border-color: $white;
+  border-color: $additional;
 }
 
 .data-form__input--check:disabled + .data-form__input-title--check::before {
@@ -219,6 +241,8 @@
   color: $white;
   width: calc(100% - 10px);
   padding: 3px 5px 3px 31px;
+  position: relative;
+  top: -4px;
 }
 
 .data-form__button .button__text {
@@ -299,19 +323,28 @@
   .data-form {
     width: 490px;
     min-height: 800px;
-    padding: 40px 70px;
+    padding: 40px 70px 30px 70px;
   }
 
   .data-form__title {
     font-size: 32px;
     line-height: 36px;
-    margin: 14px 0;
+    margin: 5px 0 13px;
   }
 
   .data-form__subtitle {
     font-size: 16px;
     line-height: 26px;
   }
+
+  .data-form__select.select-element {
+    width: 100%;
+  }
+
+  .data-form__input-wrapper.select {
+    flex-flow: wrap column;
+    margin: 0px 0 2px;
+}
 
   .data-form__input-title {
     font-size: 14px;
@@ -325,5 +358,9 @@
       font-size: 12px;
       line-height: 12px
     }
+  }
+
+  .data-form__button {
+    margin: 23px 0 0;
   }
 }

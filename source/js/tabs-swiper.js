@@ -20,7 +20,7 @@ export const initTabsSwiper = () => {
           spaceBetween: 0,
         },
         768: {
-          spaceBetween: 10,
+          spaceBetween: 0,
         },
         320: {
 

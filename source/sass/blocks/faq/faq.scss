@@ -5,6 +5,9 @@
 
 .faq__title {
   margin: 0;
+  position: relative;
+  top: 1px;
+  left: -1px;
 }
 
 .faq__wrapper {
@@ -19,11 +22,29 @@
   .faq {
     min-height: 874px;
   }
+
+  .faq__title {
+    top: 0;
+    left: 0;
+  }
+
+  .faq__wrapper {
+    gap: 40px;
+  }
 }
 
 @media #{$desktop-only} {
   .faq {
     padding: 60px 0;
     min-height: 1066px;
+  }
+
+  .faq__wrapper {
+    gap: 70px;
+  }
+
+  .faq__title {
+    margin: 10px 0 0;
+    top: 1px;
   }
 }

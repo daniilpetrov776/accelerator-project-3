@@ -112,6 +112,7 @@
 @media #{$not-mobile} {
   .news__title {
     margin: 0 auto;
+    top: 0;
   }
 
   .news {
@@ -125,6 +126,16 @@
 
   .news__navigation-wrapper {
     margin: 0;
+  }
+
+  .news__pagination {
+    height: 32px;
+    gap: 20px;
+  }
+
+  .news__pagination-bullet {
+    width: 32px;
+    height: 32px;
   }
 }
 

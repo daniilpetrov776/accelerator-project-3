@@ -1,6 +1,6 @@
 .reviews {
   min-height: 632px;
-  padding: 50px 0;
+  padding: 60px 0 52px 0;
   overflow: hidden;
   position: relative;
   width: 320px;
@@ -10,11 +10,14 @@
 
 .reviews__title {
   margin: 0 0 30px;
+  position: relative;
+  top: -4px;
 }
 
 .reviews__navigation-wrapper {
   position: absolute;
-  top: 0;
+  top: -6px;
+  right: 1px;
   right: 0;
   display: flex;
   width: 52px;
@@ -30,10 +33,13 @@
     min-height: 669px;
     width: 768px;
     margin: 0 auto;
+    padding: 55px 0 40px 0;
   }
 
   .reviews__title {
-    margin: 0 0 40px;
+    margin: 0 0 35px;
+    position: relative;
+    top: -5px;
   }
 
   .reviews__navigation-wrapper {
@@ -45,7 +51,8 @@
 
   .reviews__scrollbar {
     display: block;
-    width: 100%;
+    width: 83%;
+    margin: 0 54px 0 0;
     height: 2px;
     background-color: rgba(49, 109, 194, 0.2);
     cursor: pointer;
@@ -72,6 +79,16 @@
   .reviews {
     min-height: 765px;
     padding: 60px 0;
-    width: 1240px;
+    width: 100%;
+  }
+  .reviews__title {
+    position: relative;
+    left: 3px;
+    top: 4px;
+    margin: 0 0 50px;
+  }
+
+  .reviews__scrollbar {
+    width: 100%;
   }
 }

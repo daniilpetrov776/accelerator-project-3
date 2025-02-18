@@ -69,9 +69,14 @@
     overflow-y: visible;
     width: 100%;
     flex-flow: wrap;
-    gap: 10px;
+    gap: 10px 6px;
     padding: 0;
-    justify-content: space-between
+    justify-content: flex-start;
+  }
+
+  .tabs__item:not(:first-child) {
+    position: relative;
+    left: 3px;
   }
 
   .tabs__button {
@@ -79,23 +84,25 @@
     line-height: 14px;
     letter-spacing: 0.28px;
     min-height: 46px;
+    padding: 10px 20px 11px 20px;
   }
 }
 
 @media #{$desktop-only} {
   .tabs {
-    width: 760px;
+    width: 740px;
+    left: 10px;
   }
 
   .tabs__list {
-    gap: 0;
+    gap: 10px;
   }
 
   .tabs__button {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 14px 25px;
+    padding: 14px 20px;
     min-width: 120px;
   }
 }

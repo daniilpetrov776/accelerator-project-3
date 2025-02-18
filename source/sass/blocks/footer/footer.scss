@@ -30,7 +30,7 @@
   align-items: flex-start;
 
   justify-content: center;
-  gap: 20px 30px;
+  gap: 17px 30px;
   margin: 0 0 5px;
 }
 
@@ -76,7 +76,7 @@
   flex-flow: wrap;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 13px;
 }
 
 .footer__policy-link {
@@ -119,7 +119,7 @@
 
   .footer__wrapper {
     justify-content: space-between;
-    gap: 25px;
+    gap: 20px;
   }
 
   .footer__nav {
@@ -130,7 +130,10 @@
 
   .footer__nav-list {
     margin: 0;
+    padding: 0 2px 0 0;
     gap: 15px;
+    position: relative;
+    top: -2px;
   }
 
   .footer__nav-link {
@@ -162,7 +165,7 @@
 
   .footer__wrapper {
     justify-content: flex-start;
-    gap: 25px 52px;
+    gap: 22px 52px;
   }
 
   .footer__logo-wrapper {
@@ -190,6 +193,7 @@
     width: 100%;
     justify-content: space-between;
     order: -1;
+    flex-flow: wrap row-reverse;
   }
 
   .footer__policy-link {
