@@ -8,7 +8,7 @@
 
   &::before {
     position: absolute;
-    content: '';
+    content: "";
     top: -10px;
     bottom: -10px;
     width: calc(100% + 20px);
@@ -53,6 +53,7 @@
     background-color: $additional;
     outline: none;
   }
+
   &:focus-visible::after {
     background-color: $white;
     transform: translate(-50%, -50%) rotate(45deg);

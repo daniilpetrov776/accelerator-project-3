@@ -53,6 +53,7 @@
   align-items: center;
   justify-content: center;
   flex-flow: wrap;
+
   // gap: 4px;
   transition: opacity 0.2s ease-in-out;
   opacity: 1;
@@ -110,6 +111,7 @@
   &:active::before {
     background-color: $active;
   }
+
   &:active::after {
     background-color: $active;
   }
@@ -143,6 +145,7 @@
   &--active::after {
     opacity: 0;
   }
+
   &--active::before {
     background-color: $active;
   }
@@ -204,7 +207,6 @@
 
 .hero-swiper__title {
   margin: 0;
-  position: relative;
   display: inline-flex;
   align-items: center;
   padding: 21px 25px 16px 14px;
@@ -293,6 +295,7 @@
     position: absolute;
     content: "";
     width: 184px;
+
     // min-height: 64px;
     height: calc(100% + 20px);
     left: -15px;
@@ -308,7 +311,7 @@
   max-width: 50%;
 }
 
-@media  #{$not-mobile} {
+@media #{$not-mobile} {
   // .hero-swiper {
   //   width: 768px;
   //   height: 1024px;
@@ -382,6 +385,7 @@
     width: 325px;
     background-color: $white;
     border-bottom-left-radius: 30px;
+
     p {
       font-size: 16px;
       height: min-content;
@@ -396,7 +400,7 @@
         content: "";
         width: 594px;
         height: 120%;
-        background-color: white;
+        background-color: $white;
         z-index: -1;
         bottom: 0;
         left: 0;
@@ -468,7 +472,7 @@
   }
 }
 
-@media  #{$desktop-only} {
+@media #{$desktop-only} {
   // .hero-swiper {
   //   width: 1440px;
   //   height: 800px;
@@ -489,7 +493,7 @@
 
   .hero-swiper__slide {
     min-height: 800px;
-    padding: 100px 100px 60px 100px;
+    padding: 100px 100px 60px;
   }
 
 
@@ -503,7 +507,7 @@
     font-size: 54px;
     line-height: 62px;
     width: 968px;
-    padding: 40px 50px 30px 50px;
+    padding: 40px 50px 30px;
     grid-column: span 3;
 
     &::after {
@@ -514,15 +518,17 @@
   .hero-swiper__cms-wrapper {
     min-height: 113px;
     grid-column: span 1;
+
     &::before {
       width: 775px;
     }
+
     p {
       width: 446px;
       font-size: 16px;
       line-height: 26px;
       padding: 0 0 35px 50px;
-      min-height: 78px;;
+      min-height: 78px;
 
       &::before {
         width: 775px;

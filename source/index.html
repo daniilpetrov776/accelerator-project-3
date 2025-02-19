@@ -24,7 +24,7 @@
                 <span class="nav-button__lines"></span>
               </span>
             </button>
-            <nav class="hero-header__navigation-menu navigation-menu navigation-menu--is-closed">
+            <nav class="hero-header__navigation-menu navigation-menu navigation-menu--is-closed" aria-label="Меню навигации.">
               <ul class="navigation-menu__list">
                 <li class="navigation-menu__item">
                   <a class="navigation-menu__link" href="#about">О проекте</a>
@@ -220,7 +220,9 @@
       <div class="container modal__wrapper">
         <h2 class="modal__title">Напишите нам</h2>
         <p class="modal__description">Оставьте ваши контакты, если у вас остались вопросы – мы на них ответим!</p>
-        <button class="modal__close-button" type="button" tabindex="0"></button>
+        <button class="modal__close-button" type="button" tabindex="0">
+          <span class="visually-hidden">Закрыть форму.</span>
+        </button>
         <form class="modal__form" action="https://echo.htmlacademy.ru" method="post" autocomplete="off" novalidate>
           <div class="modal__input-wrapper">
             <input class="modal__input modal__input--name" type="text" id="name" name="name" required tabindex="0">
@@ -232,11 +234,13 @@
           </div>
           <div class="modal__input-wrapper select">
             <label class="modal__input-title select__title" for="city">Выберите город</label>
-            <input class="select-input" type="text" id="city" autocomplete="something" name="city" value="" required tabindex="0">
+            <input class="select-input" type="text" id="city" name="city" value="blank" required tabindex="0">
             <div class="modal__select select__select-element select-element">
               <span class="select__text"></span>
               <div class="select__options">
-                <button class="select__option" value="" type="button" tabindex="0"></button>
+                <button class="select__option" value="blank" type="button" tabindex="0">
+                  <span class="visually-hidden">Не указывать.</span>
+                </button>
                 <button class="select__option" value="moscow" type="button" tabindex="0">
                   Москва</button>
                 <button class="select__option" value="saint-petersburg" type="button" tabindex="0">Санкт-Петербург</button>
@@ -394,7 +398,7 @@
             </div>
           </div>
         </div>
-        <button class="button programs__button">
+        <button class="button programs__button" type="button">
           <span class="button__text">все программы</span>
           <span class="button__figure"></span>
         </button>
@@ -461,19 +465,19 @@
         <div class="news__tabs tabs swiper">
           <ul class="tabs__list swiper-wrapper">
             <li class="tabs__item swiper-slide">
-              <button class="tabs__button tabs__button--active" data-tab="general">общее</button>
+              <button class="tabs__button tabs__button--active" data-tab="general" type="button">общее</button>
             </li>
             <li class="tabs__item swiper-slide">
-              <button class="tabs__button" data-tab="Volunteering">Волонтёрство</button>
+              <button class="tabs__button" data-tab="Volunteering" type="button">Волонтёрство</button>
             </li>
             <li class="tabs__item swiper-slide">
-              <button class="tabs__button" data-tab="internship">Стажировки</button>
+              <button class="tabs__button" data-tab="internship" type="button">Стажировки</button>
             </li>
             <li class="tabs__item swiper-slide">
-              <button class="tabs__button" data-tab="career">Карьера</button>
+              <button class="tabs__button" data-tab="career" type="button">Карьера</button>
             </li>
             <li class="tabs__item swiper-slide">
-              <button class="tabs__button" data-tab="travel">путешествия</button>
+              <button class="tabs__button" data-tab="travel" type="button">путешествия</button>
             </li>
           </ul>
         </div>
@@ -1730,11 +1734,13 @@
           </div>
           <div class="data-form__input-wrapper select select--on-additional">
             <label class="data-form__input-title data-form__input-title--city select__title" for="form-city">Выберите город</label>
-            <input class="select-input data-form__input data-form__input--select" autocomplete="something" type="text" id="form-city" name="city" value="" required tabindex="0">
+            <input class="select-input data-form__input data-form__input--select" type="text" id="form-city" name="city" value="blank" required tabindex="0">
             <div class="data-form__select select__select-element select-element select-element--on-additional">
               <span class="select__text"></span>
               <div class="select__options">
-                <button class="select__option" value="" type="button" tabindex="0"></button>
+                <button class="select__option" value="blank" type="button" tabindex="0">
+                  <span class="visually-hidden">Не указывать.</span>
+                </button>
                 <button class="select__option" value="moscow" type="button" tabindex="0">
                   Москва</button>
                 <button class="select__option" value="saint-petersburg" type="button" tabindex="0">Санкт-Петербург</button>
@@ -1759,7 +1765,7 @@
         <div class="footer__logo-wrapper">
           <img class="footer__logo" src="./img/logo/logo.svg" alt="Логотип нашей организации." width="30" height="30">
         </div>
-        <nav class="footer__nav">
+        <nav class="footer__nav" aria-label="Меню навигации футера.">
           <ul class="footer__nav-list">
             <li class="footer__nav-list-item">
               <a class="footer__nav-link" href="#about">О проекте</a>
@@ -1787,17 +1793,17 @@
         </div>
         <ul class="footer__socials socials">
           <li class="socials__item">
-            <a class="socials__link socials__link--vk" target="_blank" href="https://htmlacademy.ru/profession/frontender/individual">
+            <a class="socials__link socials__link--vk" rel="noreferrer noopener" target="_blank" href="https://htmlacademy.ru/profession/frontender/individual">
               <span class="visually-hidden">Перейти в ВК.</span>
             </a>
           </li>
           <li class="socials__item">
-            <a class="socials__link socials__link--ok" target="_blank" href="https://htmlacademy.ru/profession/react/individual">
+            <a class="socials__link socials__link--ok" rel="noreferrer noopener" target="_blank" href="https://htmlacademy.ru/profession/react/individual">
               <span class="visually-hidden">Перейти в Одноклассники.</span>
             </a>
           </li>
           <li class="socials__item">
-            <a class="socials__link socials__link--reddit" target="_blank" href="https://htmlacademy.ru/profession/fullstack/individual">
+            <a class="socials__link socials__link--reddit" rel="noreferrer noopener" target="_blank" href="https://htmlacademy.ru/profession/fullstack/individual">
               <span class="visually-hidden">Перейти на Реддит.</span>
             </a>
           </li>

@@ -40,7 +40,7 @@
 }
 
 .reviews-slide__prorgamms {
-  display:  flex;
+  display: flex;
   flex-flow: wrap;
   align-items: flex-start;
   gap: 25px;
@@ -51,6 +51,7 @@
   flex-flow: wrap column;
   align-items: flex-start;
   gap: 8px;
+  max-width: 110px;
 }
 
 .reviews-slide__subtitle {
@@ -82,6 +83,7 @@
   flex-flow: wrap;
   align-items: flex-start;
   gap: 10px;
+
   p {
     font-size: 14px;
     line-height: 20px;
@@ -91,7 +93,6 @@
 }
 
 @media #{$not-mobile} {
-
   .reviews-slide__header {
     width: 100%;
     justify-content: space-between;
@@ -106,7 +107,7 @@
 
   .reviews-slide__name {
     width: unset;
-    max-width: 65px;
+    max-width: 60px;
     padding: 0;
     font-size: 20px;
     line-height: 24px;
@@ -114,6 +115,7 @@
 
   .reviews-slide__programm-wrapper {
     gap: 11px;
+    max-width: 126px;
   }
 
   .reviews-slide__subtitle {
@@ -144,11 +146,14 @@
 }
 
 @media #{$desktop-only} {
-
   .reviews-slide {
     width: 604px;
     min-height: 483px;
     padding: 50px 48px 50px 50px;
+  }
+
+  .reviews-slide__programm-wrapper {
+    max-width: 140px;
   }
 
   .reviews-slide__text {
@@ -165,6 +170,7 @@
   .reviews-slide__text-important {
     font-size: 24px;
     line-height: 26px;
+
     // padding: 0 10px 0 0;
   }
 

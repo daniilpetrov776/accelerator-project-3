@@ -69,15 +69,15 @@
   }
 
   // Стили для фокуса
-  &:focus-visible {
-    background-color: $white;
-    color: $additional;
-    outline: none;
-  }
+  // &:focus-visible {
+  //   background-color: $white;
+  //   color: $additional;
+  //   outline: none;
+  // }
 
-  &:active .nav-button__lines {
-    background-color: rgba(49, 109, 194, 0.7);
-  }
+  // &:active .nav-button__lines {
+  //   background-color: rgba(49, 109, 194, 0.7);
+  // }
 
   &:active .nav-button__lines::before {
     background-color: rgba(49, 109, 194, 0.7);
@@ -110,13 +110,13 @@
 }
 
 // Стили для фокуса на внутренних элементах
-.nav-button:focus-visible .nav-button__figure {
-  background-color: $additional;
-}
+// .nav-button:focus-visible .nav-button__figure {
+//   background-color: $additional;
+// }
 
-.nav-button:focus-visible .nav-button__lines {
-  background-color: $white;
-}
+// .nav-button:focus-visible .nav-button__lines {
+//   background-color: $white;
+// }
 
 .nav-button:active .nav-button__lines {
   background-color: rgba(49, 109, 194, 0.7);
@@ -223,10 +223,13 @@
   background-color: $additional;
   border-color: $white;
   color: $white;
+  outline: none;
 }
+
 .nav-button:focus-visible .nav-button__figure {
   background-color: $white;
 }
+
 .nav-button:focus-visible .nav-button__lines {
   background-color: $additional;
 }

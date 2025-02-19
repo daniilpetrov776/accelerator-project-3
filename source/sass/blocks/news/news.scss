@@ -12,6 +12,7 @@
   flex-flow: wrap;
   align-items: flex-start;
   gap: 20px;
+
   // width: 320px;
 }
 
@@ -48,10 +49,8 @@
   position: relative;
   opacity: 0.5;
   transition: background 0.3s $smooth, opacity 0.3s $smooth, border 0.3s $smooth;
-  border:  solid 2px transparent;
+  border: solid 2px transparent;
   cursor: pointer;
-
-
 
 
   &:hover {
@@ -79,9 +78,9 @@
     opacity: 1;
   }
 
-  &--active::after {
-    color: $white;
-  }
+  // &--active::after {
+  //   color: $white;
+  // }
 
   &:focus-visible {
     outline: none;
@@ -140,7 +139,6 @@
 }
 
 @media #{$desktop-only} {
-
   .news__title {
     width: 100%;
     text-align: center;

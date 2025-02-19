@@ -13,6 +13,7 @@ const fakeSelect = form.querySelector('.modal__select');
 const select = form.querySelector('.select-input');
 const selectOptions = form.querySelectorAll('.select__option');
 const checkboxInput = form.querySelector('.modal__input--check');
+const body = document.querySelector('.page');
 
 const updateTabindex = (isOpen) => {
   const elements = modal.querySelectorAll('[tabindex]');
@@ -35,12 +36,14 @@ const clearFormFields = () => {
 const openModal = () => {
   modal.classList.add('modal--is-open');
   overlay.classList.add('page-overlay--active');
+  body.style.overflow = 'hidden';
   updateTabindex(true);
 };
 
 const closeModal = () => {
   modal.classList.remove('modal--is-open');
   overlay.classList.remove('page-overlay--active');
+  body.style.overflow = 'auto';
   updateTabindex(false);
 };
 

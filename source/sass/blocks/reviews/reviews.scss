@@ -1,6 +1,6 @@
 .reviews {
   min-height: 632px;
-  padding: 60px 0 52px 0;
+  padding: 60px 0 52px;
   overflow: hidden;
   position: relative;
   width: 320px;
@@ -17,7 +17,6 @@
 .reviews__navigation-wrapper {
   position: absolute;
   top: -6px;
-  right: 1px;
   right: 0;
   display: flex;
   width: 52px;
@@ -33,7 +32,7 @@
     min-height: 669px;
     width: 768px;
     margin: 0 auto;
-    padding: 55px 0 40px 0;
+    padding: 55px 0 40px;
   }
 
   .reviews__title {
@@ -81,6 +80,7 @@
     padding: 60px 0;
     width: 100%;
   }
+
   .reviews__title {
     position: relative;
     left: 3px;

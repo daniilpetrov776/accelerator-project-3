@@ -80,7 +80,8 @@
     color: #484848;
     outline: none;
   }
-  &:focus-visible:not(.contacts-info-link--text)::before  {
+
+  &:focus-visible:not(.contacts-info-link--text)::before {
     transform: scaleX(1);
   }
 
@@ -162,9 +163,10 @@
     font-size: 50px;
     line-height: 50px;
     font-weight: 400;
+    max-width: 600px;
   }
 
-  .contacts__info-list  {
+  .contacts__info-list {
     gap: 52.5px;
   }
 

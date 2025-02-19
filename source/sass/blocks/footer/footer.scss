@@ -23,7 +23,6 @@
 
 .footer__nav-list {
   list-style-type: none;
-  margin: 0;
   padding: 0;
   display: flex;
   flex-flow: wrap;
@@ -84,12 +83,31 @@
   font-size: 12px;
   line-height: 14px;
   font-weight: 400;
-  text-underline-offset: 4px;
+  text-align: center;
+
+  // text-underline-offset: 4px;
+  text-decoration: none;
   transition: color 0.3s $smooth, opacity 0.3s $smooth;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #484848;
+    left: 0;
+    bottom: -3px;
+    transition: background 0.3s $smooth;
+  }
 
   &:hover {
     color: $additional;
     opacity: 0.7;
+  }
+
+  &:hover::before {
+    background-color: $additional;
   }
 
   &:focus-visible {
@@ -97,9 +115,17 @@
     outline: none;
   }
 
+  &:focus-visible::before {
+    background-color: $additional;
+  }
+
   &:active {
     color: $active;
     opacity: 1;
+  }
+
+  &:active::before {
+    background-color: $active;
   }
 }
 
@@ -109,6 +135,7 @@
   font-size: 12px;
   line-height: 14px;
   font-weight: 400;
+  text-align: center;
   margin: 0;
 }
 
@@ -126,6 +153,9 @@
     display: flex;
     align-items: center;
     flex-flow: wrap;
+    width: 530px;
+    position: relative;
+    left: 3px;
   }
 
   .footer__nav-list {
@@ -149,11 +179,13 @@
   .footer__policy-link {
     font-size: 12px;
     line-height: 12px;
+    text-align: left;
   }
 
   .footer__policy-disclaimer {
     font-size: 12px;
     line-height: 12px;
+    text-align: left;
   }
 }
 
@@ -174,6 +206,7 @@
 
   .footer__nav {
     order: -3;
+    width: 60%;
   }
 
   .footer__nav-list {
@@ -199,10 +232,15 @@
   .footer__policy-link {
     font-size: 14px;
     line-height: 18px;
+    position: relative;
+    top: -2px;
+    max-width: 45%;
   }
 
   .footer__policy-disclaimer {
     font-size: 14px;
     line-height: 18px;
+    opacity: 1;
+    max-width: 45%;
   }
 }

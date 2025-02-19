@@ -39,6 +39,10 @@
   min-height: 44px;
 }
 
+.about__button .button__text {
+  max-width: 73%;
+}
+
 @media #{$not-mobile} {
   .about__title {
     margin: 0 0 30px;
@@ -91,6 +95,7 @@
 
   .about__subtitle-wrapper {
     width: 702px;
+
     p {
       font-size: 22px;
       line-height: 32px;
@@ -99,6 +104,7 @@
 
   .about__content-wrapper {
     width: 498px;
+
     h3 {
       font-size: 32px;
       margin: 0 0 40px;
@@ -112,8 +118,17 @@
     }
   }
 
+  .about__title {
+    max-width: 600px;
+  }
+
   .about__button {
     margin: 0 219px 50px 0;
     min-width: 279px;
+    max-width: 279px;
+  }
+
+  .about__button .button__text {
+    max-width: 70%;
   }
 }

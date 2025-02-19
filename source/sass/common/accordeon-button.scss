@@ -16,7 +16,7 @@
     height: 1px;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%) rotate(90deg) ;
+    transform: translate(-50%, -50%) rotate(90deg);
     background-color: $white;
     transition: background 0.3s $smooth, transform 0.3s $smooth;
   }
@@ -39,11 +39,11 @@
   }
 
   &:focus-visible::before {
-  background-color: $additional;
+    background-color: $additional;
   }
 
   &:focus-visible::after {
-  background-color: $additional;
+    background-color: $additional;
   }
 
   &:active {
@@ -68,6 +68,7 @@
     background-color: $white;
     opacity: 0.6;
   }
+
   &::after {
     background-color: $white;
     opacity: 0.6;
@@ -83,6 +84,7 @@
     background-color: $white;
     opacity: 0.6;
   }
+
   &::after {
     background-color: $white;
     opacity: 0.6;
@@ -101,18 +103,16 @@
     transform: translate(-50%, -50%) rotate(0deg);
     background-color: $additional;
   }
-
-  &:focus-visible {
-    border-color: $active;
-  }
 }
 
 .accordeon-button--active:focus-visible {
   background-color: $additional;
   border-color: $white;
+
   &::before {
     background-color: $white;
   }
+
   &::after {
     background-color: $white;
   }

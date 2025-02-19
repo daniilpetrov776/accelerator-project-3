@@ -26,7 +26,7 @@
 .conditions__item {
   padding: 24px 20px 24px 26px;
   color: #f0efe9;
-  border: solid 1px #F0EFE9;
+  border: solid 1px #f0efe9;
   border-radius: 16px;
   width: 95%;
   position: relative;
@@ -70,7 +70,7 @@
 
   .conditions__list {
     display: grid;
-    grid-template-columns: 1fr 1fr;;
+    grid-template-columns: 1fr 1fr;
     gap: 25px 48px;
     padding: 0 0 0 20px;
   }
@@ -86,7 +86,7 @@
       top: -15px;
       left: -20px;
       font-size: 22px;
-      line-height: 22px
+      line-height: 22px;
     }
   }
 

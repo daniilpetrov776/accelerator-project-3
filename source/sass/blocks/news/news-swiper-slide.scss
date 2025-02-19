@@ -1,10 +1,10 @@
 
 .news-swiper-slide {
   position: relative;
-  height: 240px;
   display: flex;
   flex-flow: wrap;
   align-items: flex-end;
+
   // border-radius: 12px;
   overflow: hidden;
   width: 290px;
@@ -26,6 +26,26 @@
 .news-swiper-slide__content {
   width: 100%;
   z-index: 1;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.news-swiper-slide__content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.news-swiper-slide__content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.news-swiper-slide__content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+.news-swiper-slide__content::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .news-swiper-slide__date {
@@ -125,6 +145,7 @@
 .news-swiper-slide:nth-child(even) .news-swiper-slide__date {
   min-width: 79px;
 }
+
 .news-swiper-slide:nth-child(even) .news-swiper-slide__cms-wrapper p {
   padding: 14px 0 10px;
 }
@@ -146,6 +167,7 @@
     width: 240px;
     gap: 16px;
     justify-content: flex-start;
+
     p {
       font-size: 14px;
       line-height: 20px;
@@ -154,9 +176,14 @@
     }
   }
 
+  .news-swiper-slide__content {
+    max-height: 280px;
+  }
+
   .news-swiper-slide:nth-child(even) .news-swiper-slide__date {
     min-width: 78px;
   }
+
   .news-swiper-slide:nth-child(even) .news-swiper-slide__cms-wrapper p {
     padding: 11px 0 16px;
   }
@@ -183,6 +210,10 @@
     }
   }
 
+  .news-swiper-slide__content {
+    max-height: 250px;
+  }
+
   .news-swiper-slide__title {
     font-size: 24px;
     line-height: 26px;
@@ -193,6 +224,7 @@
 
   .news-swiper-slide--bigger .news-swiper-slide__title {
     padding: 18px 18px 6px 0;
+    width: 426px;
   }
 
   .news-swiper-slide__cms-wrapper {
@@ -205,9 +237,9 @@
     }
   }
 
-  .news-swiper-slide--bigger .news-swiper-slide__title {
-    width: 426px;
-  }
+  // .news-swiper-slide--bigger .news-swiper-slide__title {
+  //   width: 426px;
+  // }
 
   .news-swiper-slide--bigger .news-swiper-slide__cms-wrapper {
     width: 468px;

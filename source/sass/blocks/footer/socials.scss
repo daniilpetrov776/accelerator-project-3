@@ -44,9 +44,11 @@
   &--vk::after {
     mask: url("/__spritemap#sprite-vk-view") center center no-repeat;
   }
+
   &--ok::after {
     mask: url("/__spritemap#sprite-ok-view") center center no-repeat;
   }
+
   &--reddit::after {
     mask: url("/__spritemap#sprite-reddit-view") center center no-repeat;
   }
@@ -59,12 +61,15 @@
     background-color: $white;
     outline: none;
   }
+
   &:focus-visible::after {
     background: $additional;
   }
+
   &:active {
     background: $active;
   }
+
   &:active::after {
     opacity: 1;
   }
@@ -86,5 +91,10 @@
   .socials {
     margin: 0 0 0 auto;
     gap: 20px;
+    position: relative;
+    top: -2px;
+    max-width: 20%;
+
+    // align-items: flex-start;
   }
 }

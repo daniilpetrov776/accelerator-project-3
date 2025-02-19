@@ -63,7 +63,7 @@
     top: 50%;
     left: -32px;
     transform: translateY(-50%);
-    border: solid 1px rgba(255,255,255, 0.7);
+    border: solid 1px rgba(255, 255, 255, 0.7);
     border-radius: 2px;
     transition: opacity 0.3s $smooth, background 0.3s $smooth, border 0.3s $smooth;
   }
@@ -107,13 +107,9 @@
   min-height: 50px;
   background: transparent;
   width: 100%;
-  border: solid 1px rgba(255,255,255, 0.3);
+  border: solid 1px rgba(255, 255, 255, 0.3);
   border-radius: 8px;
   transition: border 0.3s $smooth;
-
-  &--comment {
-    resize: none;
-  }
 
   &--check {
     width: 20px;
@@ -124,6 +120,7 @@
 
   &--comment {
     height: 94px;
+    resize: none;
   }
 }
 
@@ -140,9 +137,10 @@
 }
 
 .data-form__input--check:disabled + .data-form__input-title--check::before {
-  background-color: rgba(255,255,255, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
   border-color: $white;
 }
+
 .data-form__input--check:disabled + .data-form__input-title--check {
   cursor: auto;
   pointer-events: none;
@@ -156,28 +154,35 @@
 .data-form__input--check:checked + .data-form__input-title--check::before {
   background-color: $white;
 }
+
 .data-form__input--check:checked + .data-form__input-title--check::after {
   background-color: $additional;
   opacity: 1;
 }
+
 .data-form__input--check:checked:hover + .data-form__input-title--check::before {
   background-color: $additional;
 }
+
 .data-form__input--check:checked:hover + .data-form__input-title--check::after {
   background-color: $white;
   opacity: 1;
 }
+
 .data-form__input--check:checked:focus-visible + .data-form__input-title--check::before {
   background-color: $additional;
 }
+
 .data-form__input--check:checked:focus-visible + .data-form__input-title--check::after {
   background-color: $white;
   opacity: 1;
 }
+
 .data-form__input--check:checked:disabled + .data-form__input-title--check::before {
   background-color: $disabled;
   border-color: $disabled;
 }
+
 .data-form__input--check:checked:disabled + .data-form__input-title--check::after {
   background-color: $white;
   opacity: 1;
@@ -191,23 +196,29 @@
 .data-form__input:not(.data-form__input--check):hover {
   border-color: $white;
 }
+
 .data-form__input:not(.data-form__input--check):hover + .data-form__input-title {
   color: #f0efe9;
 }
+
 .data-form__input:not(.data-form__input--check):focus {
   border-color: $white;
   outline: none;
 }
+
 .data-form__input:not(.data-form__input--check):focus + .data-form__input-title {
   color: #f0efe9;
 }
+
 .data-form__input:not(.data-form__input--check):active {
   border-color: $white;
   outline: none;
 }
+
 .data-form__input:not(.data-form__input--check):active + .data-form__input-title {
   color: #f0efe9;
 }
+
 .data-form__input:not(.data-form__input--check):disabled {
   opacity: 0.4;
   border-color: $white;
@@ -215,13 +226,16 @@
   cursor: auto;
   pointer-events: none;
 }
+
 .data-form__input:not(.data-form__input--check):disabled + .data-form__input-title {
   color: rgba(240, 239, 233, 0.6);
 }
+
 .data-form__input--error:not(.data-form__input--check) {
   border-color: #ff5e66;
   background-color: rgba(255, 94, 102, 0.2);
 }
+
 .data-form__input--error:not(.data-form__input--check):disabled + .data-form__input-title {
   color: rgba(240, 239, 233, 0.8);
   background-color: transparent;
@@ -235,6 +249,10 @@
 .data-form__input:not(.data-form__input--check) {
   padding: 16px 25px;
   color: $white;
+}
+
+.data-form__input--select {
+  height: 100%;
 }
 
 .data-form__button {
@@ -269,6 +287,10 @@
     font-size: 16px;
     line-height: 20px;
     margin: 0 0 20px;
+  }
+
+  .data-form__select.select-element {
+    width: 100%;
   }
 
   .data-form__input-wrapper {
@@ -314,6 +336,7 @@
     width: 46px;
     height: 46px;
   }
+
   .data-form__button .button__text {
     width: 240px;
   }
@@ -323,7 +346,7 @@
   .data-form {
     width: 490px;
     min-height: 800px;
-    padding: 40px 70px 30px 70px;
+    padding: 40px 70px 30px;
   }
 
   .data-form__title {
@@ -343,8 +366,8 @@
 
   .data-form__input-wrapper.select {
     flex-flow: wrap column;
-    margin: 0px 0 2px;
-}
+    margin: 0 0 2px;
+  }
 
   .data-form__input-title {
     font-size: 14px;
@@ -356,7 +379,7 @@
 
     &--check {
       font-size: 12px;
-      line-height: 12px
+      line-height: 12px;
     }
   }
 

@@ -20,12 +20,14 @@ const updateSelectItemsTabIndex = () => {
 const openSelect = () => {
   selectOptions.classList.add('select__options--is-open');
   fakeSelect.classList.add('select-element--active');
+  selectOptions.style.maxHeight = `${selectOptions.scrollHeight}px`;
   updateSelectItemsTabIndex();
 };
 
 const closeSelect = () => {
   selectOptions.classList.remove('select__options--is-open');
   fakeSelect.classList.remove('select-element--active');
+  selectOptions.style.maxHeight = 0;
   updateSelectItemsTabIndex();
 };
 

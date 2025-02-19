@@ -14,8 +14,9 @@
   border: 2px solid $additional;
   border-radius: 14px;
   cursor: pointer;
+
   p {
-    margin: 0 0 0;
+    margin: 0;
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
@@ -24,8 +25,8 @@
     transition: all 0.3s $smooth;
     transform-origin: top;
     max-height: 0;
-
   }
+
   transition: background 0.3s $smooth;
 }
 
@@ -34,12 +35,13 @@
 }
 
 .faq-accordeon__item:hover .accordeon-button {
-  background-color:  $white;
+  background-color: $white;
 }
 
 .faq-accordeon__item:hover .accordeon-button::before {
   background-color: $additional;
 }
+
 .faq-accordeon__item:hover .accordeon-button::after {
   background-color: $additional;
 }
@@ -51,9 +53,11 @@
 .faq-accordeon__item:active .accordeon-button {
   background-color: $additional;
 }
+
 .faq-accordeon__item:active .accordeon-button::before {
   background-color: $white;
 }
+
 .faq-accordeon__item:active .accordeon-button::after {
   background-color: $white;
 }
@@ -63,7 +67,7 @@
   color: $white;
 
   p {
-    color: #F0EFE9;
+    color: #f0efe9;
     margin: 20px 0 0;
     transform: scaleY(1);
     transition: all 0.3s $smooth;
@@ -79,9 +83,11 @@
   background-color: $additional;
   border-color: $white;
 }
+
 .faq-accordeon__item--is-open:hover .accordeon-button::before {
   background-color: $white;
 }
+
 .faq-accordeon__item--is-open:hover .accordeon-button::after {
   background-color: $white;
 }
@@ -94,9 +100,11 @@
   background-color: $white;
   border-color: $active;
 }
+
 .faq-accordeon__item--is-open:active .accordeon-button::before {
   background-color: $active;
 }
+
 .faq-accordeon__item--is-open:active .accordeon-button::after {
   background-color: $active;
 }
@@ -109,9 +117,11 @@
   background-color: $additional;
   border-color: $white;
 }
+
 .faq-accordeon__item--is-open:focus-visible .accordeon-button::before {
   background-color: $white;
 }
+
 .faq-accordeon__item--is-open:focus-visible .accordeon-button::after {
   background-color: $white;
 }
@@ -133,7 +143,7 @@
 }
 
 .faq-accordeon__item:nth-child(4) .faq-accordeon__title {
- padding: 0 20px 0 0;
+  padding: 0 20px 0 0;
   max-width: 210px;
 }
 
@@ -151,8 +161,8 @@
 
   .faq-accordeon__item:nth-child(4) .faq-accordeon__title {
     padding: 0 60px 0 0;
-     max-width: 500px;
-   }
+    max-width: 500px;
+  }
 
   .faq-accordeon__title {
     font-size: 22px;
@@ -174,7 +184,7 @@
   }
 
   .faq-accordeon__item {
-    padding: 40px 40px;
+    padding: 40px;
 
     p {
       padding: 0 25px 0 0;
@@ -191,7 +201,6 @@
 
   .faq-accordeon__item:nth-child(4) .faq-accordeon__title {
     padding: 0;
-     max-width: 800px;
-   }
-
+    max-width: 800px;
+  }
 }
