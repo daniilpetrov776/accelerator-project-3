@@ -20,6 +20,13 @@ const clearFormFields = () => {
 };
 
 // const validateSelect = (value) => !!value;
+const validateSelect = (value) => {
+  if (value === '' || value === 'empty') {
+    return false;
+  }
+  return true;
+};
+
 const validateFormfield = (value) => !!value;
 
 const onFormSubmit = (evt) => {
@@ -71,17 +78,17 @@ const onFormSubmit = (evt) => {
   }
 
   // Валидация селекта
-  // const isSelectValid = validateInput(
-  //   select,
-  //   validateSelect,
-  //   'Пожалуйста, укажите город.',
-  //   'data-form__input--error',
-  //   fakeSelect
-  // );
-  // if (!isSelectValid) {
-  //   isFormValid = false;
-  //   firstInvalidInput = firstInvalidInput || select;
-  // }
+  const isSelectValid = validateInput(
+    select,
+    validateSelect,
+    'Пожалуйста, укажите город.',
+    'data-form__input--error',
+    fakeSelect
+  );
+  if (!isSelectValid) {
+    isFormValid = false;
+    firstInvalidInput = firstInvalidInput || select;
+  }
 
   // Валидация чекбокса (отдельная логика)
   if (!checkboxInput.checked) {
@@ -109,12 +116,12 @@ const onFormSubmit = (evt) => {
 
 const handleInputEvent = (evt) => {
   const input = evt.target;
-
   // Обработка селекта
   if (input === select || input === fakeSelect || input.closest('.select__option')) {
     if (select.value) {
       select.setCustomValidity('');
       fakeSelect.classList.remove('data-form__input--error');
+      select.classList.remove('data-form__input--error');
     }
     return;
   }

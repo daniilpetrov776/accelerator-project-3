@@ -15,6 +15,8 @@ const selectOptions = form.querySelectorAll('.select__option');
 const checkboxInput = form.querySelector('.modal__input--check');
 const body = document.querySelector('.page');
 
+const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
 const updateTabindex = (isOpen) => {
   const elements = modal.querySelectorAll('[tabindex]');
 
@@ -33,17 +35,28 @@ const clearFormFields = () => {
 
 // const validateSelect = (value) => !!value;
 
+const validateSelect = (value) => {
+  if (value === '' || value === 'empty') {
+    return false;
+  }
+  return true;
+};
+
 const openModal = () => {
   modal.classList.add('modal--is-open');
   overlay.classList.add('page-overlay--active');
   body.style.overflow = 'hidden';
+  body.style.paddingRight = `${scrollbarWidth}px`;
   updateTabindex(true);
 };
 
 const closeModal = () => {
   modal.classList.remove('modal--is-open');
   overlay.classList.remove('page-overlay--active');
-  body.style.overflow = 'auto';
+  setTimeout(() => {
+    body.style.overflow = 'auto';
+    document.body.style.paddingRight = '';
+  }, 300);
   updateTabindex(false);
 };
 
@@ -84,17 +97,17 @@ const onFormSubmit = (evt) => {
   }
 
   // Валидация селекта
-  // const isSelectValid = validateInput(
-  //   select,
-  //   validateSelect,
-  //   'Пожалуйста, укажите город.',
-  //   'modal__input--error',
-  //   fakeSelect
-  // );
-  // if (!isSelectValid) {
-  //   isFormValid = false;
-  //   firstInvalidInput = firstInvalidInput || select;
-  // }
+  const isSelectValid = validateInput(
+    select,
+    validateSelect,
+    'Пожалуйста, укажите город.',
+    'modal__input--error',
+    fakeSelect
+  );
+  if (!isSelectValid) {
+    isFormValid = false;
+    firstInvalidInput = firstInvalidInput || select;
+  }
 
   // Валидация чекбокса (отдельная логика)
   if (!checkboxInput.checked) {
@@ -128,6 +141,7 @@ const handleInputEvent = (evt) => {
     if (select.value) {
       select.setCustomValidity('');
       fakeSelect.classList.remove('modal__input--error');
+      select.classList.remove('modal__input--error');
     }
     return;
   }

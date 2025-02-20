@@ -135,6 +135,15 @@
   .news__pagination-bullet {
     width: 32px;
     height: 32px;
+
+    &::after {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &--active::after {
+      font-weight: 400;
+    }
   }
 }
 

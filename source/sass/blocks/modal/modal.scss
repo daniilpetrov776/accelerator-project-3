@@ -24,10 +24,8 @@
   }
 }
 
-.modal__wrapper {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: center;
+.modal::-webkit-scrollbar {
+  width: 6px;
 }
 
 .modal::-webkit-scrollbar-track {
@@ -42,6 +40,13 @@
 
 .modal::-webkit-scrollbar-thumb:hover {
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.modal__wrapper {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
 }
 
 .modal__form {
@@ -316,7 +321,9 @@
   .modal {
     width: 510px;
     padding: 60px 80px;
-    max-height: 700px;
+    max-height: 90vh;
+
+    // max-height: 700px;
   }
 
   .modal__title {
