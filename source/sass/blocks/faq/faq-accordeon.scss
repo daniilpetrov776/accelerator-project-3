@@ -14,6 +14,7 @@
   border: 2px solid $additional;
   border-radius: 14px;
   cursor: pointer;
+  width: 100%;
 
   p {
     margin: 0;
@@ -25,6 +26,7 @@
     transition: all 0.3s $smooth;
     transform-origin: top;
     max-height: 0;
+    word-break: break-word;
   }
 
   transition: background 0.3s $smooth;
@@ -51,7 +53,7 @@
 }
 
 .faq-accordeon__item:active .accordeon-button {
-  background-color: $additional;
+  background-color: $active;
 }
 
 .faq-accordeon__item:active .accordeon-button::before {
@@ -80,7 +82,7 @@
 }
 
 .faq-accordeon__item--is-open:hover .accordeon-button {
-  background-color: $additional;
+  background-color: transparent;
   border-color: $white;
 }
 
@@ -126,7 +128,6 @@
   background-color: $white;
 }
 
-
 .faq-accordeon__title-wrapper {
   display: flex;
   flex-flow: wrap;
@@ -146,6 +147,76 @@
   padding: 0 20px 0 0;
   max-width: 210px;
 }
+
+.accordeon-button:disabled {
+  background-color: $disabled;
+  pointer-events: none;
+  cursor: auto;
+  border-color: $disabled;
+}
+
+.accordeon-button:disabled::before {
+  background-color: $disabled;
+}
+
+.accordeon-button:disabled::after {
+  background-color: $disabled;
+}
+
+.faq-accordeon__item:hover .accordeon-button:disabled {
+  background-color: $disabled;
+  border-color: $disabled;
+}
+
+.faq-accordeon__item:hover .accordeon-button:disabled::before {
+  background-color: $white;
+}
+
+.faq-accordeon__item:hover .accordeon-button:disabled::after {
+  background-color: $white;
+}
+
+.faq-accordeon__item:has(.accordeon-button:disabled) {
+  background-color: transparent;
+}
+
+.faq-accordeon__item:active .accordeon-button:disabled {
+  background-color: $disabled;
+  border-color: $disabled;
+}
+
+
+.faq-accordeon__item:active .accordeon-button:disabled::before {
+  background-color: $white;
+}
+
+.faq-accordeon__item:active .accordeon-button:disabled::after {
+  background-color: $white;
+}
+
+
+.faq-accordeon__item--is-open:has(.accordeon-button:disabled) {
+  color: $white;
+
+  p {
+    color: $white;
+  }
+}
+
+.faq-accordeon__item--is-open:active .accordeon-button:disabled {
+  background-color: $disabled;
+  border-color: $disabled;
+}
+
+
+.faq-accordeon__item--is-open:active .accordeon-button:disabled::before {
+  background-color: $white;
+}
+
+.faq-accordeon__item--is-open:active .accordeon-button:disabled::after {
+  background-color: $white;
+}
+
 
 @media #{$not-mobile} {
   .faq-accordeon__item {

@@ -25,6 +25,7 @@
   font-size: 14px;
   line-height: 20px;
   margin: 0 0 10px;
+  word-break: break-word;
 }
 
 .data-form__input-wrapper {
@@ -53,6 +54,7 @@
   color: rgba(240, 239, 233, 0.8);
   position: relative;
   transition: color 0.3s $smooth;
+  word-break: break-word;
 
   &--check::before {
     position: absolute;
@@ -98,10 +100,6 @@
   width: 260px;
   height: 52px;
 }
-
-// .data-form__input-wrapper--check {
-//   gap: 15px;
-// }
 
 .data-form__input {
   min-height: 50px;
@@ -252,6 +250,18 @@
   color: $white;
 }
 
+.data-form__input.data-form__input--select:disabled {
+  opacity: 0;
+}
+
+.data-form__input.data-form__input--select:disabled + .data-form__select {
+  opacity: 0.4;
+  border-color: $white;
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: auto;
+  pointer-events: none;
+}
+
 .data-form__input--select {
   height: 100%;
 }
@@ -296,10 +306,6 @@
 
   .data-form__input-wrapper {
     margin: 0;
-
-    // &--check {
-    //   align-items: flex-start;
-    // }
   }
 
   .data-form__input {

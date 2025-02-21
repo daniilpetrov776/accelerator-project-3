@@ -7,7 +7,7 @@ const fakeSelect = form.querySelector('.data-form__select');
 const updateSelectItemsTabIndex = () => {
   const selectOptionItems = document.querySelectorAll('.select__option');
   selectOptionItems.forEach((option) => {
-    // Если меню открыто — делаем ссылки доступными для фокуса, иначе — нет
+
     if (selectOptions.classList.contains('select__options--is-open')) {
       option.setAttribute('tabindex', '0');
     } else {

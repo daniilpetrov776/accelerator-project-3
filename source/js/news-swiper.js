@@ -15,28 +15,6 @@ const updateSlideHeights = (swiper) => {
       slide.style.height = isOdd ? '240px' : '330px';
       slide.style.marginTop = isOdd ? '20px' : '0';
     });
-
-    const reorderedSlides = [];
-    const slidesArray = Array.from(swiper.slides);
-
-    for (let i = 0; i < slidesArray.length; i += 4) {
-      if (slidesArray[i]) {
-        reorderedSlides.push({ slide: slidesArray[i], tabindex: i + 1 });
-      }
-      if (slidesArray[i + 1]) {
-        reorderedSlides.push({ slide: slidesArray[i + 1], tabindex: i + 2 });
-      }
-      if (slidesArray[i + 2]) {
-        reorderedSlides.push({ slide: slidesArray[i + 2], tabindex: i + 3 });
-      }
-      if (slidesArray[i + 3]) {
-        reorderedSlides.push({ slide: slidesArray[i + 3], tabindex: i + 4 });
-      }
-    }
-
-    reorderedSlides.forEach(({ slide, tabindex }) => {
-      slide.setAttribute('tabindex', tabindex);
-    });
   }
 };
 
@@ -86,7 +64,7 @@ const updatePagination = (swiper) => {
     if (start < 1) {
       start = 1;
     }
-    // Изменяем условие: корректируем только если start+3 строго больше totalGroups
+
     if (start + 3 > totalGroups) {
       start = Math.max(1, totalGroups - 3);
     }

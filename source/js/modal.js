@@ -33,13 +33,17 @@ const clearFormFields = () => {
   });
 };
 
-// const validateSelect = (value) => !!value;
-
 const validateSelect = (value) => {
   if (value === '' || value === 'empty') {
     return false;
   }
   return true;
+};
+
+const handleEscKey = (evt) => {
+  if (evt.key === 'Escape' && modal.classList.contains('modal--is-open')) {
+    closeModal();
+  }
 };
 
 const openModal = () => {
@@ -48,9 +52,10 @@ const openModal = () => {
   body.style.overflow = 'hidden';
   body.style.paddingRight = `${scrollbarWidth}px`;
   updateTabindex(true);
+  document.addEventListener('keydown', handleEscKey);
 };
 
-const closeModal = () => {
+function closeModal () {
   modal.classList.remove('modal--is-open');
   overlay.classList.remove('page-overlay--active');
   setTimeout(() => {
@@ -58,13 +63,13 @@ const closeModal = () => {
     document.body.style.paddingRight = '';
   }, 300);
   updateTabindex(false);
-};
+  document.removeEventListener('keydown', handleEscKey);
+}
 
 const onFormSubmit = (evt) => {
   let isFormValid = true;
   let firstInvalidInput = null;
 
-  // Сбрасываем ошибки только для основных полей
   formInputs.forEach((input) => {
     input.classList.remove('modal__input--error');
     input.setCustomValidity('');
@@ -72,7 +77,6 @@ const onFormSubmit = (evt) => {
   fakeSelect.classList.remove('modal__input--error');
   select.setCustomValidity('');
 
-  // Валидация имени
   const isNameValid = validateInput(
     nameInput,
     validateName,
@@ -84,7 +88,6 @@ const onFormSubmit = (evt) => {
     firstInvalidInput = firstInvalidInput || nameInput;
   }
 
-  // Валидация телефона
   const isPhoneValid = validateInput(
     phoneInput,
     validatePhone,
@@ -96,7 +99,6 @@ const onFormSubmit = (evt) => {
     firstInvalidInput = firstInvalidInput || phoneInput;
   }
 
-  // Валидация селекта
   const isSelectValid = validateInput(
     select,
     validateSelect,
@@ -109,7 +111,6 @@ const onFormSubmit = (evt) => {
     firstInvalidInput = firstInvalidInput || select;
   }
 
-  // Валидация чекбокса (отдельная логика)
   if (!checkboxInput.checked) {
     checkboxInput.classList.add('modal__input--error');
     checkboxInput.setCustomValidity('Необходимо ваше согласие');
@@ -136,7 +137,6 @@ const onFormSubmit = (evt) => {
 const handleInputEvent = (evt) => {
   const input = evt.target;
 
-  // Обработка селекта
   if (input === select || input === fakeSelect || input.closest('.select__option')) {
     if (select.value) {
       select.setCustomValidity('');
@@ -146,14 +146,12 @@ const handleInputEvent = (evt) => {
     return;
   }
 
-  // Обработка чекбокса (только при его изменении)
   if (input === checkboxInput) {
     input.classList.remove('modal__input--error');
     input.setCustomValidity('');
     return;
   }
 
-  // Общая обработка полей
   if (input.value) {
     input.classList.remove('modal__input--error');
     input.setCustomValidity('');

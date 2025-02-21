@@ -153,13 +153,6 @@
   font-weight: 400;
   opacity: 80%;
   transition: opacity 0.3s $smooth;
-
-  // &--check {
-  //   font-size: 12px;
-  //   width: 80%;
-  //   opacity: 90%;
-  //   cursor: pointer;
-  // }
 }
 
 .modal__input-wrapper.select {
@@ -183,10 +176,6 @@
   border-radius: 8px;
   padding: 0 20px;
   transition: opacity 0.3s $smooth, border 0.3s $smooth;
-
-  // &--check {
-  //   border-width: 1px;
-  // }
 
   &--error:not(.modal__input--check) {
     border-color: #ff5e66;
@@ -249,18 +238,6 @@
   }
 }
 
-// .modal__input--check:disabled + .modal__input-title--check {
-//   // pointer-events: none;
-//   // cursor: auto;
-
-//   // &::before {
-//   //   opacity: 0.6;
-//   //   background-color: #ffffff99;
-//   //   pointer-events: none;
-//   //   cursor: auto;
-//   // }
-// }
-
 .modal__input--check.modal__input--error + .modal__input-title--check {
   &::before {
     border-color: #ff5e66;
@@ -317,13 +294,39 @@
   position: relative;
 }
 
+.modal__input:disabled {
+  background-color: rgba(169, 175, 183, 0.2);
+  border-color: rgba(169, 175, 183, 0.5);
+  pointer-events: none;
+  cursor: auto;
+}
+
+.modal__input-wrapper:hover .modal__input:disabled {
+  background-color: rgba(169, 175, 183, 0.2);
+  border-color: rgba(169, 175, 183, 0.5);
+}
+
+.modal__input:disabled + .modal__input-title {
+  color: #a9afb7;
+  opacity: 0.6;
+}
+
+.modal__select-input:disabled ~ .modal__select {
+  background-color: rgba(169, 175, 183, 0.2);
+  border-color: rgba(169, 175, 183, 0.5);
+}
+
+.modal__select-input:disabled + .modal__input-title {
+  color: #a9afb7;
+  opacity: 0.6;
+}
+
+
 @media #{$not-mobile} {
   .modal {
     width: 510px;
     padding: 60px 80px;
     max-height: 90vh;
-
-    // max-height: 700px;
   }
 
   .modal__title {
@@ -353,11 +356,6 @@
     width: 90%;
     font-size: 14px;
     line-height: 20px;
-
-    // &--check {
-    //   font-size: 12px;
-    //   line-height: 12px;
-    // }
   }
 
   .modal__button {
@@ -383,10 +381,6 @@
     top: -40px;
     right: -50px;
   }
-
-  // .modal__button {
-  //   padding: 4px 5px 4px 30px;
-  // }
 }
 
 @media #{$desktop-only} {

@@ -1,12 +1,7 @@
 .tabs {
   position: relative;
   width: 100%;
-
-  // width: 320px;
   min-height: 40px;
-
-  // height: max-content;
-  // overflow: hidden;
 }
 
 .tabs__list {
@@ -16,13 +11,8 @@
   display: flex;
   flex-flow: nowrap;
   width: 320px;
-
-  // overflow-y: hidden;
-  // gap: 12px;
   position: relative;
   left: -15px;
-
-  // min-height: 40px;
   min-height: fit-content;
 }
 
@@ -37,7 +27,6 @@
   font-weight: 500;
   border-radius: 20px;
   min-height: 36px;
-  min-width: 75px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,8 +62,6 @@
   .tabs__list {
     position: static;
     overflow-y: visible;
-
-    // width: 100%;
     width: 674px;
     flex-flow: nowrap;
     gap: 10px 6px;

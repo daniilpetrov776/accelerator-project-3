@@ -1,21 +1,9 @@
-// .hero-swiper {
-//   height: 568px;
-//   width: 320px;
-//   overflow: hidden;
-// }
-
 .hero-swiper {
   height: 568px;
   width: 100%;
   overflow: hidden;
   position: relative;
 }
-
-// .hero-swiper__swiper-wrapper {
-//   display: flex;
-//   align-items: flex-start;
-//   flex-flow: nowrap;
-// }
 
 .hero-swiper__swiper-wrapper {
   display: flex;
@@ -53,10 +41,9 @@
   align-items: center;
   justify-content: center;
   flex-flow: wrap;
-
-  // gap: 4px;
   transition: opacity 0.2s ease-in-out;
   opacity: 1;
+  gap: 2px;
 
   &--fade-out {
     opacity: 0;
@@ -76,8 +63,8 @@
 }
 
 .hero-swiper__pagination-bullet {
-  width: 20px;
-  height: 18px;
+  width: 18px;
+  height: 16px;
   position: relative;
   top: -1px;
   transition: opacity 0.3s $smooth;
@@ -220,6 +207,7 @@
   top: -1px;
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
+  word-break: break-word;
 
   position: relative;
 
@@ -310,28 +298,14 @@
 }
 
 @media #{$not-mobile} {
-  // .hero-swiper {
-  //   width: 768px;
-  //   height: 1024px;
-  // }
-
   .hero-swiper {
     width: 100%;
     min-height: 1024px;
   }
 
-
-  // .hero-swiper__picture-wrapper {
-  //   width: 768px;
-  // }
-
-  // .hero-swiper__picture {
-  //   width: 768px;
-  // }
-
-
   .hero-swiper__picture-wrapper {
     width: 100%;
+    background: #b3ce54;
   }
 
   .hero-swiper__picture {
@@ -343,12 +317,6 @@
     min-height: 1024px;
     padding: 90px 64px 60px 45px;
   }
-
-
-  // .hero-swiper__slide {
-  //   height: 100%;
-  //   padding: 90px 64px 60px 45px;
-  // }
 
   .hero-swiper__content-wrapper {
     display: grid;
@@ -441,6 +409,7 @@
     min-width: 100px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
+    gap: 1px;
 
     &::after {
       position: absolute;
@@ -455,8 +424,8 @@
   }
 
   .hero-swiper__pagination-bullet {
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
 
     &::after {
       width: 8px;
@@ -471,11 +440,6 @@
 }
 
 @media #{$desktop-only} {
-  // .hero-swiper {
-  //   width: 1440px;
-  //   height: 800px;
-  // }
-
   .hero-swiper {
     width: 100%;
     min-height: 800px;

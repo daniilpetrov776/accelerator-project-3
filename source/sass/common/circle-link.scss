@@ -58,4 +58,21 @@
     background-color: $white;
     transform: translate(-50%, -50%) rotate(45deg);
   }
+
+  &:disabled {
+    background-color: $disabled;
+    pointer-events: none;
+    cursor: auto;
+  }
+
+  &--disabled {
+    background-color: $disabled;
+    pointer-events: none;
+    cursor: auto;
+  }
+
+  &--disabled::before {
+    pointer-events: none;
+    cursor: auto;
+  }
 }

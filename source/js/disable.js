@@ -15,4 +15,5 @@ export const blockDisabledElements = () => {
   blockDisabledElementsBySelector('.nav-button', 'nav-button--disabled');
   blockDisabledElementsBySelector('.button', 'button--disabled');
   blockDisabledElementsBySelector('.accordeon-button', 'accordeon-button--disabled');
+  blockDisabledElementsBySelector('.circle-link', 'circle-link--disabled');
 };

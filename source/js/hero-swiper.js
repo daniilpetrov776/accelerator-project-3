@@ -21,12 +21,11 @@ const updatePaginationPosition = (swiperInstance, update) => {
   const textContainer = activeSlide.querySelector('.hero-swiper__content-wrapper');
 
   if (textContainer) {
-    // Вертикальное позиционирование
+
     const textContainerHeight = textContainer.offsetHeight;
     const padding = parseFloat(window.getComputedStyle(activeSlide).paddingBottom);
     const currentBottomPosition = textContainerHeight + padding - 1;
 
-    // Горизонтальное позиционирование
     const textContainerRect = textContainer.getBoundingClientRect();
     const currentLeftPosition = textContainerRect.left;
 

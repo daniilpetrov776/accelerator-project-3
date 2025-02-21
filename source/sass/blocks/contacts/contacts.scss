@@ -47,6 +47,7 @@
   margin: 0;
   opacity: 0.8;
   text-transform: uppercase;
+  word-break: break-word;
 }
 
 .contacts-info-link {
@@ -58,6 +59,7 @@
   margin: 0;
   transition: opacity 0.3s $smooth, color 0.3s $smooth;
   position: relative;
+  word-break: break-word;
 
   &::before {
     position: absolute;
@@ -95,6 +97,7 @@
 .contacts__picture-wrapper {
   position: relative;
   margin: 30px 0 0;
+  background: #b3ce54;
 
   &::before {
     position: absolute;

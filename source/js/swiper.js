@@ -9,7 +9,7 @@ let resizeTimeout;
 
 const handleResizeEvent = () => {
   window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout); // Очищаем предыдущий таймер
+    clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
       initHeroSwiper();
       initProgramsSwiper();
@@ -17,7 +17,7 @@ const handleResizeEvent = () => {
       initNewsSwiper();
       handleFaqControls();
       initReviewsSwiper();
-    }, 200); // Задержка в миллисекундах (например, 200 мс)
+    }, 200);
   });
 };
 

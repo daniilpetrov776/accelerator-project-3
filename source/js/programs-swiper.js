@@ -32,23 +32,26 @@ export const initProgramsSwiper = () => {
         },
         scrollbarDragMove: function (swiper) {
           const scrollbar = swiper.scrollbar;
+          const containerWidth = scrollbar.el.clientWidth;
+          const dragWidth = scrollbar.dragEl.clientWidth;
+          const maxTranslate = containerWidth - dragWidth;
+
           const computedStyle = window.getComputedStyle(scrollbar.dragEl);
           const matrix = computedStyle.transform;
           let translateX = 0;
           if (matrix && matrix !== 'none') {
-            // Получаем значение translateX из матрицы вида "matrix(a, b, c, d, tx, ty)"
             const matrixValues = matrix.match(/matrix\(([^,]+),[^,]+,[^,]+,[^,]+,([^,]+),/);
             if (matrixValues && matrixValues.length >= 3) {
               translateX = parseFloat(matrixValues[2]);
             }
           }
-          const containerWidth = scrollbar.el.clientWidth;
-          const dragWidth = scrollbar.dragEl.clientWidth;
-          const maxTranslate = containerWidth - dragWidth;
+
           let progress = translateX / maxTranslate;
           progress = Math.max(0, Math.min(1, progress));
-          const slideIndex = Math.round(progress * (swiper.slides.length - 1));
-          swiper.slideTo(slideIndex, 300, false);
+
+          const totalWidth = swiper.virtualSize;
+          const translate = -progress * (totalWidth - swiper.width);
+          swiper.setTranslate(translate);
         },
       },
       breakpoints: {

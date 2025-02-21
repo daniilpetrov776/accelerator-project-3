@@ -62,6 +62,7 @@
   letter-spacing: 0.12px;
   text-transform: uppercase;
   margin: 0;
+  word-break: break-word;
 }
 
 .reviews-slide__text {
@@ -69,6 +70,7 @@
   line-height: 14px;
   font-weight: 400;
   margin: 0;
+  word-break: break-word;
 }
 
 .reviews-slide__text-important {
@@ -77,6 +79,7 @@
   font-weight: 400;
   color: $additional;
   margin: 5px 0 0;
+  word-break: break-word;
 }
 
 .reviews-slide__cms-wrapper {
@@ -90,6 +93,7 @@
     line-height: 20px;
     font-weight: 400;
     margin: 0;
+    word-break: break-word;
   }
 }
 
@@ -171,8 +175,6 @@
   .reviews-slide__text-important {
     font-size: 24px;
     line-height: 26px;
-
-    // padding: 0 10px 0 0;
   }
 
   .reviews-slide__cms-wrapper {

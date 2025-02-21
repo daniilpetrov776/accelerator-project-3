@@ -1,6 +1,5 @@
 import Swiper from 'swiper/bundle';
 import { Mousewheel, FreeMode } from 'swiper/modules';
-// import'swiper/css/bundle';
 
 let tabsSwiper = null;
 

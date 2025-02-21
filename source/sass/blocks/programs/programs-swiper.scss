@@ -17,6 +17,7 @@
   flex-flow: wrap;
   align-items: flex-end;
   padding: 18px 10px;
+  border-radius: 12px;
 }
 
 .programs-swiper__picture-wrapper {
@@ -26,6 +27,7 @@
   z-index: -1;
   border-radius: 12px;
   overflow: hidden;
+  background: #b3ce54;
 
   &::after {
     position: absolute;
@@ -79,6 +81,7 @@
   border-top-right-radius: 12px;
   margin: 0;
   position: relative;
+  word-break: break-word;
 
   &::after {
     position: absolute;
@@ -97,8 +100,6 @@
   flex-flow: wrap;
   align-items: center;
   justify-content: space-between;
-
-  // width: 284px;
   min-height: 69px;
   background-color: $white;
   padding: 12px 18px 15px;
@@ -127,9 +128,6 @@
     width: 324px;
     height: 420px;
     padding: 10px 20px;
-
-    // overflow-x: hidden;
-    // flex: 1 0 auto;
   }
 
   .programs-swiper__content {

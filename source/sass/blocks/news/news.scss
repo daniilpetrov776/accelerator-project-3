@@ -12,8 +12,6 @@
   flex-flow: wrap;
   align-items: flex-start;
   gap: 20px;
-
-  // width: 320px;
 }
 
 .news__title {
@@ -32,7 +30,6 @@
 }
 
 .news__pagination {
-  // width: 152px;
   width: fit-content;
   height: 26px;
   display: flex;
@@ -77,10 +74,6 @@
     background-color: $additional;
     opacity: 1;
   }
-
-  // &--active::after {
-  //   color: $white;
-  // }
 
   &:focus-visible {
     outline: none;
