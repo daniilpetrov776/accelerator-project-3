@@ -1,5 +1,7 @@
 import Swiper from 'swiper/bundle';
 
+const RESERVED_OFFSET = 1;
+
 const changeStandardActivePaginationClass = (customActiveClass) => {
   const bullets = document.querySelectorAll('.hero-swiper__pagination-bullet');
   const standardActive = document.querySelector('.swiper-pagination-bullet-active');
@@ -24,7 +26,7 @@ const updatePaginationPosition = (swiperInstance, update) => {
 
     const textContainerHeight = textContainer.offsetHeight;
     const padding = parseFloat(window.getComputedStyle(activeSlide).paddingBottom);
-    const currentBottomPosition = textContainerHeight + padding - 1;
+    const currentBottomPosition = textContainerHeight + padding - RESERVED_OFFSET;
 
     const textContainerRect = textContainer.getBoundingClientRect();
     const currentLeftPosition = textContainerRect.left;

@@ -4,6 +4,8 @@ const submenuButtons = document.querySelectorAll('.navigation-menu__submenu-butt
 const submenuLists = document.querySelectorAll('.navigation-menu__submenu-list');
 const overlay = document.querySelector('.page-overlay');
 
+const NAV_MENU_OFFSET = 70;
+
 const updateNavMenuItemsTabIndex = () => {
   const navLinks = document.querySelectorAll('.navigation-menu__link');
   navLinks.forEach((link) => {
@@ -47,7 +49,7 @@ const updateListHeight = (list) => {
 const updateMenuHeight = (element = null) => {
   requestAnimationFrame(() => {
     const additionalHeight = element ? element.scrollHeight : 0;
-    navMenu.style.maxHeight = `${navMenu.scrollHeight + 70 + additionalHeight}px`;
+    navMenu.style.maxHeight = `${navMenu.scrollHeight + NAV_MENU_OFFSET + additionalHeight}px`;
   });
 };
 

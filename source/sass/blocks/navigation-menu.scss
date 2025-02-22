@@ -89,7 +89,6 @@
   transition: opacity 0.3s $smooth;
 
 
-
   &--active {
     opacity: 100%;
   }
@@ -115,6 +114,7 @@
     background: $white;
     mask: url("/__spritemap#sprite-arrow-down-view") center center no-repeat;
   }
+
   &--active::after {
     transform: translateY(-50%) rotate(180deg);
   }

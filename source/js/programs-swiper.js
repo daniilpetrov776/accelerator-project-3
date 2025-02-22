@@ -61,18 +61,18 @@ export const initProgramsSwiper = () => {
           centeredSlides: false,
           slideToClickedSlide: false,
           simulateTouch: false,
-          scrollbar: {
-            dragSize: 394,
-          }
+          // scrollbar: {
+          //   dragSize: 394,
+          // }
         },
         768: {
           slidesPerView: 'auto',
           spaceBetween: 30,
           centeredSlides: false,
           slideToClickedSlide: false,
-          scrollbar: {
-            dragSize: 326,
-          }
+          // scrollbar: {
+          //   dragSize: 326,
+          // }
         },
         320: {
           slidesPerView: 'auto',

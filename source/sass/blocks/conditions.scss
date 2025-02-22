@@ -31,12 +31,26 @@
   width: 95%;
   position: relative;
 
+  &::before {
+    position: absolute;
+    content: "";
+    width: 32px;
+    height: 32px;
+    background-color: $additional;
+    left: -16px;
+    top: -5px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
   &::after {
     position: absolute;
     content: attr(data-number);
     width: 32px;
     height: 32px;
-    background-color: $additional;
     left: -16px;
     top: -5px;
     border-radius: 30px;
@@ -47,6 +61,7 @@
     font-size: 18px;
     line-height: 18px;
     font-weight: 500;
+    z-index: 3;
   }
 }
 
@@ -80,6 +95,13 @@
     height: 100%;
     padding: 30px 25px;
     width: 305px;
+
+    &::before {
+      width: 42px;
+      height: 42px;
+      top: -15px;
+      left: -20px;
+    }
 
     &::after {
       width: 42px;

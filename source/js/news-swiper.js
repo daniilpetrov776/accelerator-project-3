@@ -1,17 +1,19 @@
 import Swiper from 'swiper';
 import 'swiper/css/grid';
 import { Grid } from 'swiper/modules';
+import { DESKTOP_BREAKPOINT, MOBILE_BREAKPOINT, TABLET_BREAKPOINT } from './const';
 
 const paginationContainer = document.querySelector('.news__pagination');
+
+const VISIBLE_BULLETS = 4;
 
 let newsSwiper = null;
 let lastSavedCurrentGroup = 0;
 
 const updateSlideHeights = (swiper) => {
-  if (window.innerWidth >= 320 && window.innerWidth < 768) {
+  if (window.innerWidth >= MOBILE_BREAKPOINT && window.innerWidth < TABLET_BREAKPOINT) {
     swiper.slides.forEach((slide, index) => {
       const isOdd = index % 2 !== 0;
-
       slide.style.height = isOdd ? '240px' : '330px';
       slide.style.marginTop = isOdd ? '20px' : '0';
     });
@@ -51,7 +53,7 @@ const updatePagination = (swiper) => {
 
   let visibleIndexes = [];
 
-  if (totalGroups <= 4) {
+  if (totalGroups <= VISIBLE_BULLETS) {
     visibleIndexes = Array.from({ length: totalGroups }, (_, i) => i + 1);
   } else {
     let start;
@@ -81,7 +83,7 @@ const updatePagination = (swiper) => {
 };
 
 const updateSlideWidths = (swiper) => {
-  if (window.innerWidth >= 1440) {
+  if (window.innerWidth >= DESKTOP_BREAKPOINT) {
     const slides = swiper.slides;
     const slidesPerGroup = swiper.params.slidesPerGroup;
     if (slides.length > 0) {

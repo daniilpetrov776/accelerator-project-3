@@ -122,6 +122,25 @@
   }
 }
 
+.data-form__input--comment::-webkit-scrollbar {
+  width: 6px;
+}
+
+.data-form__input--comment::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.data-form__input--comment::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  border: 2px solid transparent;
+}
+
+.data-form__input--comment::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
 .data-form__input-title:not(.data-form__input-title--check) {
   top: 1px;
 }
@@ -276,6 +295,7 @@
 
 .data-form__button .button__text {
   width: 160px;
+  margin: 0 0 0 18px;
 }
 
 @media #{$not-mobile} {
@@ -346,6 +366,7 @@
 
   .data-form__button .button__text {
     width: 240px;
+    margin: 0 0 0 24px;
   }
 }
 

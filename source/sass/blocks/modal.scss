@@ -61,8 +61,8 @@
   position: absolute;
   top: -25px;
   right: 0;
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -95,8 +95,8 @@
   &::after {
     position: absolute;
     content: "";
-    width: 22px;
-    height: 22px;
+    width: 18px;
+    height: 18px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -121,6 +121,7 @@
   font-weight: 400;
   text-align: center;
   width: 220px;
+  margin: 10px 0 20px;
 }
 
 .modal__input-wrapper {
@@ -197,6 +198,7 @@
   width: 80%;
   opacity: 90%;
   cursor: pointer;
+  margin: -15px 0 0;
 
   &::before {
     position: absolute;
@@ -325,20 +327,20 @@
 @media #{$not-mobile} {
   .modal {
     width: 510px;
-    padding: 60px 80px;
+    padding: 55px 80px 60px;
     max-height: 90vh;
   }
 
   .modal__title {
     width: 350px;
-    margin: 0 0 20px;
+    margin: 2px 0;
     font-size: 28px;
     line-height: 28px;
   }
 
   .modal__description {
     width: 350px;
-    margin: 20px 0 30px;
+    margin: 16px 0 30px;
     font-size: 16px;
     line-height: 20px;
   }
@@ -378,8 +380,15 @@
   }
 
   .modal__close-button {
-    top: -40px;
-    right: -50px;
+    top: -30px;
+    right: -55px;
+    width: 25px;
+    height: 25px;
+
+    &::after {
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 
